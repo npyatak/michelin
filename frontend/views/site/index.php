@@ -13,6 +13,7 @@
     </div>
     <div class="row main_screen">
         <div class="video">
+            <div id="launch-video" class="play-video"></div>
         </div>
         <div class="about">
             <div class="title">О проекте</div>
@@ -23,7 +24,7 @@
                 <div>и блогеры проложат для вас новые маршруты на зимней карте</div>
                 <div>России. 250 уникальных точек – столько же, сколько и шипов на</div>
                 <div>шине. Мы начинаем, а вы подхватываете!</div>
-                <!--                <div><a class="btn btn-oblique"><span>Участвовать в конкурсе!</span></a></div>-->
+                <div><a class="btn btn-oblique" target="_blank" href="/pdf/rules_michelin_31.08.2018_v8.pdf"><span>Участвовать в конкурсе!</span></a></div>
             </div>
         </div>
     </div>
@@ -87,3 +88,11 @@
 <div id="tire">
     <div class="arrows"></div>
 </div>
+
+<div class="video-modal" id="video">
+    <div class="modalType2-content">
+        <div class="video-modal-close"></div>
+        <div id="ytplayer"></div>
+    </div>
+</div>
+<div class="overlay"></div>

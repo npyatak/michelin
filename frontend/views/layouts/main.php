@@ -50,10 +50,13 @@ AppAsset::register($this);
             <a href="<?=Url::toRoute(['site/about']);?>">О шине</a>
             <span href="">Конкурс</span>
         </nav>
-        <div class="user">
-            <div class="score">0</div>
-            <div class="name">Иван Иванов</div>
+        <div class="start">
+            <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
         </div>
+<!--        <div class="user">-->
+<!--            <div class="score">0</div>-->
+<!--            <div class="name">Иван Иванов</div>-->
+<!--        </div>-->
     </header>
 
     <?= $content;?>
