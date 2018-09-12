@@ -1,0 +1,188 @@
+.index_page { overflow: hidden;
+
+  .main_title { vertical-align: middle; background: url("../img/title.png") 50% / contain no-repeat; width: 483px; height: 78px; margin-left: 90px; margin-right: 30px;
+    @media (max-height: 950px) {
+      width: 390px;
+      height: 60px;
+    }
+    @media (max-width: 1024px) {
+      width: 240px;
+      height: 39px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .mans { vertical-align: middle;
+    > div { display: inline-block; vertical-align: top; font-size: 9px; font-weight: bold; color: #0551A0; text-transform: uppercase; margin: 0 18px;
+      &:before { display: block; content: " "; width: 115px; height: 115px; border-radius: 50%; background-size: cover; background-position: 50%; border: 3px solid #FFF; margin-bottom: 20px; }
+    }
+    .savin:before { background-image: url("../img/savin.jpg"); }
+    .chesnokova:before { background-image: url("../img/chesnokova.jpg"); }
+    .chebatkov:before { background-image: url("../img/chebatkov.jpg"); }
+    .kovinov:before { background-image: url("../img/kovinov.jpg") }
+
+    @media (max-height: 950px) {
+      > div { margin: 0 15px;
+        &:before { width: 70px; height: 70px; margin: 0 auto 15px; }
+      }
+    }
+    @media (max-width: 1024px) {
+      > div { margin: 0 10px; font-size: 8px;
+        &:before { width: 50px; height: 50px; margin: 0 auto 10px; }
+      }
+    }
+    @media (max-width: 768px) {
+      > div { margin: 0 5px; max-width: 65px;
+        &:before { width: 50px; height: 50px; margin: 0 auto 10px; }
+      }
+    }
+  }
+
+  .main_screen { padding-top: 50px; text-align: center;
+    .video { background: url("../img/video_bg.png") 0 0 / cover; width: 634px; height: 260px; }
+    .about { max-width: 600px; transform: skewX(-24deg); text-align: left;
+      box-sizing: border-box;
+      .title { font-size: 20px; color: #FFF; font-weight: 600; text-transform: uppercase; transform: skewX(24deg); margin-bottom: 25px; text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.3); }
+      .descr { font-family: Arial, sans-serif; color: #0551A0; font-size: 12px; font-weight: bold; text-transform: uppercase; line-height: 22px;
+        > div { transform: skewX(24deg); }
+        .btn { margin-top: 38px; font-family: Michelin, Arial, sans-serif; }
+      }
+    }
+    @media (max-height: 800px) {
+      padding-top: 35px;
+      .video { width: 480px; height: 195px; }
+      .about {
+        max-width: 420px;
+        .title { font-size: 18px; margin-bottom: 15px; }
+        .descr { line-height: 16px; font-size: 10px;
+          .btn { margin-top: 25px; }
+        }
+      }
+    }
+    @media (max-width: 1024px) {
+      padding-top: 35px;
+      .video { width: 320px; height: 145px; background-position: -20px 0; background-size: 335px; }
+      .about {
+        max-width: 400px; padding: 0 10px; box-sizing: border-box;
+        .title { font-size: 18px; margin-bottom: 15px; }
+        .descr { line-height: 16px; font-size: 10px;
+          > div { display: inline; }
+          .btn { margin-top: 25px; }
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      .video { display: none; }
+      .about {
+        transform: none;
+        .title { transform: none; }
+        .descr {
+          > div { transform: none; }
+        }
+      }
+    }
+  }
+
+  .city {
+    display: none;;
+    top: 150px;
+    position: absolute; width: 1200px; z-index: 30; left: 50%; margin-left: -600px;
+
+    &[data-type="1"] {
+      .text_block {
+        .text { display: none; }
+        .city_img {
+          iframe { display: block; }
+          div { display: none; }
+        }
+      }
+    }
+
+    .text_block {
+      overflow: hidden; background: #fff; transform: skewX(-24deg); width: 1200px; height: 380px; padding-left: 660px; box-sizing: border-box;
+      .city_img { width: 670px; overflow: hidden; position: absolute; left: -90px; height: 100%;
+        div {
+          display: block; content: ""; background: url(../img/city/1.jpg) 50%  /cover no-repeat;
+        }
+        iframe { display: none; }
+        > * { transform: skewX(24deg); height: 100%; width: calc(~"100% + 90px"); }
+      }
+
+      .city-title { transform: skewx(24deg); font-size: 24px; color: #004f9f; font-weight: bold; text-transform: uppercase; margin-top: 70px; }
+      .show_on_map {
+        display: none;
+        cursor: pointer; position: absolute; top: 0; right: 0; color: #fff; line-height: 40px; font-size: 10px; text-transform: uppercase; font-weight: bold; text-align: center; width: 220px;
+        background: #0451a0;
+        div { padding-right: 25px; box-sizing: border-box; transform: skewx(24deg); background: url("../img/show_on_map_ico.png") 90% 50% no-repeat; }
+      }
+      .text {
+        margin: 15px 0; transform: skewx(24deg); font-size: 12px; font-family: Arial, sans-serif; line-height: 16px; color: #1c4e94; margin-left: 55px;
+        width: 400px;
+        max-height: 180px;
+        overflow: auto;
+        p { margin: 20px 0; }
+      }
+    }
+
+    .info_block { font-size: 10.6px; color: #004f9f; font-weight: 600; margin-left: -85px; padding-top: 5px;
+      .characteristics { font-size: inherit; text-transform: uppercase; padding-top: 10px;
+        > div { font-size: inherit; width: 140px;
+          &:nth-child(1) { width: 200px; padding-top: 5px; }
+          .scores { padding-bottom: 10px;
+            &:before, &:after { display: inline-block; content: " "; background: url("../img/snow_flake_blue.png"); width: 19px; height: 15px; }
+            &:before { opacity: 0.4 }
+
+            &:before { width: 19*5px }
+            &:after { width: 19*0px }
+            &[data-score="1"] {
+              &:before { width: 19*4px }
+              &:after { width: 19*1px }
+            }
+            &[data-score="2"] {
+              &:before { width: 19*3px }
+              &:after { width: 19*2px }
+            }
+            &[data-score="3"] {
+              &:before { width: 19*2px }
+              &:after { width: 19*3px }
+            }
+            &[data-score="4"] {
+              &:before { width: 19*1px }
+              &:after { width: 19*4px }
+            }
+            &[data-score="5"] {
+              &:before { width: 19*0px }
+              &:after { width: 19*5px }
+            }
+          }
+        }
+      }
+      .peoples {
+        float: right; padding-right: 80px; font-size: inherit;
+        > div { font-size: inherit; display: inline-block; vertical-align: top; font-weight: bold; color: #0551A0; text-transform: uppercase; max-width: 200px; text-align: left; padding-top: 22px;
+          &:before { margin-top: -22px;
+            margin-right: 10px; float: left; display: block; content: " "; width: 64px; height: 64px; border-radius: 50%; background-size: cover; background-position: 50%; border: 2px solid #FFF; }
+        }
+        .savin { max-width: 170px;
+          &:before { background-image: url("../img/savin.jpg"); }
+        }
+        .chesnokova {
+          max-width: 190px;
+          &:before { background-image: url("../img/chesnokova.jpg"); }
+        }
+        .chebatkov {
+          max-width: 180px;
+          &:before { background-image: url("../img/chebatkov.jpg"); }
+        }
+        .kovinov {
+          max-width: 180px;
+          &:before { background-image: url("../img/kovinov.jpg") }
+        }
+      }
+    }
+  }
+}

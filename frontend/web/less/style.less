@@ -1,0 +1,160 @@
+@import 'fonts';
+@import "common";
+@import "index";
+@import "about";
+.main_tire { display: block; position: relative; width: 360px; left: 50%; overflow: hidden;
+  canvas { margin: -100px 0; }
+  .text-label { user-select: none; padding-top: 35px; transition: opacity 0.3s, font-size 0.2s; display: none; opacity: 0; font-size: 12px; line-height: 12px; text-shadow: 2px 2px 2px #000, -2px -2px 2px #000; cursor: pointer;
+    &:before { display: block; content: " "; background: url("../img/marker.png") 50% no-repeat; width: 20px; height: 35px; position: absolute; left: 50%; margin-left: -10px; top: 0; }
+    &.marker_only { font-size: 0; opacity: 0.5 }
+    &.show { display: block; opacity: 1; animation: display-none-transition 1s both; }
+    span { font-weight: bold; }
+    color: #FFF; text-align: center; width: 100px; margin-left: -55px; margin-top: 10px;
+  }
+}
+#tire { position: fixed; bottom: -10vw; display: block; background: url('../img/sprite.png') no-repeat; text-align: left;
+  width: 100%; background-size: 100%;
+  height: 23.91vw; z-index: 5;
+  transform-origin: 0 0;
+  .arrows { background: url("../img/arrows.png") 50% / contain  no-repeat; width: 18vw; height: 3vw; position: absolute; left: 50%; margin-left: -9vw; bottom: 12vw; }
+  .marker { display: none; position: absolute; cursor: pointer; width: 200px; margin-left: -100px; text-align: center; transform: skewX(-24deg);
+    font-size: .7vw; font-weight: bold; text-transform: uppercase; color: #fff; text-shadow: -1px 0 0 black, 1px 0 0 black, 0 -1px 0px black, 0 1px 0 black;
+
+    &.active { color: #fdec79; background: #0451a0;
+      &:after { transform: skewX(24deg); box-shadow: 0 0 33px 10px #fff; position: absolute; left: 50%; display: block; width: 40px; height: 40px; top: -67px; margin-left: -45px; z-index: -1; border-radius: 50%; content: " "; }
+    }
+
+    span { transform: skewX(24deg); padding: 2px 4px; display: inline-block; }
+    &:before { transform: skewX(24deg); position: absolute; left: 50%; content: " "; display: block; background: url(../img/marker.png) 50% /contain no-repeat; width: 2.7vw; padding-top: 3.93vw; margin-top: -4.2vw; margin-left: -2.7vw; }
+    &_type_0 { }
+    &_type_1 {
+      &:before { background-image: url("../img/marker_b.png"); }
+    }
+  }
+
+  &.frame-0000 { background-position: 0 0; }
+  &.frame-0001 { background-position: 0 5.263158%; }
+  &.frame-0002 { background-position: 0 10.526316%; }
+  &.frame-0003 { background-position: 0 15.789474%; }
+  &.frame-0004 { background-position: 0 21.052632%; }
+  &.frame-0005 { background-position: 0 26.315789%; }
+  &.frame-0006 { background-position: 0 31.578947%; }
+  &.frame-0007 { background-position: 0 36.842105%; }
+  &.frame-0008 { background-position: 0 42.105263%; }
+  &.frame-0009 { background-position: 0 47.368421%; }
+  &.frame-0010 { background-position: 0 52.631579%; }
+  &.frame-0011 { background-position: 0 57.894737%; }
+  &.frame-0012 { background-position: 0 63.157895%; }
+  &.frame-0012 { background-position: 0 68.421053%; }
+  &.frame-0015 { background-position: 0 73.684211%; }
+  &.frame-0016 { background-position: 0 78.947368%; }
+  &.frame-0017 { background-position: 0 84.210526%; }
+  &.frame-0018 { background-position: 0 89.473684%; }
+  &.frame-0019 { background-position: 0 94.736842%; }
+  &.frame-0020 { background-position: 0 100%; }
+
+  &.frame-0000 {
+    .marker1 { display: block; left: 16.5%; top: 32%;; }
+    .marker2 { display: block; left: 27.5%; top: 40%;; }
+    .marker3 { display: block; left: 64.5%; top: 25%; }
+    .marker4 { display: block; left: 87%; top: 47%; }
+    .marker5 { display: block; left: 29.4%; top: 14%;; }
+    .marker6 { display: block; left: 72.7%; top: 21%; }
+    .marker7 { display: block; left: 42.3%; top: 7%; }
+  }
+  &.frame-0001 {
+    .marker1 { display: block; left: 14.3%; top: 41%; }
+    .marker2 { display: block; left: 26.2%; top: 50%; }
+    .marker3 { display: block; left: 65.5%; top: 33%; }
+    .marker5 { display: block; left: 28.2%; top: 18%; }
+    .marker6 { display: block; left: 74.2%; top: 27%; }
+    .marker7 { display: block; left: 41.8%; top: 9%; }
+    .marker8 { display: block; left: 67.4%; top: 11%; }
+  }
+
+  &.frame-0002 {
+    .marker1 { display: block; left: 12%; top: 50%; }
+    .marker3 { display: block; left: 66.6%; top: 41%; }
+    .marker5 { display: block; left: 26.8%; top: 22%; }
+    .marker6 { display: block; left: 75.7%; top: 34%; }
+    .marker7 { display: block; left: 41.3%; top: 12%; }
+    .marker8 { display: block; left: 68.5%; top: 16%; }
+    .marker9 { display: block; left: 54%; top: 7%; }
+  }
+  &.frame-0003 {
+    .marker3 { display: block; left: 68%; top: 52%; }
+    .marker5 { display: block; left: 25.5%; top: 29%; }
+    .marker6 { display: block; left: 77.7%; top: 45%; }
+    .marker7 { display: block; left: 40.8%; top: 16%; }
+    .marker8 { display: block; left: 69.5%; top: 22%; }
+    .marker9 { display: block; left: 54.5%; top: 9%; }
+    .marker10 { display: block; left: 32.4%; top: 14%; }
+  }
+
+  &.frame-0004 {
+    .marker5 { display: block; left: 23.5%; top: 38%; }
+    .marker7 { display: block; left: 40.3%; top: 22%; }
+    .marker8 { display: block; left: 71%; top: 29%; }
+    .marker9 { display: block; left: 54.6%; top: 13%; }
+    .marker10 { display: block; left: 31.3%; top: 18%; }
+  }
+
+  &.frame-0005 {
+    .marker5 { display: block; left: 21.8%; top: 49%; }
+    .marker7 { display: block; left: 39.6%; top: 31%; }
+    .marker8 { display: block; left: 72.5%; top: 38%; }
+    .marker9 { display: block; left: 55%; top: 19%; }
+    .marker10 { display: block; left: 30%; top: 24.5%; }
+    .marker11 { display: block; left: 74.4%; top: 13%; }
+  }
+
+  &.frame-0006 {
+    .marker7 { display: block; left: 38.7%; top: 41%; }
+    .marker8 { display: block; left: 74.1%; top: 51%; }
+    .marker9 { display: block; left: 55.3%; top: 26%; }
+    .marker10 { display: block; left: 28.6%; top: 32%; }
+    .marker11 { display: block; left: 75.8%; top: 17%; }
+    .marker12 { display: block; left: 37.4%; top: 12%; }
+  }
+  &.frame-0007 {
+    .marker9 { display: block; left: 55.5%; top: 36%; }
+    .marker10 { display: block; left: 27.1%; top: 43%; }
+    .marker11 { display: block; left: 77.2%; top: 22%; }
+    .marker12 { display: block; left: 36.6%; top: 15%; }
+  }
+  &.frame-0008 {
+    .marker9 { display: block; left: 56%; top: 47%; }
+    .marker11 { display: block; left: 78.9%; top: 28%; }
+    .marker12 { display: block; left: 35.6%; top: 20%; }
+  }
+  &.frame-0009 {
+    .marker11 { display: block; left: 80.9%; top: 36%; }
+    .marker12 { display: block; left: 34.9%; top: 27%; }
+    .marker13 { display: block; left: 54.3%; top: 9%; }
+  }
+  &.frame-0010 {
+    .marker11 { display: block; left: 83.1%; top: 46%; }
+    .marker12 { display: block; left: 33.8%; top: 38%; }
+    .marker13 { display: block; left: 54.5%; top: 12% }
+    .marker14 { display: block; left: 36.8%; top: 14%; }
+  }
+  &.frame-0011 {
+    .marker12 { display: block; left: 32.5%; top: 49%; }
+    .marker13 { display: block; left: 54.8%; top: 17%; }
+    .marker14 { display: block; left: 35.8%; top: 19%; }
+  }
+  &.frame-0012 {
+    .marker13 { display: block; left: 55.9%; top: 42%; }
+    .marker14 { display: block; left: 36.1%; top: 17%; }
+    .marker15 { display: block; left: 32.8%; top: 47%; }
+  }
+
+  @media (max-height: 600px) {
+    position: static;
+  }
+}
+@keyframes display-none-transition {
+  0% {
+    opacity: 0;
+  }
+}
