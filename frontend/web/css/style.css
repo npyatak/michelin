@@ -1578,7 +1578,7 @@ body.overflow {
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    width: 450px;
+    width: 390px;
     background: #fff;
     padding: 50px;
     z-index: 99;
@@ -1592,12 +1592,13 @@ body.overflow {
 }
 .auth>div:nth-child(2) {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 21px;
     color: rgb(0,0,0);
     font-family: "Helvetica", sans-serif;
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
 }
 .auth>div:nth-child(3) {
     text-align: center;

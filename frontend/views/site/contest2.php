@@ -8,7 +8,7 @@
 
 </div>
 <div class="auth" style="display: block">
-    <div><span>Авторизируйся</span></div>
+    <div><span>Авторизуйся</span></div>
     <div>для участия в викторине необходимо авторизоваться с использованием аккаунта социальной сети</div>
     <div>
         <a href="" class="vk"></a>
