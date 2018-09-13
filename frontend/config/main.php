@@ -82,8 +82,8 @@ return [
             'baseUrl' => '/',
             'rules' => [                
                 '/' => 'site/index',
-                '<action:\w+>/<id:\d+>' => 'site/<action>',
-                '<action:\w+>' => 'site/<action>',
+                '<action>/<id:\d+>' => 'site/<action>',
+                '<action>' => 'site/<action>',
             ],
         ],
     ],

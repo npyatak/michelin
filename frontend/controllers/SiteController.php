@@ -13,6 +13,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
+use common\models\City;
+
 /**
  * Site controller
  */
@@ -146,6 +148,49 @@ class SiteController extends Controller
     public function actionContest()
     {
         return $this->render('contest');
+    }
+
+    public function actionCityList()
+    {
+        if(Yii::$app->request->isAjax) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $cities = City::find()->all();
+
+            $citiesArr = [];
+            foreach ($cities as $c) {
+                $citiesArr[] = [
+                    'id' => $c->id,
+                    'name' => $c->name,
+                    'type' => $c->type,
+                ];
+            }
+
+            shuffle($citiesArr);
+
+            return $citiesArr;
+        }
+    }
+
+    public function actionCityData($id)
+    {
+        if(Yii::$app->request->isAjax) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $city = City::findOne($id);
+            if($city === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+
+            return  [
+                'name' => $city->name,
+                'descr' => $city->descr,
+                'coord' => $city->coord,
+                'type' => $city->type,
+                'score1' => $city->char1,
+                'score2' => $city->char2,
+                'score3' => $city->char3,
+                'yt_id' => $city->video_yt_id,
+            ];
+        }
     }
 
     /**

@@ -823,14 +823,14 @@ window.App = (function (app) {
     app.request.getCityNames = function (callback, failCallback) {
 
         return $.ajax({
-            url: app.state.request_pre_url + '/get_city_list'
+            url: '/city-list'
         }).done(callback).fail(failCallback);
 
     };
     app.request.getCityData = function (city_id, callback, failCallback) {
 
         return $.ajax({
-            url: app.state.request_pre_url + '/get_city_data/' + city_id
+            url: '/city-data/' + city_id
         }).done(callback).fail(failCallback);
 
     };
