@@ -13,4 +13,13 @@
             <div>революционные шины <b>Michelin X-Ice North 4</b></div>
         </div>
     </div>
+    <div class="start-block">
+        <div class="left">
+            <div>Старт</div>
+            <div>конкурса</div>
+        </div>
+        <div class="right">
+            <div><span>17</span> сентября</div>
+        </div>
+    </div>
 </div>

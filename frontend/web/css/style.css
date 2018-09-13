@@ -260,7 +260,7 @@ header .start span.number {
 
 .main_title {
     vertical-align: middle;
-    background: url(../img/title.png) 50%/contain no-repeat;
+    background: url('../img/title-new.png') 50%/contain no-repeat;
     width: 483px;
     height: 78px;
     margin-left: 90px;
@@ -814,6 +814,10 @@ header .start span.number {
     position: relative
 }
 
+.about_page .main_title {
+    margin-bottom: 30px;
+}
+
 .about_page ._250_contacts {
     background: url(../img/250_contacts.png);
     width: 456px;
@@ -833,9 +837,9 @@ header .start span.number {
 
 .about_page .text .like-p {
     color: #1b4c94;
-    font-size: 17px;
-    margin-bottom: 27px;
-    line-height: 22px
+    font-size: 25px;
+    margin-bottom: 50px;
+    line-height: 30px;
 }
 
 .about_page .text .like-p div {
@@ -854,6 +858,54 @@ header .start span.number {
 .about_page .page_wrapper {
     max-width: 1200px;
     margin: 0 auto
+}
+
+.about_page .start-block {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+    -webkit-transform: skewX(-24deg) translateX(-50px);
+    -moz-transform: skewX(-24deg) translateX(-50px);
+    -ms-transform: skewX(-24deg) translateX(-50px);
+    -o-transform: skewX(-24deg) translateX(-50px);
+    transform: skewX(-24deg) translateX(-50px);
+    text-align: center;
+}
+.about_page .start-block>div>div {
+    -webkit-transform: skewX(24deg);
+    -moz-transform: skewX(24deg);
+    -ms-transform: skewX(24deg);
+    -o-transform: skewX(24deg);
+    transform: skewX(24deg);
+}
+.about_page .start-block .left {
+    padding: 25px 35px 15px;
+    background: #fff;
+    color: rgb(41,80,158);
+}
+.about_page .start-block .left>div:nth-child(1) {
+    font-size: 42px;
+    line-height: 28px;
+    font-family: "Michelin", sans-serif;
+    font-weight: bold;
+}
+.about_page .start-block .left>div:nth-child(2) {
+    font-size: 29px;
+    font-family: "Michelin", sans-serif;
+}
+.about_page .start-block .right {
+    padding: 0 35px;
+    font-size: 28px;
+    font-family: "Michelin", sans-serif;
+    color: rgb(253,230,76);
+    white-space: nowrap;
+    background: #23559B;
+}
+.about_page .start-block .right span {
+    font-size: 75px;
+    font-weight: bold;
 }
 
 .main_tire {
