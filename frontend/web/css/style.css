@@ -258,7 +258,7 @@ header .start span.number {
     overflow: hidden
 }
 
-.index_page .main_title {
+.main_title {
     vertical-align: middle;
     background: url(../img/title.png) 50%/contain no-repeat;
     width: 483px;
