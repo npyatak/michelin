@@ -930,13 +930,13 @@ module.exports = (function () {
         });
 
         $('body').on('click', function (e) {
-            e.stopPropagation();
-            $('.main_screen').show();
-            $(".marker").removeClass('active');
-            $(".city").hide();
-            $(".city").find(".city_img iframe").attr("src", '');
-
-
+            if($('.city').is(':visible')) {
+                e.stopPropagation();
+                $('.main_screen').show();
+                $(".marker").removeClass('active');
+                $(".city").hide();
+                $(".city").find(".city_img iframe").attr("src", '');
+            }
         });
 
         $(".city").on('click', function (e) {
@@ -989,37 +989,37 @@ module.exports = (function () {
 
         var city_id = marker_el.data('city_id');
 
-        $('.main_screen').hide();
-
         var text_block = $(".text_block");
 
 
         $.when(App.request.getCityData(city_id)).then(function (data) {
-
             $(".marker").removeClass('active');
             marker_el.addClass('active');
 
-            $(".city").show();
-
-            $(".city").attr('data-type', data.type);
-
-            var video_url = '';
-
             if (data.type == 1) {
-                video_url = 'https://www.youtube.com/embed/' + data.yt_id + '?rel=0&amp;controls=0&amp;showinfo=0';
+                playVideo(data.yt_id);
+                //video_url = 'https://www.youtube.com/embed/' + data.yt_id + '?rel=0&amp;controls=0&amp;showinfo=0';
+            } else {
+                $('.main_screen').hide();
+                $(".city").show();
+
+                $(".city").attr('data-type', data.type);
+
+                var video_url = '';
+
+
+                text_block.find(".city-title").html(data.name);
+                text_block.find(".text").html(data.descr);
+                text_block.find(".city_img div").css("background-image", "url('/img/city/" + city_id + ".jpg')");
+                text_block.find(".city_img iframe").attr("src", video_url);
+                text_block.find(".text").attr('ss-container', true);
+
+                $('.scores.scores_1').attr('data-score', data.score1);
+                $('.scores.scores_2').attr('data-score', data.score2);
+                $('.scores.scores_3').attr('data-score', data.score3);
+
+                SimpleScrollbar.initAll();
             }
-
-            text_block.find(".city-title").html(data.name);
-            text_block.find(".text").html(data.descr);
-            text_block.find(".city_img div").css("background-image", "url('/Michelin2018/assets/img/city/" + city_id + ".jpg')");
-            text_block.find(".city_img iframe").attr("src", video_url);
-            text_block.find(".text").attr('ss-container', true);
-
-            $('.scores.scores_1').attr('data-score', data.score1);
-            $('.scores.scores_2').attr('data-score', data.score2);
-            $('.scores.scores_3').attr('data-score', data.score3);
-
-            SimpleScrollbar.initAll();
         });
 
     }

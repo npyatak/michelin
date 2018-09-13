@@ -1,3 +1,15 @@
+var videoId = '3K76Y5qBzfw';
+
+function playVideo(id) {
+    $('body').addClass('overflow');
+    $(document).find('.overlay').fadeIn(100);
+    var modal = $(document).find('.video-modal');
+    modal.fadeIn(100);
+    
+    window.player.loadVideoById(id);
+    window.player.playVideo();
+}
+
 $(document).ready(function () {
 
     $(this)
@@ -10,11 +22,7 @@ $(document).ready(function () {
         })
         .on('click', '.play-video', function (e) {
             e.preventDefault();
-            $('body').addClass('overflow');
-            $(document).find('.overlay').fadeIn(100);
-            var modal = $(document).find('.video-modal');
-            modal.fadeIn(100);
-            player.playVideo();
+            playVideo(videoId);
         });
 
 });
@@ -26,8 +34,6 @@ $(window).on('load', function() {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     window.player = '';
-
-    var videoId = '3K76Y5qBzfw';
 
     window.onYouTubePlayerAPIReady = function() {
         player = new YT.Player('ytplayer', {
