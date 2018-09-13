@@ -48,7 +48,7 @@ AppAsset::register($this);
         <nav class="main_menu">
             <a href="<?=Url::toRoute(['site/index']);?>" >Рули зимой</a>
             <a href="<?=Url::toRoute(['site/about']);?>">О шине</a>
-            <span href="">Конкурс</span>
+            <a href="<?=Url::toRoute(['site/contest']);?>">Конкурс</a>
         </nav>
         <div class="start">
             <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
