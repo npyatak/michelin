@@ -428,6 +428,9 @@ header .start span.number {
 
 .index_page .main_screen .about .descr .btn {
     margin-top: 38px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
     font-family: Michelin, Arial, sans-serif
 }
 
@@ -509,7 +512,7 @@ header .start span.number {
 
 .index_page .city {
     display: none;
-    top: 150px;
+    top: 140px;
     position: absolute;
     width: 1200px;
     z-index: 30;
@@ -532,10 +535,14 @@ header .start span.number {
 .index_page .city .text_block {
     overflow: hidden;
     background: #fff;
+    -webkit-transform: skewX(-24deg);
+    -moz-transform: skewX(-24deg);
+    -ms-transform: skewX(-24deg);
+    -o-transform: skewX(-24deg);
     transform: skewX(-24deg);
     width: 1200px;
     height: 380px;
-    padding-left: 660px;
+    padding-left: 640px;
     box-sizing: border-box
 }
 
@@ -596,15 +603,28 @@ header .start span.number {
 }
 
 .index_page .city .text_block .text {
-    margin: 15px 0 15px 55px;
-    transform: skewx(24deg);
+    margin: 15px 0 15px 8px;
+    -webkit-transform: skewx(-24deg);
+    -moz-transform: skewx(-24deg);
+    -ms-transform: skewx(-24deg);
+    -o-transform: skewx(-24deg);
+    transform: skewx(-24deg);
     font-size: 12px;
     font-family: Arial, sans-serif;
     line-height: 16px;
     color: #1c4e94;
-    width: 400px;
-    max-height: 180px;
-    overflow: auto
+}
+
+.index_page .city .text_block .wrap{
+    max-width: 420px;
+    padding-right: 20px;
+    -webkit-transform: skewx(24deg);
+    -moz-transform: skewx(24deg);
+    -ms-transform: skewx(24deg);
+    -o-transform: skewx(24deg);
+    transform: skewx(24deg);
+    max-height: 175px;
+    overflow: auto;
 }
 
 .index_page .city .text_block .text p {
@@ -612,11 +632,44 @@ header .start span.number {
 }
 
 .index_page .city .info_block {
-    font-size: 10.6px;
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    width: 100%;
+    background: #fff;
+    font-size: 9px;
     color: #004f9f;
     font-weight: 600;
     margin-left: -85px;
-    padding-top: 5px
+    padding-top: 5px;
+    padding-left: 40px;
+    -webkit-transform: skewx(-24deg);
+    -moz-transform: skewx(-24deg);
+    -ms-transform: skewx(-24deg);
+    -o-transform: skewx(-24deg);
+    transform: skewx(-24deg);
+}
+.index_page .city .info_block>div {
+    -webkit-transform: skewx(24deg);
+    -moz-transform: skewx(24deg);
+    -ms-transform: skewx(24deg);
+    -o-transform: skewx(24deg);
+    transform: skewx(24deg);
+}
+.index_page .city .info_block>div.characteristics>div {
+    -webkit-transform: skewx(-24deg);
+    -moz-transform: skewx(-24deg);
+    -ms-transform: skewx(-24deg);
+    -o-transform: skewx(-24deg);
+    transform: skewx(-24deg);
+}
+.index_page .city .info_block>div.characteristics .skew-text,
+.index_page .city .info_block>div.characteristics .scores {
+    -webkit-transform: skewx(24deg);
+    -moz-transform: skewx(24deg);
+    -ms-transform: skewx(24deg);
+    -o-transform: skewx(24deg);
+    transform: skewx(24deg);
 }
 
 #tire .marker, .main_tire .text-label span {
@@ -626,7 +679,7 @@ header .start span.number {
 .index_page .city .info_block .characteristics {
     font-size: inherit;
     text-transform: uppercase;
-    padding-top: 10px
+    padding-top: 5px
 }
 
 .index_page .city .info_block .characteristics > div {
@@ -640,6 +693,7 @@ header .start span.number {
 }
 
 .index_page .city .info_block .characteristics > div .scores {
+    margin-left: -7px;
     padding-bottom: 10px
 }
 
@@ -698,6 +752,7 @@ header .start span.number {
 .index_page .city .info_block .peoples {
     float: right;
     padding-right: 80px;
+    padding-bottom: 5px;
     font-size: inherit
 }
 
@@ -1423,7 +1478,7 @@ body.overflow {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.7);
-    z-index: 8;
+    z-index: 98;
 }
 .video-modal {
     display: none;
@@ -1435,7 +1490,7 @@ body.overflow {
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    z-index: 9;
+    z-index: 99;
 }
 .video-modal-close {
     position: absolute;

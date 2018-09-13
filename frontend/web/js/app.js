@@ -932,7 +932,7 @@ module.exports = (function () {
         $('body').on('click', function (e) {
             if($('.city').is(':visible')) {
                 e.stopPropagation();
-                $('.main_screen').show();
+                $('.main_screen, .main_top').show();
                 $(".marker").removeClass('active');
                 $(".city").hide();
                 $(".city").find(".city_img iframe").attr("src", '');
@@ -1000,7 +1000,7 @@ module.exports = (function () {
                 playVideo(data.yt_id);
                 //video_url = 'https://www.youtube.com/embed/' + data.yt_id + '?rel=0&amp;controls=0&amp;showinfo=0';
             } else {
-                $('.main_screen').hide();
+                $('.main_screen, .main_top').hide();
                 $(".city").show();
 
                 $(".city").attr('data-type', data.type);
@@ -1009,7 +1009,7 @@ module.exports = (function () {
 
 
                 text_block.find(".city-title").html(data.name);
-                text_block.find(".text").html(data.descr);
+                text_block.find(".wrap").html(data.descr);
                 text_block.find(".city_img div").css("background-image", "url('/img/city/" + city_id + ".jpg')");
                 text_block.find(".city_img iframe").attr("src", video_url);
                 text_block.find(".text").attr('ss-container', true);
