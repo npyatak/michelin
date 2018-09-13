@@ -3,7 +3,7 @@
 <div class="page_wrapper">
 
     <div class="row text_center main_top">
-        <a href="#" class="main_title"></a>
+        <a href="#" class="main_title main"></a>
         <div class="mans">
             <div class="savin">Евгений Савин</div>
             <div class="chesnokova">Ирина Чеснокова</div>
@@ -35,7 +35,7 @@
                 <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="show_on_map">
-                <div>Показать на карте</div>
+                <a href="">Показать на карте</a>
             </div>
             <div class="city-title">Байкал. остров ольхон</div>
             <div class="text">
