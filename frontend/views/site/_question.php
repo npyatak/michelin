@@ -3,7 +3,8 @@ use yii\helpers\Html;
 ?>
 
 <div class="question" data-question="<?=$question->id;?>">
-	<?=$question->title;?>
+    <div class="question-number">Вопрос <?=$question->id;?></div>
+	<div class="question-title"><?=$question->title;?></div>
 	<ul>
 		<?php foreach ($question->answers as $a):?>
 			<li>
