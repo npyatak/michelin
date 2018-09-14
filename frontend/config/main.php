@@ -39,8 +39,8 @@ return [
                 'fb' => [
                     // register your app here: https://developers.facebook.com/apps/
                     'class' => 'frontend\models\social\FbOAuth2Service',
-                    'clientId' => '555351101530900',
-                    'clientSecret' => 'be504bde95fc808aaec5d71642d9dd19',
+                    'clientId' => '1084982635003171',
+                    'clientSecret' => '13382e8e648da1e6a3c00f9964f4f87b',
                 ],
                 'vk' => [
                     // register your app here: https://vk.com/editapp?act=create&site=1

@@ -8,16 +8,7 @@ use mihaildev\elfinder\ElFinder;
 ?>
 
 <div class="add-form">
-    <?php $form = ActiveForm::begin([
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
-            'horizontalCssClasses' => [
-                'label' => false,
-                'wrapper' => 'form-container',
-            ],
-        ]
-    ]);?>
+    <?php $form = ActiveForm::begin();?>
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 

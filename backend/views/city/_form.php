@@ -7,16 +7,7 @@ use kartik\select2\Select2;
 ?>
 
 <div class="add-form">
-    <?php $form = ActiveForm::begin([
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
-            'horizontalCssClasses' => [
-                'label' => false,
-                'wrapper' => 'form-container',
-            ],
-        ]
-    ]);?>
+    <?php $form = ActiveForm::begin();?>
 
     <div class="row">
         <div class="col-sm-6">
