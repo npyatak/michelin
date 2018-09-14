@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
+use common\models\Week;
 use common\models\Question;
 
 $this->title = 'Вопросы';
@@ -33,10 +34,10 @@ foreach ($weeks as $week) {
                 [
                     'attribute' => 'week_id',
                     'format' => 'raw',
-                    'value' => function($data) {
-                        return $data->getStatusArray()[$data->week_id];
+                    'value' => function($data) use($weekArr) {
+                        return $weekArr[$data->week_id];
                     },
-                    'filter' => Html::activeDropDownList($searchModel, 'week_id', Question::getStatusArray(), ['prompt'=>''])
+                    'filter' => Html::activeDropDownList($searchModel, 'week_id', $weekArr, ['prompt'=>''])
                 ], 
                 [
                     'attribute' => 'status',

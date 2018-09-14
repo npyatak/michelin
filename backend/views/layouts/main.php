@@ -40,7 +40,7 @@ AppAsset::register($this);
         ['label' => 'Тест', 'items' => [
                 ['label' => 'Недели', 'url' => ['/week']],
                 ['label' => 'Вопросы', 'url' => ['/question']],
-                ['label' => 'Результаты', 'url' => ['/test-result']],
+                ['label' => 'Результаты', 'url' => ['/user-test']],
             ]
         ],
         ['label' => 'Города', 'url' => ['/city']],

@@ -21,7 +21,7 @@ use Yii;
 class UserTest extends \yii\db\ActiveRecord
 {
 
-    public $answersArr;
+    public $answersArr = [];
     /**
      * {@inheritdoc}
      */
@@ -45,7 +45,7 @@ class UserTest extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'week_id'], 'required'],
-            [['user_id', 'week_id', 'score', 'is_finished', 'created_at', 'updated_at'], 'integer'],
+            [['user_id', 'week_id', 'score', 'is_finished', 'right_answers', 'created_at', 'updated_at'], 'integer'],
             [['answers'], 'string'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['week_id'], 'exist', 'skipOnError' => true, 'targetClass' => Week::className(), 'targetAttribute' => ['week_id' => 'id']],
@@ -67,6 +67,8 @@ class UserTest extends \yii\db\ActiveRecord
             'is_finished' => 'Закончен',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'right_answers' => 'Правильные ответы',
+            'time' => 'Время',
         ];
     }
 
@@ -77,21 +79,24 @@ class UserTest extends \yii\db\ActiveRecord
     }
 
     public function afterSave($insert, $changedAttributes) {
-        if(Question::find()->where(['status' => Question::STATUS_ACTIVE, 'week_id' => $this->id])->count() == count($this->answersArr) && !$this->is_finished) {
-            $questions = Question::find()->where(['status' => Question::STATUS_ACTIVE, 'week_id' => $this->id])->indexBy('id')->all();
-            
+        if(Question::find()->where(['status' => Question::STATUS_ACTIVE, 'week_id' => $this->week_id])->count() == count($this->answersArr) && !$this->is_finished) {
+            $questions = Question::find()->where(['status' => Question::STATUS_ACTIVE, 'week_id' => $this->week_id])->indexBy('id')->all();
             $score = 0;
-            foreach (json_decode($this->answers) as $answer) {
-                $is_right = Answer::find()->select('is_right')->where(['id' => $answer->a_id])->column();
-                if($is_right && isset($questions[$answer->q_id])) {
-                    $score += $questions[$answer->q_id]->score;
+            $right_answers = 0;
+
+            foreach ($this->answersArr as $q_id => $a_id) {
+                $is_right = Answer::find()->select('is_right')->where(['id' => $a_id])->asArray()->one()['is_right'];
+                if($is_right && isset($questions[$q_id])) {
+                    $right_answers++;
+                    $score += $questions[$q_id]->right_answer_points;
                 }
             }
 
             $this->is_finished = 1;
+            $this->right_answers = $right_answers;
             $this->score = $score;
 
-            $this->save(false, ['result_id', 'score']);
+            $this->save(false, ['is_finished', 'right_answers', 'score']);
 
             $user = User::findOne(Yii::$app->user->id);
             $userScores = UserTest::find()->select('score')->where(['user_id' => $user->id])->column();
@@ -103,7 +108,7 @@ class UserTest extends \yii\db\ActiveRecord
     }
 
     public function afterFind() {
-        $this->answersArr = json_decode($this->answers);
+        $this->answersArr = json_decode($this->answers, true);
     }
 
     /**
@@ -120,5 +125,22 @@ class UserTest extends \yii\db\ActiveRecord
     public function getWeek()
     {
         return $this->hasOne(Week::className(), ['id' => 'week_id']);
+    }
+
+    public function getQuestionsText() {
+        $lastDigit =  substr($this->right_answers, -1);
+        if($lastDigit == 1 && $this->right_answers != 11) {
+            return 'вопрос';
+        } elseif($lastDigit == 2 && $this->right_answers != 12) {
+            return 'вопроса';
+        } else {
+            return 'вопросов';
+        }
+    }
+
+    public function getTime() {
+        if($this->is_finished) {
+            return $this->updated_at - $this->created_at;
+        }
     }
 }

@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
+use yii\web\NotFoundHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -15,6 +16,7 @@ use common\models\User;
 use common\models\Week;
 use common\models\UserTest;
 use common\models\Question;
+use common\models\Answer;
 
 /**
  * Site controller
@@ -190,7 +192,6 @@ class SiteController extends Controller
 
     public function actionContest2()
     {
-        print_r(Yii::$app->request->get());exit;
         if(Yii::$app->user->isGuest) {
             return $this->render('contest2');
         }
@@ -204,27 +205,9 @@ class SiteController extends Controller
         }
 
         $userTest = UserTest::find()->where(['week_id' => $week->id, 'user_id' => Yii::$app->user->identity->id])->one();
-        if($userTest === null) {
-            $userTest = new UserTest;
-            $userTest->week_id = $week->id;
-            $userTest->user_id = Yii::$app->user->identity->id;
+        if($userTest && $userTest->is_finished) {
+            return $this->redirect(['site/contest-result']);
         }
-
-        $post = Yii::$app->request->post();
-        if(Yii::$app->request->isAjax && !empty($post) && $post['question'] && $post['answer']) { 
-            $userTest->answersArr[] = ['q_id' => $post['question'], 'a_id' => $post['answer']];
-            $userTest->save();
-
-            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-
-            if($questionsCount == count($userTest->answersArr)) {
-                return ['status' => 'redirect'];
-            }
-
-            return ['status' => 'success'];
-        }
-        //$questions = Question::find()->where(['status' => Question::STATUS_ACTIVE])->all();
-
 
         $questionOffset = 0;
         if($userTest !== null && !empty($userTest->answersArr)) {
@@ -236,7 +219,41 @@ class SiteController extends Controller
         return $this->render('contest2', [
             'week' => $week,
             'question' => $question,
+            'userTest' => $userTest,
         ]);
+    }
+
+    public function actionContestAjax($question = false, $answer = false) {
+        if(!Yii::$app->user->isGuest) {
+            $week = $this->currentWeek;
+            if($week === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+
+            $userTest = UserTest::find()->where(['week_id' => $week->id, 'user_id' => Yii::$app->user->identity->id])->one();
+            
+            if(Yii::$app->request->isAjax && $question && $answer && ($userTest === null || !$userTest->is_finished)) { 
+                if($userTest === null) {
+                    $userTest = new UserTest;
+                    $userTest->week_id = $week->id;
+                    $userTest->user_id = Yii::$app->user->identity->id;
+                }
+
+                $userTest->answersArr[$question] = $answer;
+                $userTest->save();
+
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+                $questionsCount = Question::find()->where(['status' => Question::STATUS_ACTIVE, 'week_id' => $week->id])->count();
+                if($questionsCount == count($userTest->answersArr)) {
+                    return ['status' => 'redirect'];
+                }
+
+                $question = Question::find()->where(['status' => Question::STATUS_ACTIVE, 'week_id' => $week->id])->offset(count($userTest->answersArr))->one();
+
+                return $this->renderAjax('_question', ['question' => $question]);
+            }
+        }
     }
 
     public function actionLeaders()
@@ -246,7 +263,19 @@ class SiteController extends Controller
 
     public function actionContestResult()
     {
-        return $this->render('contest-result');
+        $week = $this->currentWeek;
+        if(Yii::$app->user->isGuest || $week === null) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+            
+        $userTest = UserTest::find()->where(['week_id' => $week->id, 'user_id' => Yii::$app->user->id])->one();
+        if($userTest === null) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
+        return $this->render('contest-result', [
+            'userTest' => $userTest,
+        ]);
     }
 
     public function actionCityList()

@@ -96,6 +96,7 @@ class Question extends \yii\db\ActiveRecord
             'comment' => 'Комментарий',
             'right_answer_points' => 'Баллы за правильный ответ',
             'status' => 'Статус',
+            'week_id' => 'Неделя',
         ];
     }
 

@@ -27,11 +27,12 @@ use yii\helpers\Html;
 	<?php
 	$script = "
 		$(document).on('click', '.answer', function(e) {
-			var question = $(this).closest('.question').data('qid');
-			var answer = $(this).data('aid');
+			var question = $(this).closest('.question').data('question');
+			var answer = $(this).data('answer');
 	        $.ajax({
 	            type: 'GET',
-	            data: 'q_id='+question+'&a_id='+answer,
+	            url: '".Url::toRoute(['site/contest-ajax'])."',
+	            data: 'question='+question+'&answer='+answer,
 	            success: function (data) {
 	            	if(data.status == 'redirect') {
 	                    window.location.href = '".Url::toRoute(['site/contest-result'])."';

@@ -35,7 +35,7 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 
-<body class="<?=$this->params['bodyClass'];?>">
+<body class="<?=isset($this->params['bodyClass']) ? $this->params['bodyClass'] : '';?>">
     <?php $this->beginBody() ?>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
