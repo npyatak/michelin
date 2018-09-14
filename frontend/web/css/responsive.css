@@ -3,13 +3,21 @@
         border-bottom: 2px solid #FDE64C;
     }
     body, html {
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
+    }
+    body {
+        background: url(../img/bg.jpg);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     header {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        margin-bottom: 25px;
     }
     header .logo {
         float: none;
@@ -42,6 +50,7 @@
     }
     .about_page .page_wrapper {
         max-width: initial;
+        position: relative;
     }
     .about_page .page_wrapper .row {
         margin: 0;
@@ -55,16 +64,21 @@
     .about_page .text {
         transform: none;
     }
+    .about_page .text h1 {
+        text-align: center;
+        margin: 30px auto 25px auto;
+    }
     .about_page .text .like-p {
-        color: #1b4c94;
-        font-size: 18px;
+        /* color: #1b4c94; */
+        /* font-size: 18px; */
         margin-bottom: 25px;
-        line-height: 20px;
+        /* line-height: 20px; */
+        text-align: center;
     }
     .about_page .text .like-p div {
         transform: none;
         margin-bottom: 15px;
-        font-size: 14px;
+        font-size: 20px;
     }
     .about_page .start-block {
         display: none;
@@ -74,16 +88,19 @@
         width: 100%;
     }
     .about_page .about_tire {
-        width: 100%;
-        height: 320px;
-        position: relative;
-        margin: -50px auto 0 auto;
+        width: 300px;
+        height: 249px;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-size: contain;
     }
     .about_page ._250_contacts {
-        width: 100%;
-        height: 304px;
-        background-position: left;
-        margin: 0 auto;
+        width: 85%;
+        height: 320px;
+        background-position: center;
+        display: block;
         background-repeat: no-repeat;
     }
     .about_page .text {
@@ -91,11 +108,20 @@
     }
     .about_page h1 {
         transform: none;
-        font-size: 19px;
-        
+        /* font-size: 19px; */
     }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    body, html {
+        height: auto;
+        min-height: 100vh;
+    }
+    body {
+        background: url(../img/bg.jpg);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     header .main_menu a.active, header .main_menu span.active {
         border-bottom: 2px solid #FDE64C;
     }
@@ -168,16 +194,20 @@
         width: 100%;
     }
     .about_page .about_tire {
-        width: 100%;
-        height: 320px;
+        width: 51%;
+        height: 160px;
         position: relative;
-        margin: -50px 0 0 0;
+        margin: 0 0 0 auto;
+        bottom: inherit;
+        right: inherit;
+        background-position: top right;
     }
     .about_page ._250_contacts {
         width: 100%;
-        height: 204px;
-        background-position: right;
+        height: 210px;
+        background-position: top right;
         margin: 0;
+        background-repeat: no-repeat;
     }
     .about_page .text {
         padding: 0 20px;
