@@ -45,8 +45,8 @@ return [
                 'vk' => [
                     // register your app here: https://vk.com/editapp?act=create&site=1
                     'class' => 'frontend\models\social\VkOAuth2Service',
-                    'clientId' => '6398360',
-                    'clientSecret' => 'YzJfifcRqH3glDhRk81p',
+                    'clientId' => '6692145',
+                    'clientSecret' => 'UtupSMaTmYSTtA7Aayle',
                 ],
             ],
         ],

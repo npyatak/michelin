@@ -53,10 +53,12 @@ AppAsset::register($this);
         <div class="start">
             <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
         </div>
-<!--        <div class="user">-->
-<!--            <div class="score">0</div>-->
-<!--            <div class="name">Иван Иванов</div>-->
-<!--        </div>-->
+        <?php if(!Yii::$app->user->isGuest):?>
+            <div class="user">
+                <div class="score"><?=Yii::$app->user->identity->score;?></div>
+                <div class="name"><?=Yii::$app->user->identity->fullName;?></div>
+            </div>
+        <?php endif;?>
     </header>
 
     <?= $content;?>

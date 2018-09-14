@@ -7,6 +7,12 @@ use common\models\Question;
 
 $this->title = 'Вопросы';
 $this->params['breadcrumbs'][] = $this->title;
+
+$weeks = Week::find()->all();
+$weekArr = [];
+foreach ($weeks as $week) {
+    $weekArr[$week->id] = $week->name ? $week->name : $week->number;
+}
 ?>
 
 <div class="index">
@@ -25,6 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'id',
                 'title',   
                 [
+                    'attribute' => 'week_id',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return $data->getStatusArray()[$data->week_id];
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'week_id', Question::getStatusArray(), ['prompt'=>''])
+                ], 
+                [
                     'attribute' => 'status',
                     'format' => 'raw',
                     'value' => function($data) {
@@ -32,14 +46,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'status', Question::getStatusArray(), ['prompt'=>''])
                 ], 
-                [
-                    'attribute' => 'image',
-                    'header' => 'Изображение',
-                    'format' => 'raw',
-                    'value' => function($data) {
-                        return $data->image ? Html::img($data->imageUrl, ['width' => '200']) : '';
-                    },
-                ],
+                // [
+                //     'attribute' => 'image',
+                //     'header' => 'Изображение',
+                //     'format' => 'raw',
+                //     'value' => function($data) {
+                //         return $data->image ? Html::img($data->imageUrl, ['width' => '200']) : '';
+                //     },
+                // ],
 
                 ['class' => 'yii\grid\ActionColumn'],
             ],

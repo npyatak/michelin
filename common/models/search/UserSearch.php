@@ -5,12 +5,12 @@ namespace common\models\search;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Question;
+use common\models\User;
 
 /**
- * QuestionSearch represents the model behind the search form about `common\models\Question`.
+ * UserSearch represents the model behind the search form about `common\models\User`.
  */
-class QuestionSearch extends Question
+class UserSearch extends User
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class QuestionSearch extends Question
     public function rules()
     {
         return [
-            [['id', 'status', 'week_id'], 'integer'],
-            [['title'], 'safe'],
+            [['id', 'sid', 'created_at', 'updated_at'], 'integer'],
+            [['name', 'soc', 'surname'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class QuestionSearch extends Question
      */
     public function search($params)
     {
-        $query = Question::find();
+        $query = User::find();
 
         // add conditions that should always apply here
 
@@ -60,11 +60,14 @@ class QuestionSearch extends Question
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'status' => $this->status,
-            'week_id' => $this->week_id,
+            'sid' => $this->sid,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'surname', $this->surname])
+            ->andFilterWhere(['like', 'soc', $this->soc]);
 
         return $dataProvider;
     }

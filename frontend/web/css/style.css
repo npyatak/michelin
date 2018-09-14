@@ -1617,7 +1617,7 @@ body.overflow {
     -webkit-background-size: contain;
     background-size: contain;
 }
-.auth>div:nth-child(3) a.facebook {
+.auth>div:nth-child(3) a.fb {
     background: url('../img/facebook.png') no-repeat center;
     -webkit-background-size: contain;
     background-size: contain;

@@ -38,6 +38,7 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Пользователи', 'url' => ['/user']],
         ['label' => 'Тест', 'items' => [
+                ['label' => 'Недели', 'url' => ['/week']],
                 ['label' => 'Вопросы', 'url' => ['/question']],
                 ['label' => 'Результаты', 'url' => ['/test-result']],
             ]
