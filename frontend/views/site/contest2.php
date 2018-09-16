@@ -9,8 +9,6 @@ use yii\helpers\Html;
     <div class="row text_center">
         <a href="#" class="main_title"></a>
     </div>
-
-
 </div>
 <?php if(Yii::$app->user->isGuest):?>
 	<div class="auth" style="display: block">
@@ -20,6 +18,103 @@ use yii\helpers\Html;
 	</div>
 	<div class="overlay" style="display: block"></div>
 <?php else:?>
+
+<!-- Лидеры  -->
+
+<!--    <div class="leaders-page">-->
+<!--        <div class="leaders-title">Лидеры викторины</div>-->
+<!--        <div class="leaders">-->
+<!--            <div class="leader">-->
+<!--                <div class="leader-name">Иван Иванов</div>-->
+<!--                <div class="leader-info">-->
+<!--                    <span>10</span>-->
+<!--                    <span>0'21'723</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="leader">-->
+<!--                <div class="leader-name">Иван Иванов</div>-->
+<!--                <div class="leader-info">-->
+<!--                    <span>10</span>-->
+<!--                    <span>0'21'723</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="leader">-->
+<!--                <div class="leader-name">Иван Иванов</div>-->
+<!--                <div class="leader-info">-->
+<!--                    <span>10</span>-->
+<!--                    <span>0'21'723</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="leader">-->
+<!--                <div class="leader-name">Иван Иванов</div>-->
+<!--                <div class="leader-info">-->
+<!--                    <span>10</span>-->
+<!--                    <span>0'21'723</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="leader">-->
+<!--                <div class="leader-name">Иван Иванов</div>-->
+<!--                <div class="leader-info">-->
+<!--                    <span>10</span>-->
+<!--                    <span>0'21'723</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="leader">-->
+<!--                <div class="leader-name">Иван Иванов</div>-->
+<!--                <div class="leader-info">-->
+<!--                    <span>10</span>-->
+<!--                    <span>0'21'723</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="text-center">-->
+<!--            <a href="" class="go-to-page">На главную</a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    -->
+
+
+
+<!--  Результаты  -->
+
+<!--    <div class="result-page">-->
+<!--        <div class="points">-->
+<!--            <span>72.00</span>-->
+<!--        </div>-->
+<!--        <div class="result-title">Результат</div>-->
+<!--        <div class="result-text">-->
+<!--            <p>Ты ответил правильно на 25 вопросов из 30.</p>-->
+<!--            <p>Отличный результат!</p>-->
+<!--        </div>-->
+<!--        <div class="result-share">-->
+<!--            <div>Поделись с друзьями</div>-->
+<!--            <a href="" class="result-facebook"><i class="fa fa-facebook-f"></i></a>-->
+<!--            <a href="" class="result-vk"><i class="fa fa-vk"></i></a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    -->
+
+
+
+
+<!--  НАЧАТЬ  -->
+
+<!--    <div class="start-question">-->
+<!--        <div class="start-question-text">-->
+<!--            <p>Прими участие в викторине и получи фору при старте второго этапа! Отвечай на вопросы правильно и не затягивай со временем. Первые топ-10 игроков получат приятный бонус в творческом конкурсе!</p>-->
+<!--            <p>Лучшие результаты каждой недели будут награждены памятными сувенирами: абонементы, чемоданы, навигаторы, пледы и кружки!</p>-->
+<!--        </div>-->
+<!--        <div class="text-center">-->
+<!--            <a href="" class="start-question-btn">Начать</a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    -->
+
+
+
 	<div id="question">
 		<?=$this->render('_question', ['question' => $question]);?>
 	</div>

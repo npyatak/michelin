@@ -1671,3 +1671,152 @@ body.overflow {
 .question ul a:hover {
     text-decoration: none;
 }
+
+.start-question {
+    max-width: 545px;
+    margin: 0 auto 20px;
+}
+.start-question-text {
+    margin-bottom: 30px;
+}
+.start-question-text p {
+    margin-bottom: 20px;
+    color: #fff;
+    font: 15px 'Helvetica', sans-serif;
+}
+.start-question-btn {
+    display: inline-block;
+    background: #004F9E;
+    padding: 10px 35px;
+    color: #FFE921;
+    font-size: 20px;
+}
+.start-question-btn:hover {
+    text-decoration: none;
+    color: #FFE921;
+}
+
+.result-page {
+    padding: 0 15px;
+    text-align: center;
+}
+.result-page .points span {
+    display: inline-block;
+    background: #004F9E;
+    padding: 8px 12px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+.result-title {
+    margin: 25px 0 30px;
+    font-size: 60px;
+    color: #FFE921;
+}
+.result-text {
+    margin-bottom: 40px;
+}
+.result-text p {
+    margin-bottom: 0;
+    font: 25px 'Helvetica', sans-serif;
+    color: #fff;
+}
+.result-share>div {
+    margin-bottom: 40px;
+    font: 30px 'Helvetica', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+.result-share a {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    line-height: 80px;
+    background: #004F9E;
+    color: #fff;
+}
+
+.leaders-page {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.leaders-title {
+    margin-top: 20px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 45px;
+    color: #ffe921;
+    font-family: "Michelin", sans-serif;
+    font-weight: bold;
+}
+.leaders {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+.leader {
+    width: calc(50% - 45px);
+    background: #004F9E;
+    margin-bottom: 25px;
+    padding: 5px 20px;
+}
+.leader-name {
+    font-size: 29px;
+    color: rgb(255,255,255);
+    font-family: "Michelin", sans-serif;
+}
+.leader-info {
+    font-size: 21px;
+    color: rgb(255,255,255);
+    font-family: 'Helvetica', sans-serif;
+}
+.leader-info span:nth-child(1) {
+    margin-right: 15px;
+}
+.leaders-page .go-to-page {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #004F9E;
+    color: #fff;
+    font-family: "Michelin", sans-serif;
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .question,
+    .start-question {
+        max-width: none;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .question ul a {
+        padding: 15px;
+        font-size: 15px;
+    }
+    .question-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .question-number {
+        font-size: 39px;
+    }
+    .leaders-title {
+        font-size: 20px;
+    }
+    .leader {
+        width: 100%;
+    }
+}
