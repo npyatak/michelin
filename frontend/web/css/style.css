@@ -94,7 +94,7 @@ header .main_menu {
     line-height: 55px;
     font-size: 0;
     transform: skewX(-24deg);
-    padding: 0 40px
+    padding: 0 20px
 }
 
 header .main_menu a, header .main_menu span {
@@ -103,7 +103,7 @@ header .main_menu a, header .main_menu span {
     text-decoration: none;
     height: inherit;
     box-sizing: border-box;
-    margin: 0 35px;
+    margin: 0 15px;
     display: inline-block;
     font-size: 12px
 }
