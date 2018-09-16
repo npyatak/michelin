@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="city">
+    <div class="city show-desktop">
         <div class="text_block">
             <div class="city_img">
                 <div></div>
@@ -83,6 +83,73 @@
             <div class="peoples row">
                 <div class="chesnokova">Ирина Чеснокова</div>
                 <div class="chebatkov">Жека Чебатков</div>
+            </div>
+        </div>
+    </div>
+    <div class="city show-ipad-mobile">
+        <div class="city-inner">
+            <div class="text_block">
+                <div class="left">
+                    <div class="city_img">
+                        <div></div>
+                        <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="right">
+                <div class="city-title">Байкал. остров ольхон</div>
+                    <div class="text">
+                        <div class="wrap">
+                            <p>
+                                Ольхон – одна из жемчужин Байкала, древний мистический остров шаманов. Зимой дорога сюда от Иркутска
+                                займёт несколько часов, причём часть её пройдёт по льду Байкала. Всё как на обычной трассе –
+                                разметка,
+                                знаки,ограничение скорости, но стоит отойти на несколько метров в сторону – и сквозь прозрачную
+                                толщу
+                                льда ты увидишь камни на дне и поймешь, что под тобой глубина в несколько десятков метров. Зимой
+                                туристический поток спадает, и остров предстаёт в первозданной суровой красоте.
+                            </p>
+                            <p>
+                                Вы можете свободно посетить священные места шаманов, увидеть причудливые скульптуры из льда,
+                                покрывающие
+                                прибрежные скалы, и, конечно отведать знаменитого копчёного омуля – легенду байкальской кухни.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="show_on_map">
+                    <a href="">Показать на карте</a>
+                </div>
+            </div>
+            <div class="info_block row">
+                <div class="characteristics row">
+                    <div>
+                        <div class="skew-text">характеристики шины,</div>
+                        <div class="skew-text">которые проявятся</div>
+                        <div class="skew-text">в этой точке</div>
+                    </div>
+                    <div>
+                        <div class="scores scores_1"></div>
+                        <div class="skew-text">СЦЕПЛЕНИЕ</div>
+                        <div class="skew-text">С АСФАЛЬТОМ</div>
+                    </div>
+                    <div>
+                        <div class="scores scores_2"></div>
+                        <div class="skew-text">КОНТРОЛЬ</div>
+                        <div class="skew-text">НА ЛЬДУ</div>
+                    </div>
+                    <div>
+                        <div class="scores scores_3"></div>
+                        <div class="skew-text">УПРАВЛЯЕМОСТЬ</div>
+                        <div class="skew-text">НА СНЕГУ</div>
+                    </div>
+                </div>
+                <div class="peoples row">
+                    <div class="chesnokova">Ирина Чеснокова</div>
+                    <div class="chebatkov">Жека Чебатков</div>
+                </div>
+            </div>
+            <div class="close-info-modal">
+                <img src="./img/helpers/menu-close-blue.svg" class="fa-times" />
             </div>
         </div>
     </div>

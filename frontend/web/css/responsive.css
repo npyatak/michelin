@@ -44,6 +44,111 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .close-info-modal {
+        position: absolute;
+        left: 50%;
+        bottom: -50px;
+    }
+    .index_page .city {
+        position: absolute;
+        width: 100%;
+        transform: none;
+        left: 0;
+        top: 170px;
+        margin-left: 0;
+    }
+    .city .city-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+    .index_page .city .text_block {
+        transform: none;
+        position: relative;
+        margin: 0;
+        left: initial;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .index_page .city .text_block .city_img {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        left: initial;
+        height: 100%;
+    }
+    .index_page .city .text_block .left {
+        width: 50%;
+        height: 100%;
+        display: block;
+    }
+    .index_page .city .text_block .right {
+        width: 50%;
+        height: 100%;
+        padding: 0 10px;
+        display: block;
+    }
+    .index_page .city .info_block {
+        position: relative;
+        margin: 0;
+        transform: none;
+        padding: 20px;
+        left: inherit;
+    }
+    .index_page .city .info_block>div {
+        transform: none!important;
+        width: 100%;
+    }
+    .index_page .city .info_block .characteristics {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    .index_page .city .info_block .characteristics > div:nth-child(1) {
+        transform: none!important;
+        width: auto;
+    }
+    .index_page .city .info_block>div.characteristics .skew-text {
+        transform: none!important;
+    }
+    .index_page .city .info_block .characteristics > div .scores {
+        transform: none!important;
+    }
+    .index_page .city .text {
+        transform: none!important;
+    }
+    .index_page .city .info_block>div.characteristics>div {
+        transform: none!important;
+    }
+    .index_page .city .text_block .wrap {
+        transform: none!important;
+    }
+    .index_page .city .text_block .city-title {
+        transform: none;
+    }
+    .index_page .city .text_block .show_on_map a {
+        transform: none;
+    }
+    .index_page .city .text_block .city_img > * {
+        transform: none;
+    }
+    .index_page .city .info_block .peoples {
+        float: none;
+        padding-right: 0;
+        padding-bottom: 0;
+        font-size: inherit;
+        padding: 0;
+        text-align: center;
+    }
     header .main_menu a.active,
     header .main_menu span.active {
         border-bottom: 2px solid #FDE64C;
@@ -87,6 +192,11 @@
         width: calc(95% - 20px);
         padding: 0 10px;
         margin: 20px auto 0 auto;
+    }
+    header .user {
+        width: calc(95% - 20px);
+        padding: 0 10px;
+        margin: 15px auto 0 auto;
     }
     header .main_menu a {
         margin: 0;
@@ -157,6 +267,113 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .close-info-modal {
+        position: absolute;
+        left: 50%;
+        bottom: -50px;
+    }
+    .index_page .city {
+        position: absolute;
+        width: 100%;
+        transform: none;
+        left: 0;
+        top: 140px;
+        margin-left: 0;
+    }
+    .city .city-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    }
+    .index_page .city .text_block {
+        transform: none;
+        position: relative;
+        margin: 0;
+        left: initial;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .index_page .city .text_block .city_img {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        left: initial;
+        height: 100%;
+    }
+    .index_page .city .text_block .left {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .index_page .city .text_block .right {
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        display: block;
+    }
+    .index_page .city .info_block {
+        position: relative;
+        margin: 0;
+        transform: none;
+        padding: 20px;
+        left: inherit;
+    }
+    .index_page .city .info_block>div {
+        transform: none!important;
+        width: 100%;
+    }
+    .index_page .city .info_block .characteristics {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .index_page .city .info_block .characteristics > div:nth-child(1) {
+        transform: none!important;
+        width: auto;
+    }
+    .index_page .city .info_block>div.characteristics .skew-text {
+        transform: none!important;
+    }
+    .index_page .city .info_block .characteristics > div .scores {
+        transform: none!important;
+    }
+    .index_page .city .text {
+        transform: none!important;
+    }
+    .index_page .city .info_block>div.characteristics>div {
+        transform: none!important;
+    }
+    .index_page .city .text_block .wrap {
+        transform: none!important;
+    }
+    .index_page .city .text_block .city-title {
+        transform: none;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .index_page .city .text_block .show_on_map a {
+        transform: none;
+    }
+    .index_page .city .text_block .city_img > * {
+        transform: none;
+    }
+    .index_page .city .info_block .peoples {
+        float: none;
+        padding-right: 0;
+        padding-bottom: 0;
+        font-size: inherit;
+        padding: 0;
+        text-align: center;
+    }
     body,
     html {
         height: auto;
@@ -197,6 +414,12 @@
         width: calc(95% - 20px);
         padding: 0 10px;
         margin: 0 auto;
+    }
+    header .user {
+        width: calc(95% - 20px);
+        padding: 0 10px;
+        margin: 0 auto;
+        margin-top: 15px;
     }
     header .main_menu a {
         margin: 0;
@@ -244,7 +467,7 @@
         width: 51%;
         height: 160px;
         position: relative;
-        margin: 0 0 0 auto;
+        margin: -60px 0 0 auto;
         bottom: inherit;
         right: inherit;
         background-position: top right;
