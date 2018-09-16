@@ -54,6 +54,9 @@ window.App = (function (app) {
         $(function () {
             $(".main_menu a[href='" + location.pathname + "']").addClass('active');
         });
+        $(function () {
+            $(".hidden-menu a[href='" + location.pathname + "']").addClass('active');
+        });
     };
     return app;
 })({});

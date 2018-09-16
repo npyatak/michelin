@@ -1,8 +1,55 @@
+@media screen and (min-width: 1200px) {
+    .show-ipad,
+    .show-ipad-mobile,
+    .show-mobile {
+        display: none !important;
+    }
+    .show-desktop,
+    .show-desktop-ipad,
+    .show-desktop-mobile {
+        display: block;
+    }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-    header .main_menu a.active, header .main_menu span.active {
+    .show-mobile {
+        display: none !important;
+    }
+    .show-ipad,
+    .show-ipad-mobile {
+        display: block;
+    }
+    .show-desktop,
+    .show-desktop-mobile {
+        display: none !important;
+    }
+    .show-desktop-ipad {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .show-mobile {
+        display: block;
+    }
+    .show-desktop,
+    .show-desktop-ipad,
+    .show-ipad {
+        display: none !important;
+    }
+    .show-desktop-mobile,
+    .show-ipad-mobile {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    header .main_menu a.active,
+    header .main_menu span.active {
         border-bottom: 2px solid #FDE64C;
     }
-    body, html {
+    body,
+    html {
         height: auto;
         min-height: 100vh;
     }
@@ -22,6 +69,8 @@
     header .logo {
         float: none;
         margin: 0 auto 15px auto;
+        width: 112px!important;
+        height: 55px!important;
     }
     header .main_menu {
         line-height: 30px;
@@ -37,7 +86,7 @@
     header .start {
         width: calc(95% - 20px);
         padding: 0 10px;
-        margin: 0 auto;
+        margin: 20px auto 0 auto;
     }
     header .main_menu a {
         margin: 0;
@@ -61,25 +110,6 @@
     .row.text_center.main_top {
         margin: 0;
     }
-    .about_page .text {
-        transform: none;
-    }
-    .about_page .text h1 {
-        text-align: center;
-        margin: 30px auto 25px auto;
-    }
-    .about_page .text .like-p {
-        /* color: #1b4c94; */
-        /* font-size: 18px; */
-        margin-bottom: 25px;
-        /* line-height: 20px; */
-        text-align: center;
-    }
-    .about_page .text .like-p div {
-        transform: none;
-        margin-bottom: 15px;
-        font-size: 20px;
-    }
     .about_page .start-block {
         display: none;
     }
@@ -88,31 +118,47 @@
         width: 100%;
     }
     .about_page .about_tire {
-        width: 300px;
-        height: 249px;
+        width: 100%;
+        height: 170px;
         display: block;
-        position: absolute;
+        position: relative;
         top: 0;
         right: 0;
         background-size: contain;
+        background-position: center;
     }
     .about_page ._250_contacts {
-        width: 85%;
-        height: 320px;
-        background-position: center;
+        width: 100%;
+        height: 202px;
+        background-position: left center;
         display: block;
         background-repeat: no-repeat;
     }
     .about_page .text {
+        transform: none;
         padding: 0 20px;
     }
-    .about_page h1 {
+    .about_page .text h1 {
+        text-align: center;
+        margin: 30px auto 25px auto;
         transform: none;
-        /* font-size: 19px; */
+        font-size: 19px;
+    }
+    .about_page .text .like-p {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .about_page .text .like-p div {
+        transform: none;
+        margin-bottom: 15px;
+        font-size: 15px;
+        display: inline;
     }
 }
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
-    body, html {
+    body,
+    html {
         height: auto;
         min-height: 100vh;
     }
@@ -122,7 +168,8 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    header .main_menu a.active, header .main_menu span.active {
+    header .main_menu a.active,
+    header .main_menu span.active {
         border-bottom: 2px solid #FDE64C;
     }
     header {

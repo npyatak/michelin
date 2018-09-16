@@ -31,7 +31,7 @@ AppAsset::register($this);
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TG6PTDF');</script>
     <!-- End Google Tag Manager -->
-    
+
     <?php $this->head() ?>
 </head>
 
@@ -44,12 +44,46 @@ AppAsset::register($this);
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
-        <a href="<?=Url::home();?>" class="logo"></a>
+        <a href="<?=Url::home();?>" class="logo show-desktop"></a>
         <nav class="main_menu">
-            <a href="<?=Url::toRoute(['site/index']);?>" >Рули зимой</a>
-            <a href="<?=Url::toRoute(['site/about']);?>">О шине</a>
-            <a href="<?=Url::toRoute(['site/contest']);?>">Конкурс</a>
+            <a href="<?=Url::toRoute(['site/index']);?>">
+                Рули зимой
+            </a>
+            <a href="<?=Url::toRoute(['site/about']);?>">
+                О шине
+            </a>
+            <a href="<?=Url::toRoute(['site/contest']);?>">
+                Конкурс
+            </a>
+            <a href="http://michelin.promo-group.org/pdf/rules_michelin_31.08.2018_v8.pdf">
+                Правила
+            </a>
         </nav>
+        <div class="mobile-menu show-ipad-mobile">
+            <div class="mobile-menu__top">
+                <a href="<?=Url::home();?>" class="logo"></a>
+                <a href="#" class="toggle-menu show-ipad-mobile">
+                    <img src="./img/helpers/menu-open.svg" class="fa-bars now-active" />
+                    <img src="./img/helpers/menu-close.svg" class="fa-times" />
+                </a>
+            </div>
+            <div class="hidden-menu hidden">
+                <nav>
+                    <a href="<?=Url::toRoute(['site/index']);?>">
+                        Рули зимой
+                    </a>
+                    <a href="<?=Url::toRoute(['site/about']);?>">
+                        О шине
+                    </a>
+                    <a href="<?=Url::toRoute(['site/contest']);?>">
+                        Конкурс
+                    </a>
+                    <a href="http://michelin.promo-group.org/pdf/rules_michelin_31.08.2018_v8.pdf">
+                        Правила
+                    </a>
+                </nav>
+            </div>
+        </div>
         <div class="start">
             <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
         </div>

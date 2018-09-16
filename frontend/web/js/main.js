@@ -5,7 +5,7 @@ function playVideo(id) {
     $(document).find('.overlay').fadeIn(100);
     var modal = $(document).find('.video-modal');
     modal.fadeIn(100);
-    
+
     window.player.loadVideoById(id);
     window.player.playVideo();
 }

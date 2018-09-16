@@ -1,0 +1,180 @@
+.not-scrollable {
+    overflow: hidden!important;
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    header {
+        margin-top: 16px;
+    }
+    .main_menu {
+        display: none!important;
+    }
+    .mobile-menu {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+    .mobile-menu .logo {
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        margin: 0;
+    }
+    .toggle-menu {
+        position: absolute;
+        right: 20px;
+        z-index: 10;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        display: block;
+        width: 24px;
+        height: 24px;
+        top: 15px;
+        -webkit-transition: all ease .2s;
+        -o-transition: all ease .2s;
+        transition: all ease .2s;
+    }
+    .toggle-menu img {
+        width: 100%;
+        height: 100%;
+        right: 0;
+        position: absolute;
+        opacity: 0;
+        -webkit-transition: all ease .2s;
+        -o-transition: all ease .2s;
+        transition: all ease .2s;
+    }
+    .toggle-menu img.now-active {
+        opacity: 1;
+    }
+    .hidden-menu.hidden {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+    .hidden-menu {
+        height: 100vh;
+        width: 100%;
+        padding: 20px;
+        position: fixed;
+        left: 0;
+        top: 85px;
+        z-index: 9;
+        background: #fff;
+        opacity: 1;
+    }
+    .hidden-menu .logo {
+        left: 20px;
+        top: 15px;
+        width: 112px!important;
+        height: 55px!important;
+    }
+    .hidden-menu nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .hidden-menu nav a {
+        width: auto;
+        color: rgb(4, 81, 160);
+        text-decoration: none;
+        height: 25px;
+        box-sizing: border-box;
+        margin: 10px 0;
+        display: inline-block;
+        font-size: 15px;
+        font-family: Michelin, Arial, sans-serif;
+    }
+    .hidden-menu nav a.active {
+        border-bottom: 2px solid #FDE64C;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .main_menu {
+        display: none!important;
+    }
+    .mobile-menu {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+    .mobile-menu .logo {
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        margin: 0;
+    }
+    .toggle-menu {
+        position: absolute;
+        right: 20px;
+        z-index: 10;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        display: block;
+        width: 24px;
+        height: 24px;
+        top: 7px;
+        -webkit-transition: all ease .2s;
+        -o-transition: all ease .2s;
+        transition: all ease .2s;
+    }
+    .toggle-menu img {
+        width: 100%;
+        height: 100%;
+        right: 0;
+        position: absolute;
+        opacity: 0;
+        -webkit-transition: all ease .2s;
+        -o-transition: all ease .2s;
+        transition: all ease .2s;
+    }
+    .toggle-menu img.now-active {
+        opacity: 1;
+    }
+    .hidden-menu.hidden {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+    .hidden-menu {
+        height: 100vh;
+        width: 100%;
+        padding: 20px;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        z-index: 9;
+        background: #fff;
+        opacity: 1;
+    }
+    .hidden-menu .logo {
+        left: 20px;
+        top: 15px;
+    }
+    .hidden-menu nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .hidden-menu nav a {
+        width: auto;
+        color: rgb(4, 81, 160);
+        text-decoration: none;
+        height: 25px;
+        box-sizing: border-box;
+        margin: 10px 0;
+        display: inline-block;
+        font-size: 15px;
+        font-family: Michelin, Arial, sans-serif;
+    }
+    .hidden-menu nav a.active {
+        border-bottom: 2px solid #FDE64C;
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="18px" viewBox="0 0 26 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>burger-menu-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="inner-1-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="inner-desktop-1280-1-1" transform="translate(-1219.000000, -23.000000)" stroke="#FDE64C" stroke-width="2">
+            <g id="header">
+                <g id="burger-menu-icon" transform="translate(1220.000000, 23.000000)">
+                    <path d="M0,9 L24,9" id="Line"></path>
+                    <path d="M0,1 L24,1" id="Line"></path>
+                    <path d="M0,17 L24,17" id="Line"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
