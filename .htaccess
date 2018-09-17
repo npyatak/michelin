@@ -4,6 +4,9 @@ Options -Indexes
 Options FollowSymlinks
 RewriteEngine on
 
+#RewriteCond %{ENV:HTTPS} !on
+#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 #AuthType Basic
 #AuthName "Password Protected Area"
 #AuthUserFile /home/promo-1/events2018.promo-group.org/docs/htpassword

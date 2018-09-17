@@ -376,6 +376,11 @@ header .start span.number {
     text-align: center
 }
 
+#map {
+    width: 640px;
+    height: 360px;
+}
+
 .video {
     position: relative;
     background: url(../img/video_bg.png) 0 0/cover;
@@ -1562,7 +1567,7 @@ body.overflow {
     background-color: rgba(0,0,0,.7);
     z-index: 98;
 }
-.video-modal {
+.video-modal, .map-modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -1574,7 +1579,7 @@ body.overflow {
     transform: translate(-50%,-50%);
     z-index: 99;
 }
-.video-modal-close {
+.video-modal-close, .map-modal-close {
     position: absolute;
     bottom: 100%;
     left: 100%;

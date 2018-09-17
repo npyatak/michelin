@@ -1,3 +1,8 @@
+<?php
+use yii\helpers\Url;
+use yii\helpers\Html;
+?>
+
 <?php $this->params['bodyClass'] = 'index_page';?>
 
 <?=\frontend\widgets\share\ShareWidget::widget([
@@ -7,6 +12,8 @@
     ], 
     'showButtons' => false,
 ]);?>
+
+<script src="//api-maps.yandex.ru/2.1/?lang=en_RU" type="text/javascript"></script>
 
 <div class="page_wrapper">
 
@@ -32,7 +39,7 @@
                 <div>и блогеры проложат для вас новые маршруты на зимней карте</div>
                 <div>России. 250 уникальных точек – столько же, сколько и шипов на</div>
                 <div>шине. Мы начинаем, а вы подхватываете!</div>
-                <div><a class="btn btn-oblique" target="_blank" href="/pdf/rules_michelin_31.08.2018_v8.pdf"><span>Участвовать в конкурсе!</span></a></div>
+                <div><a class="btn btn-oblique" target="_blank" href="<?=Url::toRoute(['site/contest']);?>"><span>Участвовать в конкурсе!</span></a></div>
             </div>
         </div>
     </div>
@@ -45,7 +52,7 @@
                 </div>
             </div>
             <div class="show_on_map">
-                <a href="">Показать на карте</a>
+                <a href="" class="show-map-link" data-coord="">Показать на карте</a>
             </div>
             <div class="city-title">Байкал. остров ольхон</div>
             <div class="text">
@@ -172,6 +179,12 @@
     <div class="modalType2-content">
         <div class="video-modal-close"></div>
         <div id="ytplayer"></div>
+    </div>
+</div>
+<div class="map-modal" id="map-modal">
+    <div class="modalType2-content">
+        <div class="map-modal-close"></div>
+        <div id="map"></div>
     </div>
 </div>
 <div class="overlay"></div>

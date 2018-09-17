@@ -71,6 +71,7 @@ class City extends \yii\db\ActiveRecord
 
     public function beforeSave($insert) {
         $this->people = serialize($this->peopleArr);
+        //print_r($this->people);exit;
 
         return parent::beforeSave($insert);
     }
@@ -89,9 +90,9 @@ class City extends \yii\db\ActiveRecord
 
     public function getCorrespondents() {
         $res = [];
-        if(!empty($this->peopleArr)) {
+        if(!empty($this->peoplerr)) {
             foreach ($this->peopleArr as $p) {
-                $res[$p] = $this->peopleList[$p];
+                $res[$p] = $this->peopleData[$p];
             }
         }
         
@@ -99,6 +100,15 @@ class City extends \yii\db\ActiveRecord
     }
 
     public function getPeopleList() {
+        return [
+            1 => 'savin',
+            2 => 'chesnokova',
+            3 => 'chebatkov',
+            4 => 'kovinov',
+        ];
+    }
+
+    public function getPeopleData() {
         return [
             1 => ['class' => 'savin', 'name' => 'Евгений Савин'],
             2 => ['class' => 'chesnokova', 'name' => 'Ирина Чеснокова'],

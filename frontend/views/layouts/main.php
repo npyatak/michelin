@@ -46,7 +46,7 @@ AppAsset::register($this);
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
-        <a href="<?=Url::home();?>" class="logo show-desktop"></a>
+        <a href="https://www.michelin.ru/" class="logo show-desktop" target="_blank"></a>
         <nav class="main_menu">
             <a href="<?=Url::toRoute(['site/index']);?>">
                 Рули зимой

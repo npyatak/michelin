@@ -11,9 +11,9 @@ function playVideo(id) {
 $(document).ready(function () {
 
     $(this)
-        .on('click', '.video-modal-close', function (e) {
+        .on('click', '.modal-close', function (e) {
             e.preventDefault();
-            $(this).closest('.video-modal').fadeOut(100);
+            $(this).closest('.modal').fadeOut(100);
             $('body').removeClass('overflow');
             $(document).find('.overlay').fadeOut(100);
             window.player.stopVideo();
@@ -23,8 +23,11 @@ $(document).ready(function () {
             $('.city').hide();
             $('.main_screen, .main_top').show();
             playVideo($(this).data('id'));
+        })
+        .on('click', '.show-map-link', function(e) {
+            e.preventDefault();
+            openMap($(this).data('coord'));
         });
-
 });
 
 $(window).on('load', function() {
@@ -49,3 +52,32 @@ $(window).on('load', function() {
         });
     };
 });
+ 
+
+function openMap(coord) {
+    $('body').addClass('overflow');
+    $(document).find('.overlay').fadeIn(100);
+    var modal = $(document).find('.map-modal');
+    modal.fadeIn(100);
+
+    var myMap = new ymaps.Map('map', {
+            center: [coord],
+            zoom: 15
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), null, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/marker.svg',
+            iconImageSize: [30, 40],
+            iconImageOffset: [-5, -38]
+        });
+
+    myMap.geoObjects
+        .add(myPlacemark);
+    myMap.behaviors.disable('scrollZoom', 'Drag');
+}

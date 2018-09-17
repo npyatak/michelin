@@ -934,7 +934,7 @@ module.exports = (function () {
         });
 
         $('body').on('click', function (e) {
-            if($('.city').is(':visible') && e.target.className !== 'play-video') {
+            if($('.city').is(':visible') && e.target.className !== 'play-video' && e.target.className !== 'show-map-link') {
                 e.stopPropagation();
                 $('.main_screen, .main_top').show();
                 $(".marker").removeClass('active');
@@ -943,7 +943,7 @@ module.exports = (function () {
         });
 
         $(".city").on('click', function (e) {
-            if(e.target.className !== 'play-video') {
+            if(e.target.className !== 'play-video' && e.target.className !== 'show-map-link') {
                 e.stopPropagation();
             }
         });
@@ -1020,17 +1020,19 @@ module.exports = (function () {
             //text_block.find(".city_img iframe").attr("src", video_url);
             text_block.find(".text").attr('ss-container', true);
 
+            var str = '';
             if(!$.isEmptyObject(data.people)) {
-                var str = '';
                 $.each(data.people, function(index, value){
                     str += '<div class="'+value.class+'">'+value.name+'</div>';
                 });
-                $('.city .peoples').html(str);
             }
+            $('.city .peoples').html(str);
 
             $('.scores.scores_1').attr('data-score', data.score1);
             $('.scores.scores_2').attr('data-score', data.score2);
             $('.scores.scores_3').attr('data-score', data.score3);
+
+            $('.show-map-link').attr('data-coord', data.coord);
 
             SimpleScrollbar.initAll();
         });
