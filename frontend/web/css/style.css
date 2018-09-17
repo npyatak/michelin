@@ -633,11 +633,11 @@ header .main_menu span {
 
 .index_page .city .text_block .text {
     margin: 15px 0 15px 8px;
-    -webkit-transform: skewx(-24deg);
-    -moz-transform: skewx(-24deg);
-    -ms-transform: skewx(-24deg);
-    -o-transform: skewx(-24deg);
-    transform: skewx(-24deg);
+    /*-webkit-transform: skewx(-24deg);*/
+    /*-moz-transform: skewx(-24deg);*/
+    /*-ms-transform: skewx(-24deg);*/
+    /*-o-transform: skewx(-24deg);*/
+    /*transform: skewx(-24deg);*/
     font-size: 12px;
     font-family: Arial, sans-serif;
     line-height: 16px;
@@ -647,7 +647,9 @@ header .main_menu span {
 
 .index_page .city .text_block .wrap{
     max-width: 420px;
+    margin-left: 45px;
     padding-right: 20px;
+    padding-bottom: 40px;
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
     -ms-transform: skewx(24deg);
