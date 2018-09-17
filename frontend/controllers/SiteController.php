@@ -269,12 +269,14 @@ class SiteController extends Controller
     {
         $week = $this->currentWeek;
         if(Yii::$app->user->isGuest || $week === null) {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            //throw new NotFoundHttpException('The requested page does not exist.');
+            return $this->redirect('index');
         }
             
         $userTest = UserTest::find()->where(['week_id' => $week->id, 'user_id' => Yii::$app->user->id])->one();
         if($userTest === null) {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            //throw new NotFoundHttpException('The requested page does not exist.');
+            return $this->redirect('index');
         }
 
         return $this->render('contest-result', [
