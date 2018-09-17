@@ -18,7 +18,7 @@ class AppAsset extends AssetBundle
         'css/menu.css?v=16.09_v1'
     ];
     public $js = [
-        'js/app.js?v=17.09_v1',
+        'js/app.js?v=17.09_v2',
         'js/main.js?v=16.09_v1',
         'js/menu.js?v=16.09_v1'
     ];
