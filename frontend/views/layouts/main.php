@@ -4,6 +4,8 @@ use yii\helpers\Html;
 
 use frontend\assets\AppAsset;
 
+use common\models\UserTest;
+
 AppAsset::register($this);
 ?>
 
@@ -88,10 +90,18 @@ AppAsset::register($this);
             <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
         </div>
         <?php if(!Yii::$app->user->isGuest):?>
-            <div class="user">
-                <div class="score"><?=Yii::$app->user->identity->score;?></div>
-                <div class="name"><?=Yii::$app->user->identity->fullName;?></div>
-            </div>
+            <?php $userTest = UserTest::find()->where(['user_id' => Yii::$app->user->id])->one();?>
+                <?php if($userTest && $userTest->is_finished):?>
+                <a href="<?=Url::toRoute(['site/contest-result']);?>" class="user">
+                    <div class="score"><?=Yii::$app->user->identity->score;?></div>
+                    <div class="name"><?=Yii::$app->user->identity->fullName;?></div>
+                </a>
+            <?php else:?>
+                <div class="user">
+                    <div class="score"><?=Yii::$app->user->identity->score;?></div>
+                    <div class="name"><?=Yii::$app->user->identity->fullName;?></div>
+                </div>
+            <?php endif;?>
         <?php endif;?>
     </header>
 
