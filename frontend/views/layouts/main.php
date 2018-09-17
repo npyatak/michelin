@@ -70,6 +70,23 @@ AppAsset::register($this);
                 </a>
             </div>
             <div class="hidden-menu hidden">
+                <div class="start">
+                    <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
+                </div>
+                <?php if(!Yii::$app->user->isGuest):?>
+                    <?php $userTest = UserTest::find()->where(['user_id' => Yii::$app->user->id])->one();?>
+                    <?php if($userTest && $userTest->is_finished):?>
+                        <a href="<?=Url::toRoute(['site/contest-result']);?>" class="user">
+                            <div class="score"><?=Yii::$app->user->identity->score;?></div>
+                            <div class="name"><?=Yii::$app->user->identity->fullName;?></div>
+                        </a>
+                    <?php else:?>
+                        <div class="user">
+                            <div class="score"><?=Yii::$app->user->identity->score;?></div>
+                            <div class="name"><?=Yii::$app->user->identity->fullName;?></div>
+                        </div>
+                    <?php endif;?>
+                <?php endif;?>
                 <nav>
                     <a href="<?=Url::toRoute(['site/index']);?>">
                         Рули зимой
