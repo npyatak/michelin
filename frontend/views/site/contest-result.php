@@ -16,7 +16,6 @@ use yii\helpers\Url;
 		<?=\frontend\widgets\share\ShareWidget::widget(['share' => [
 			'text' => 'Пройди викторину и расскажи свою историю путешествия',
 			'title' => '#РУЛИЗИМОЙ вместе с MICHELIN-ICE NORTH4!',
-			'url' => Url::home(),
 		]]);?>
     </div>
 </div>

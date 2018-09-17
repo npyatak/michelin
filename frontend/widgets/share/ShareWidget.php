@@ -15,6 +15,7 @@ class ShareWidget extends \yii\base\Widget
 	public $wrapClass;
 	public $itemWrapClass;
 	public $itemClass = 'share';
+	public $showButtons = true;
 
     public function init()
     {
@@ -42,24 +43,26 @@ class ShareWidget extends \yii\base\Widget
 			}
 		}
 
-	    echo Html::a('<i class="fa fa-facebook-f"></i>', '', [
-	        'class' => 'share result-facebook',
-	        'data-type' => 'fb',
-	        'data-url' => $this->share['url'],
-	        'data-title' => $this->share['title'],
-	        'data-image' => $this->share['imageUrl'],
-	        'data-text' => $this->share['text'],
-	        'rel' => 'nofollow',
-	    ]);
-	    echo Html::a('<i class="fa fa-vk"></i>', '', [
-	        'class' => 'share result-vk',
-	        'data-type' => 'vk',
-	        'data-url' => $this->share['url'],
-	        'data-title' => $this->share['title'],
-	        'data-image' => $this->share['imageUrl'],
-	        'data-text' => $this->share['text'],
-	        'rel' => 'nofollow',
-	    ]);
+		if($this->showButtons) {
+		    echo Html::a('<i class="fa fa-facebook-f"></i>', '', [
+		        'class' => 'share result-facebook',
+		        'data-type' => 'fb',
+		        'data-url' => $this->share['url'],
+		        'data-title' => $this->share['title'],
+		        'data-image' => $this->share['imageUrl'],
+		        'data-text' => $this->share['text'],
+		        'rel' => 'nofollow',
+		    ]);
+		    echo Html::a('<i class="fa fa-vk"></i>', '', [
+		        'class' => 'share result-vk',
+		        'data-type' => 'vk',
+		        'data-url' => $this->share['url'],
+		        'data-title' => $this->share['title'],
+		        'data-image' => $this->share['imageUrl'],
+		        'data-text' => $this->share['text'],
+		        'rel' => 'nofollow',
+		    ]);
+		}
     }
 
     private function registerAssets()

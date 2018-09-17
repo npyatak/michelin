@@ -1,5 +1,13 @@
 <?php $this->params['bodyClass'] = 'index_page';?>
 
+<?=\frontend\widgets\share\ShareWidget::widget([
+    'share' => [
+        'text' => 'Пройди викторину и расскажи свою историю путешествия',
+        'title' => '#РУЛИЗИМОЙ вместе с MICHELIN-ICE NORTH4!',
+    ], 
+    'showButtons' => false,
+]);?>
+
 <div class="page_wrapper">
 
     <div class="row text_center main_top">
