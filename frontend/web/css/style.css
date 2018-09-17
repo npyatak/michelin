@@ -599,9 +599,13 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .city-title {
+    margin-left: -45px;
+    -webkit-transform: skewx(24deg);
+    -moz-transform: skewx(24deg);
+    -ms-transform: skewx(24deg);
+    -o-transform: skewx(24deg);
     transform: skewx(24deg);
     font-size: 24px;
-    //color: #004f9f;
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -651,8 +655,7 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .wrap{
-    max-width: 420px;
-    margin-left: 45px;
+    max-width: 465px;
     padding-right: 20px;
     padding-bottom: 40px;
     -webkit-transform: skewx(24deg);
