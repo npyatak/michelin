@@ -21,7 +21,7 @@
     </div>
     <div class="row main_screen">
         <div class="video">
-            <div id="launch-video" class="play-video"></div>
+            <div id="launch-video" class="play-video" data-id="3K76Y5qBzfw"></div>
         </div>
         <div class="about">
             <div class="title">О проекте</div>
@@ -39,8 +39,10 @@
     <div class="city show-desktop">
         <div class="text_block">
             <div class="city_img">
-                <div></div>
-                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <!-- <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                <div class="video" data-id="">
+                    <div id="launch-video" class="play-video" data-id=""></div>
+                </div>
             </div>
             <div class="show_on_map">
                 <a href="">Показать на карте</a>

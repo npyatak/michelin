@@ -323,6 +323,7 @@ class SiteController extends Controller
                 'score2' => $city->char2,
                 'score3' => $city->char3,
                 'yt_id' => $city->video_yt_id,
+                'people' => $city->correspondents,
             ];
         }
     }

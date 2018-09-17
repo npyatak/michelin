@@ -376,14 +376,14 @@ header .start span.number {
     text-align: center
 }
 
-.index_page .main_screen .video {
+.video {
     position: relative;
     background: url(../img/video_bg.png) 0 0/cover;
     width: 634px;
     height: 260px
 }
 
-.index_page .main_screen .video .play-video {
+.video .play-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -399,6 +399,7 @@ header .start span.number {
     transform: translate(-50%,-50%);
     margin-left: 30px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .index_page .main_screen .about {
@@ -529,12 +530,12 @@ header .start span.number {
     display: none
 }
 
-.index_page .city[data-type="1"] .text_block .city_img iframe {
+/*.index_page .city[data-type="1"] .text_block .city_img iframe {
     display: block
-}
+}*/
 
 .index_page .city[data-type="1"] .text_block .city_img div {
-    display: none
+    display: block
 }
 
 .index_page .city .text_block {
@@ -563,7 +564,7 @@ header .start span.number {
 .index_page .city .text_block .city_img div {
     display: block;
     content: "";
-    background: url(../img/city/1.jpg) 50%/cover no-repeat
+    //background: url(../img/city/1.jpg) 50%/cover no-repeat
 }
 .index_page .city .text_block .city_img div::after {
     background: transparent;

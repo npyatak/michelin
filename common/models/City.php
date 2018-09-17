@@ -87,12 +87,23 @@ class City extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getCorrespondents() {
+        $res = [];
+        if(!empty($this->peopleArr)) {
+            foreach ($this->peopleArr as $p) {
+                $res[$p] = $this->peopleList[$p];
+            }
+        }
+        
+        return $res;
+    }
+
     public function getPeopleList() {
         return [
-            1 => 'savin',
-            2 => 'chesnokova',
-            3 => 'chebatkov',
-            4 => 'kovinov'
+            1 => ['class' => 'savin', 'name' => 'Евгений Савин'],
+            2 => ['class' => 'chesnokova', 'name' => 'Ирина Чеснокова'],
+            3 => ['class' => 'chebatkov', 'name' => 'Жека Чебатков'],
+            4 => ['class' => 'kovinov', 'name' => 'Дмитрий Ковинов'],
         ];
     }
 }

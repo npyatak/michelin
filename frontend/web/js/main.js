@@ -1,5 +1,3 @@
-var videoId = '3K76Y5qBzfw';
-
 function playVideo(id) {
     $('body').addClass('overflow');
     $(document).find('.overlay').fadeIn(100);
@@ -22,7 +20,9 @@ $(document).ready(function () {
         })
         .on('click', '.play-video', function (e) {
             e.preventDefault();
-            playVideo(videoId);
+            $('.city').hide();
+            $('.main_screen, .main_top').show();
+            playVideo($(this).data('id'));
         });
 
 });
@@ -39,7 +39,7 @@ $(window).on('load', function() {
         player = new YT.Player('ytplayer', {
             height: '360',
             width: '640',
-            videoId: videoId,
+            videoId: '3K76Y5qBzfw',
             playerVars: {
                 controls: 0,
                 rel: 0,
