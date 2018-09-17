@@ -22,7 +22,7 @@ class ShareWidget extends \yii\base\Widget
     }
 
     public function run() {
-        $this->share['url'] = Url::current([], $_SERVER['REQUEST_SCHEME']);
+        $this->share['url'] = $this->share['url'] ? $this->share['url'] : Url::current([], $_SERVER['REQUEST_SCHEME']);
         $this->share['imageUrl'] = isset($this->share['image']) ? Url::to([$this->share['image']], $_SERVER['REQUEST_SCHEME']) : null;
 
         $view = $this->getView();
@@ -42,8 +42,8 @@ class ShareWidget extends \yii\base\Widget
 			}
 		}
 
-	    echo Html::a('<img src="/img/facebook.png" alt="">', '', [
-	        'class' => 'share fb',
+	    echo Html::a('<i class="fa fa-facebook-f"></i>', '', [
+	        'class' => 'share result-facebook',
 	        'data-type' => 'fb',
 	        'data-url' => $this->share['url'],
 	        'data-title' => $this->share['title'],
@@ -51,8 +51,8 @@ class ShareWidget extends \yii\base\Widget
 	        'data-text' => $this->share['text'],
 	        'rel' => 'nofollow',
 	    ]);
-	    echo Html::a('<img src="/img/vk.png" alt="">', '', [
-	        'class' => 'share vk',
+	    echo Html::a('<i class="fa fa-vk"></i>', '', [
+	        'class' => 'share result-vk',
 	        'data-type' => 'vk',
 	        'data-url' => $this->share['url'],
 	        'data-title' => $this->share['title'],

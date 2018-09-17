@@ -45,7 +45,7 @@ class UserTest extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'week_id'], 'required'],
-            [['user_id', 'week_id', 'score', 'is_finished', 'right_answers', 'created_at', 'updated_at'], 'integer'],
+            [['user_id', 'week_id', 'score', 'is_finished', 'right_answers', 'created_at', 'updated_at', 'time'], 'integer'],
             [['answers'], 'string'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['week_id'], 'exist', 'skipOnError' => true, 'targetClass' => Week::className(), 'targetAttribute' => ['week_id' => 'id']],
@@ -95,8 +95,9 @@ class UserTest extends \yii\db\ActiveRecord
             $this->is_finished = 1;
             $this->right_answers = $right_answers;
             $this->score = $score;
+            $this->time = $this->updated_at - $this->created_at;
 
-            $this->save(false, ['is_finished', 'right_answers', 'score']);
+            $this->save(false, ['is_finished', 'right_answers', 'score', 'time']);
 
             $user = User::findOne(Yii::$app->user->id);
             $userScores = UserTest::find()->select('score')->where(['user_id' => $user->id])->column();
@@ -135,12 +136,6 @@ class UserTest extends \yii\db\ActiveRecord
             return 'вопроса';
         } else {
             return 'вопросов';
-        }
-    }
-
-    public function getTime() {
-        if($this->is_finished) {
-            return $this->updated_at - $this->created_at;
         }
     }
 }

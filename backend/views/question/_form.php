@@ -3,6 +3,14 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use unclead\multipleinput\TabularInput;
 use common\components\ElfinderInput;
+
+use common\models\Week;
+
+$weeks = Week::find()->all();
+$weekArr = [];
+foreach ($weeks as $week) {
+    $weekArr[$week->id] = $week->name ? $week->name : $week->number;
+}
 ?>
 
 <div class="form">
@@ -14,13 +22,16 @@ use common\components\ElfinderInput;
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
+            <?= $form->field($model, 'week_id')->dropDownList($weekArr, ['class'=>'']) ?>
+        </div>
+        <div class="col-sm-3">
             <?= $form->field($model, 'status')->dropDownList($model->getStatusArray()) ?>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <?= $form->field($model, 'right_answer_points')->textInput() ?>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
     		<?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
     	</div>
     </div>

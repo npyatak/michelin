@@ -184,16 +184,16 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionContest()
+    public function actionContest2()
     {
-        return $this->render('contest');
+        return $this->render('contest2');
     }
 
 
-    public function actionContest2()
+    public function actionContest()
     {
         if(Yii::$app->user->isGuest) {
-            return $this->render('contest2');
+            return $this->render('contest');
         }
 
         $week = $this->currentWeek;
@@ -216,7 +216,7 @@ class SiteController extends Controller
 
         $question = Question::find()->where(['status' => Question::STATUS_ACTIVE, 'week_id' => $week->id])->offset($questionOffset)->one();
 
-        return $this->render('contest2', [
+        return $this->render('contest', [
             'week' => $week,
             'question' => $question,
             'userTest' => $userTest,
@@ -258,7 +258,11 @@ class SiteController extends Controller
 
     public function actionLeaders()
     {
-        return $this->render('leaders');
+        $leaders = UserTest::find()->where(['is_finished' => 1])->orderBy('score DESC, time DESC')->joinWith('user')->all();
+
+        return $this->render('leaders', [
+            'leaders' => $leaders,
+        ]);
     }
 
     public function actionContestResult()

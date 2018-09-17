@@ -19,6 +19,7 @@ class m180914_095335_create_table_user_test extends Migration
             'score' => $this->integer()->notNull()->defaultValue(0)->comment('Баллы'),
             'is_finished' => $this->integer(),
             'right_answers' => $this->integer()->notNull()->defaultValue(0)->comment('Правильные ответы'),
+            'time' => $this->integer(),
 
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),

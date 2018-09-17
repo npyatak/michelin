@@ -35,9 +35,9 @@ class Question extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title'], 'required'],
+            [['title', 'right_answer_points'], 'required'],
             [['comment'], 'string'],
-            [['right_answer_points'], 'integer'],
+            [['right_answer_points', 'week_id'], 'integer'],
             [['title', 'image'], 'string', 'max' => 255],
             [['status'], 'integer'],
             ['answersArray', function($attribute, $params) {

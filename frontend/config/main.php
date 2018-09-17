@@ -36,12 +36,12 @@ return [
             'cache' => false, // Cache component name or false to disable cache. Defaults to 'cache' on production environments.
             'cacheExpire' => 0, // Cache lifetime. Defaults to 0 - means unlimited.
             'services' => [
-                'fb' => [
-                    // register your app here: https://developers.facebook.com/apps/
-                    'class' => 'frontend\models\social\FbOAuth2Service',
-                    'clientId' => '1084982635003171',
-                    'clientSecret' => '13382e8e648da1e6a3c00f9964f4f87b',
-                ],
+                // 'fb' => [
+                //     // register your app here: https://developers.facebook.com/apps/
+                //     'class' => 'frontend\models\social\FbOAuth2Service',
+                //     'clientId' => '1084982635003171',
+                //     'clientSecret' => '13382e8e648da1e6a3c00f9964f4f87b',
+                // ],
                 'vk' => [
                     // register your app here: https://vk.com/editapp?act=create&site=1
                     'class' => 'frontend\models\social\VkOAuth2Service',
