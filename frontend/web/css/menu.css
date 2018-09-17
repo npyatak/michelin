@@ -1,6 +1,12 @@
 .not-scrollable {
     overflow: hidden!important;
 }
+@media (max-width: 1200px) {
+    .hidden-menu nav {
+        margin-top: 30px;
+        align-items: center !important;
+    }
+}
 @media screen and (min-width: 768px) and (max-width: 1200px) {
     header {
         margin-top: 16px;

@@ -11,6 +11,24 @@
     }
 }
 
+@media (max-width: 1199px) {
+    .user {
+        display: block;
+        text-align: center;
+        width: 100% !important;
+    }
+    .user .name {
+        margin-left: 15px;
+        float: none;
+    }
+    .start {
+        width: 100% !important;
+    }
+    header>.user,
+    header>.start {
+        display: none;
+    }
+}
 @media screen and (min-width: 768px) and (max-width: 1199px) {
     .show-mobile {
         display: none !important;
@@ -188,12 +206,12 @@
         padding: 10px;
         margin: 0 auto 25px auto;
     }
-    header .start {
+    .start {
         width: calc(95% - 20px);
         padding: 0 10px;
         margin: 20px auto 0 auto;
     }
-    header .user {
+    .user {
         width: calc(95% - 20px);
         padding: 0 10px;
         margin: 15px auto 0 auto;
@@ -410,12 +428,12 @@
         padding: 10px;
         margin: 0 auto 25px auto;
     }
-    header .start {
+    .start {
         width: calc(95% - 20px);
         padding: 0 10px;
         margin: 0 auto;
     }
-    header .user {
+    .user {
         width: calc(95% - 20px);
         padding: 0 10px;
         margin: 0 auto;
