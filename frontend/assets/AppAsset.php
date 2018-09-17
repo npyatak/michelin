@@ -19,6 +19,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/app.js?v=17.09_v3',
+        'js/jquery.slimscroll.js?v=16.09_v3',
         'js/main.js?v=16.09_v3',
         'js/menu.js?v=16.09_v1'
     ];

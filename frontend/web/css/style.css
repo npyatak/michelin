@@ -554,12 +554,12 @@ header .main_menu span {
     transform: skewX(-24deg);
     width: 1200px;
     height: 380px;
-    padding-left: 640px;
+    padding-left: 600px;
     box-sizing: border-box
 }
 
 .index_page .city .text_block .city_img {
-    width: 670px;
+    width: 610px;
     overflow: hidden;
     position: absolute;
     left: -90px;
@@ -571,21 +571,25 @@ header .main_menu span {
     content: "";
     //background: url(../img/city/1.jpg) 50%/cover no-repeat
 }
-.index_page .city .text_block .city_img div::after {
-    background: transparent;
-    background: -moz-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, 1) 100%);
-    background: -webkit-gradient(left left, left right, color-stop(0%, rgba(4, 81, 160, 0)), color-stop(100%, rgba(4, 81, 160, 1)));
-    background: -webkit-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, 1) 100%);
-    background: -o-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, 1) 100%);
-    background: -ms-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, 1) 100%);
-    background: linear-gradient(to right, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, 1) 100%);
+.index_page .city .text_block .city_img .video::after {
     content: "";
     display: block;
-    height: 100%;
-    left: 0;
     position: absolute;
+    width: 61%;
+    height: 100%;
+    right: 0;
     top: 0;
-    width: 100%;
+    background: -webkit-linear-gradient(to right, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+    background: -moz-linear-gradient(to right, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+    background: -o-linear-gradient(to right, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+    background: -ms-linear-gradient(to right, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+    background: linear-gradient(to right, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+    -webkit-transform: skewX(-24deg);
+    -moz-transform: skewX(-24deg);
+    -ms-transform: skewX(-24deg);
+    -o-transform: skewX(-24deg);
+    transform: skewX(-24deg);
+    z-index: 0;
 }
 
 .index_page .city .text_block .city_img iframe {
@@ -593,13 +597,18 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .city_img > * {
+    -webkit-transform: skewX(24deg);
+    -moz-transform: skewX(24deg);
+    -ms-transform: skewX(24deg);
+    -o-transform: skewX(24deg);
     transform: skewX(24deg);
-    height: 100%;
+    height: calc(100% - 60px);
     width: calc(100% + 90px)
 }
 
 .index_page .city .text_block .city-title {
     margin-left: -45px;
+    padding-right: 30px;
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
     -ms-transform: skewx(24deg);
@@ -642,11 +651,11 @@ header .main_menu span {
 
 .index_page .city .text_block .text {
     margin: 15px 0 15px 8px;
-    /*-webkit-transform: skewx(-24deg);*/
-    /*-moz-transform: skewx(-24deg);*/
-    /*-ms-transform: skewx(-24deg);*/
-    /*-o-transform: skewx(-24deg);*/
-    /*transform: skewx(-24deg);*/
+    -webkit-transform: skewx(24deg);
+    -moz-transform: skewx(24deg);
+    -ms-transform: skewx(24deg);
+    -o-transform: skewx(24deg);
+    transform: skewx(24deg);
     font-size: 12px;
     font-family: Arial, sans-serif;
     line-height: 16px;
@@ -656,15 +665,15 @@ header .main_menu span {
 
 .index_page .city .text_block .wrap{
     max-width: 465px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-    -webkit-transform: skewx(24deg);
-    -moz-transform: skewx(24deg);
-    -ms-transform: skewx(24deg);
-    -o-transform: skewx(24deg);
-    transform: skewx(24deg);
+    padding-bottom: 10px;
     max-height: 175px;
     overflow: auto;
+}
+.index_page .ss-content {
+    padding-right: 80px;
+}
+.index_page .ss-content .slimScrollRail {
+    height: 175px !important;
 }
 
 .index_page .city .text_block .text p {
@@ -675,7 +684,7 @@ header .main_menu span {
     position: absolute;
     bottom: 0;
     left: 16px;
-    width: 100%;
+    width: 1201px;
     background: #fff;
     font-size: 9px;
     color: #004f9f;
@@ -724,7 +733,8 @@ header .main_menu span {
 
 .index_page .city .info_block .characteristics > div {
     font-size: inherit;
-    width: 140px
+    width: 140px;
+    padding-bottom: 10px;
 }
 
 .index_page .city .info_block .characteristics > div:nth-child(1) {
@@ -1825,6 +1835,34 @@ body.overflow {
     font-size: 25px;
 }
 
+.close-popup {
+    display: none;
+}
+
+@media (max-width: 1199px) {
+    .close-popup {
+        display: block;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background: #fff;
+        color: #222;
+        text-align: center;
+        z-index: 2;
+    }
+}
 @media (max-width: 768px) {
     .question,
     .start-question {

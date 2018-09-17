@@ -24,6 +24,13 @@ $(document).ready(function () {
             $('.main_screen, .main_top').show();
             playVideo($(this).data('id'));
         })
+        .on('click', '.video-modal-close', function (e) {
+            e.preventDefault();
+            $(this).closest('.video-modal').fadeOut(100);
+            $('body').removeClass('overflow');
+            $(document).find('.overlay').fadeOut(100);
+            window.player.stopVideo();
+        })
         .on('click', '.show-map-link', function(e) {
             e.preventDefault();
             openMap($(this).data('coord'));
@@ -81,3 +88,22 @@ function openMap(coord) {
         .add(myPlacemark);
     myMap.behaviors.disable('scrollZoom', 'Drag');
 }
+
+$(".niceScroll").slimScroll({
+    size: '5px',
+    position: 'right',
+    color: '#fff',
+    alwaysVisible: true,
+    railVisible: true,
+    railColor: '#5D84BD',
+    railOpacity: 0.3,
+    wheelStep: 10,
+    allowPageScroll: true,
+    disableFadeOut: false
+});
+
+$('.close-popup').click(function () {
+    $('.main_screen, .main_top').show();
+    $(".marker").removeClass('active');
+    $(".city").hide();
+});
