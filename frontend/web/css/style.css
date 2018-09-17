@@ -539,7 +539,8 @@ header .start span.number {
 
 .index_page .city .text_block {
     overflow: hidden;
-    background: #fff;
+    //background: #fff;
+    background: rgba(4, 81, 160, .67);
     -webkit-transform: skewX(-24deg);
     -moz-transform: skewX(-24deg);
     -ms-transform: skewX(-24deg);
@@ -564,6 +565,22 @@ header .start span.number {
     content: "";
     background: url(../img/city/1.jpg) 50%/cover no-repeat
 }
+.index_page .city .text_block .city_img div::after {
+    background: transparent;
+    background: -moz-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, .67) 100%);
+    background: -webkit-gradient(left left, left right, color-stop(0%, rgba(4, 81, 160, 0)), color-stop(100%, rgba(4, 81, 160, .67)));
+    background: -webkit-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, .67) 100%);
+    background: -o-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, .67) 100%);
+    background: -ms-linear-gradient(left, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, .67) 100%);
+    background: linear-gradient(to right, rgba(4, 81, 160, 0) 0%, rgba(4, 81, 160, .67) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
 
 .index_page .city .text_block .city_img iframe {
     display: none
@@ -578,7 +595,8 @@ header .start span.number {
 .index_page .city .text_block .city-title {
     transform: skewx(24deg);
     font-size: 24px;
-    color: #004f9f;
+    //color: #004f9f;
+    color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     margin-top: 70px
@@ -622,7 +640,8 @@ header .start span.number {
     font-size: 12px;
     font-family: Arial, sans-serif;
     line-height: 16px;
-    color: #1c4e94;
+    //color: #1c4e94;
+    color: #fff;
 }
 
 .index_page .city .text_block .wrap{
