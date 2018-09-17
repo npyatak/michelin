@@ -897,28 +897,29 @@ module.exports = (function () {
     }
 
     function changeRotation(offset) {
+        if(!$('.city').is(':visible')) {
+            tire_offset += offset;
 
-        tire_offset += offset;
+
+            if (tire_offset < 0) {
+                tire_offset = frame_count;
+            }
+
+            tire_div.removeAttr('class');
+
+            var frame_num = tire_offset % frame_count;
+
+            if (frame_num < 10) {
+                frame_num = "0" + frame_num;
+            }
+
+            if (frame_num > frame_count) {
+                frame_num = "00";
+            }
 
 
-        if (tire_offset < 0) {
-            tire_offset = frame_count;
+            tire_div.addClass("frame-00" + frame_num);
         }
-
-        tire_div.removeAttr('class');
-
-        var frame_num = tire_offset % frame_count;
-
-        if (frame_num < 10) {
-            frame_num = "0" + frame_num;
-        }
-
-        if (frame_num > frame_count) {
-            frame_num = "00";
-        }
-
-
-        tire_div.addClass("frame-00" + frame_num);
     }
 
     function bindEvents() {

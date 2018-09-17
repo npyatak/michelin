@@ -1820,3 +1820,9 @@ body.overflow {
         width: 100%;
     }
 }
+
+@media (max-width: 999px) {
+    #tire .marker span {
+        display: none;
+    }
+}
