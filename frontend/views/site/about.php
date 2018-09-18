@@ -2,7 +2,6 @@
 
 <div class="page_wrapper ">
     <div class="_250_contacts"></div>
-    <div class="about_tire"></div>
     <div class="text">
         <h1>Michelin X-Ice North 4 </h1>
         <div class="like-p">
@@ -21,4 +20,5 @@
             <div>вам под колёса!</div>
         </div>
     </div>
+    <div class="about_tire"></div>
 </div>
