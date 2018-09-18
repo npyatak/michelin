@@ -1026,7 +1026,7 @@ module.exports = (function () {
                     str += '<div class="'+value.class+'">'+value.name+'</div>';
                 });
             }
-            // $('.city .peoples').html(str);
+            $('.city .peoples').html(str);
 
             $('.scores.scores_1').attr('data-score', data.score1);
             $('.scores.scores_2').attr('data-score', data.score2);

@@ -9,6 +9,7 @@ use yii\helpers\Html;
     'share' => [
         'text' => 'Пройди викторину и расскажи свою историю путешествия',
         'title' => '#РУЛИЗИМОЙ вместе с MICHELIN-ICE NORTH4!',
+        'image' => '/img/share-michelin.jpg',
     ], 
     'showButtons' => false,
 ]);?>

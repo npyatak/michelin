@@ -33,7 +33,7 @@ class ShareWidget extends \yii\base\Widget
 		$view->registerMetaTag(['property' => 'og:url', 'content' => $this->share['url']], 'og:url');
 		$view->registerMetaTag(['property' => 'og:type', 'content' => 'website'], 'og:type');
 		if(isset($this->share['image']) && $this->share['image']) {
-        	$imagePath = Share::getImageSrcPath().$this->share['image'];
+        	$imagePath = __DIR__ . '/../../../frontend/web'.$this->share['image'];
         	if(is_file($imagePath)) {
 				$view->registerMetaTag(['property' => 'og:image', 'content' => $this->share['imageUrl']], 'og:image');
 				$size = getimagesize($imagePath);

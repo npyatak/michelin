@@ -90,7 +90,7 @@ class City extends \yii\db\ActiveRecord
 
     public function getCorrespondents() {
         $res = [];
-        if(!empty($this->peoplerr)) {
+        if(!empty($this->peopleArr)) {
             foreach ($this->peopleArr as $p) {
                 $res[$p] = $this->peopleData[$p];
             }

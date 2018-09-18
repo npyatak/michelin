@@ -313,7 +313,7 @@ class SiteController extends Controller
             if($city === null) {
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
-
+            
             return  [
                 'name' => $city->name,
                 'descr' => $city->descr,

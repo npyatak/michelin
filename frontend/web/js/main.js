@@ -11,12 +11,11 @@ function playVideo(id) {
 $(document).ready(function () {
 
     $(this)
-        .on('click', '.modal-close', function (e) {
+        .on('click', '.map-modal-close', function (e) {
             e.preventDefault();
-            $(this).closest('.modal').fadeOut(100);
+            $(this).closest('.map-modal').fadeOut(100);
             $('body').removeClass('overflow');
             $(document).find('.overlay').fadeOut(100);
-            window.player.stopVideo();
         })
         .on('click', '.play-video', function (e) {
             e.preventDefault();
@@ -67,9 +66,11 @@ function openMap(coord) {
     var modal = $(document).find('.map-modal');
     modal.fadeIn(100);
 
+    coords = coord.split(',');
+
     var myMap = new ymaps.Map('map', {
-            center: [coord],
-            zoom: 15
+            center: coords,
+            zoom: 10
         }, {
             searchControlProvider: 'yandex#search'
         }),
@@ -77,12 +78,7 @@ function openMap(coord) {
             '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
         ),
 
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(), null, {
-            iconLayout: 'default#image',
-            iconImageHref: 'img/marker.svg',
-            iconImageSize: [30, 40],
-            iconImageOffset: [-5, -38]
-        });
+        myPlacemark = new ymaps.Placemark(myMap.getCenter());
 
     myMap.geoObjects
         .add(myPlacemark);
