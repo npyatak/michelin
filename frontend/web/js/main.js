@@ -52,7 +52,7 @@ $(window).on('load', function() {
         player = new YT.Player('ytplayer', {
             height: '360',
             width: '640',
-            videoId: '3K76Y5qBzfw',
+            videoId: 'VZNllpqMNCo',
             playerVars: {
                 controls: 0,
                 rel: 0,
@@ -61,6 +61,13 @@ $(window).on('load', function() {
             }
         });
     };
+
+    setTimeout(function () {
+        if(window.page !== 'undefined'){
+            $('#about-play-video').click()
+            // playVideo($(this).data('id'));
+        }
+    },2000)
 });
  
 

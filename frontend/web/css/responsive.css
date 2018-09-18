@@ -195,6 +195,9 @@
         height: 100%;
         transform: none;
     }
+    .index_page .city .text_block .city_img .video {
+        left: 0;
+    }
     .index_page .city .text_block .city_img .video::after {
         width: 100%;
         -webkit-transform: none;
@@ -276,6 +279,7 @@
     .about_page .page_wrapper {
         max-width: initial;
         position: relative;
+        height: inherit;
     }
     .about_page .page_wrapper .row {
         margin: 0;
@@ -296,6 +300,7 @@
     .about_page .about_tire {
         width: 100%;
         height: 170px;
+        margin-top: 40px;
         display: block;
         position: relative;
         top: 0;
@@ -392,6 +397,10 @@
         left: inherit;
     }
     .index_page .city .info_block>div {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
         transform: none!important;
         width: 100%;
     }
@@ -410,28 +419,60 @@
         display: none;
     }
     .index_page .city .info_block .characteristics > div:nth-child(1) {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
         transform: none!important;
         width: auto;
     }
     .index_page .city .info_block>div.characteristics .skew-text {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
         transform: none!important;
     }
     .index_page .city .info_block .characteristics > div .scores {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
         transform: none!important;
     }
     .index_page .city .text {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
         transform: none!important;
     }
     .index_page .city .info_block>div.characteristics>div {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
         transform: none!important;
     }
     .index_page .city .text_block .wrap {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
         transform: none!important;
+        min-height: 175px !important;
+        height: 175px !important;
+        overflow-y: auto !important;
     }
     .index_page .city .text_block .city-title {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
         transform: none;
         margin-top: 10px;
         font-size: 15px;
+        min-height: inherit;
     }
     .index_page .city .text_block .show_on_map a {
         transform: none;
@@ -505,6 +546,7 @@
     }
     .about_page .page_wrapper {
         max-width: initial;
+        height: auto;
     }
     .about_page .page_wrapper .row {
         margin: 0;
@@ -540,7 +582,7 @@
         width: 51%;
         height: 160px;
         position: relative;
-        margin: -60px 0 0 auto;
+        margin: 40px auto 0;
         bottom: inherit;
         right: inherit;
         background-position: top right;
@@ -595,11 +637,20 @@
     .index_page .ss-content {
         padding-right: 0;
     }
-    .index_page .city .city_img .video {
+    .index_page .city .text_block .city_img .video {
         width: 100%;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
         transform: none;
+        left: 0;
     }
     .index_page .city .text_block .city_img .video:after {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
         transform: none;
     }
 
@@ -610,6 +661,20 @@
 
 @media screen and (min-width: 1000px) and (max-width: 1600px) {
     .about_page .text .like-p {
-        font-size: 17px;
+        font-size: 15px;
+    }
+    .about_page_inner {
+        margin-left: 90px;
+    }
+}
+@media screen and (min-width: 1601px) and (max-width: 1850px) {
+    .about_page .text .like-p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    iframe {
+        width: 100% !important;
     }
 }

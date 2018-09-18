@@ -614,8 +614,9 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .city-title {
+    min-height: 68px;
     margin-left: -45px;
-    padding-right: 30px;
+    padding-right: 140px;
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
     -ms-transform: skewx(24deg);
@@ -673,7 +674,8 @@ header .main_menu span {
 .index_page .city .text_block .wrap{
     max-width: 465px;
     padding-bottom: 10px;
-    max-height: 175px;
+    max-height: 140px;
+    height: 140px !important;
     overflow: auto;
 }
 .index_page .ss-content {
