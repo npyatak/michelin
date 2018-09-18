@@ -908,6 +908,7 @@ header .main_menu span {
 .about_page .page_wrapper {
     max-width: 1200px;
     margin: 0 auto
+    height: 100vh;
 }
 
 .about_page .start-block {

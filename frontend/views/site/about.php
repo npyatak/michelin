@@ -4,6 +4,7 @@
     <div class="_250_contacts"></div>
     <div class="text">
         <h1>Michelin X-Ice North 4 </h1>
+        
         <div class="like-p">
             <div>Новая зимняя шипованная шина премиум-класса</div>
             <div><b>Michelin X-Ice North 4</b> предназначена для городских</div>
@@ -19,6 +20,26 @@
             <div>дороги русской зимы послушно лягут</div>
             <div>вам под колёса!</div>
         </div>
+        <a class="btn btn-oblique" target="_blank" href="https://michelin.ru/RU/ru/tires/products/x-ice-north-4.html"><span>Подробнее</span></a>
+        <span class="btn btn-oblique play-video" id="about-play-video" data-id="VZNllpqMNCo"><span>Смотреть видео</span></span>
     </div>
     <div class="about_tire"></div>
 </div>
+
+<div class="video-modal" id="video">
+    <div class="modalType2-content">
+        <div class="video-modal-close"></div>
+        <div id="ytplayer"></div>
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<?php $script = "
+    $(document).ready(function() {
+
+        //alert($('#about-play-video').data('id'));
+        //$('.play-video').trigger('click');
+    });
+";?>
+<?php $this->registerJs($script, yii\web\View::POS_END);?>
