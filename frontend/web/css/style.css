@@ -385,7 +385,8 @@ header .main_menu span {
     position: relative;
     background: url(../img/video_bg.png) 0 0/cover;
     width: 634px;
-    height: 260px
+    height: 260px;
+    overflow: hidden;
 }
 
 .video .play-video {
@@ -559,10 +560,10 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .city_img {
-    width: 610px;
+    width: 520px;
     overflow: hidden;
     position: absolute;
-    left: -90px;
+    left: 0;
     height: 100%
 }
 
@@ -603,7 +604,13 @@ header .main_menu span {
     -o-transform: skewX(24deg);
     transform: skewX(24deg);
     height: calc(100% - 60px);
-    width: calc(100% + 90px)
+    width: calc(100% + 180px);
+}
+
+.index_page .city .text_block .city_img .video {
+    position: absolute;
+    top: 0;
+    left: -90px;
 }
 
 .index_page .city .text_block .city-title {
@@ -907,7 +914,7 @@ header .main_menu span {
 
 .about_page .page_wrapper {
     max-width: 1200px;
-    margin: 0 auto
+    margin: 0 auto;
     height: 100vh;
 }
 

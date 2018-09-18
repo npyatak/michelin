@@ -18,6 +18,7 @@ $(document).ready(function () {
             $(this).closest('.map-modal').fadeOut(100);
             $('body').removeClass('overflow');
             $(document).find('.overlay').fadeOut(100);
+            $('.marker').removeClass('active');
         })
         .on('click', '.play-video', function (e) {
             e.preventDefault();
@@ -31,6 +32,7 @@ $(document).ready(function () {
             $('body').removeClass('overflow');
             $(document).find('.overlay').fadeOut(100);
             window.player.stopVideo();
+            $('.marker').removeClass('active');
         })
         .on('click', '.show-map-link', function(e) {
             e.preventDefault();
@@ -87,7 +89,7 @@ function openMap(coord) {
     map.geoObjects.add(myPlacemark);
 }
 
-$(".niceScroll").slimScroll({
+$('.city').find(".niceScroll").slimScroll({
     size: '5px',
     position: 'right',
     color: '#fff',

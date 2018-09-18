@@ -40,7 +40,7 @@ use yii\helpers\Html;
                 <div>и блогеры проложат для вас новые маршруты на зимней карте</div>
                 <div>России. 250 уникальных точек – столько же, сколько и шипов на</div>
                 <div>шине. Мы начинаем, а вы подхватываете!</div>
-                <div><a class="btn btn-oblique" target="_blank" href="<?=Url::toRoute(['site/contest']);?>"><span>Участвовать в конкурсе!</span></a></div>
+                <div><a class="btn btn-oblique" href="<?=Url::toRoute(['site/contest']);?>"><span>Участвовать в конкурсе!</span></a></div>
             </div>
         </div>
     </div>
