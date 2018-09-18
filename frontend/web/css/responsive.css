@@ -596,4 +596,8 @@
     .index_page .city .text_block .city_img .video:after {
         transform: none;
     }
+
+    #map {
+        width: 100%;
+    }
 }

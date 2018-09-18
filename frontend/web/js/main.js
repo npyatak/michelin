@@ -72,7 +72,7 @@ function openMap(coord) {
     $('.map-modal').fadeIn(100);
     $('.city').hide();
     $('.main_screen, .main_top').show();
-alert(coord);
+
     coords = coord.split(',');
 
     map = new ymaps.Map('map', {

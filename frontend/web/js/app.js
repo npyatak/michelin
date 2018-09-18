@@ -923,14 +923,22 @@ module.exports = (function () {
     }
 
     function bindEvents() {
-
         $(document).on('wheel', function (e) {
-            if (e.originalEvent.deltaY > 0) {
-                changeRotation(1);
+            if(!window.App.helper.getMobile()) {
+                if (e.originalEvent.deltaY > 0) {
+                    changeRotation(1);
+                }
+                else if (e.originalEvent.deltaY < 0) {
+                    changeRotation(-1);
+                }
             }
-            else if (e.originalEvent.deltaY < 0) {
-                changeRotation(-1);
-            }
+        });
+
+        $(document).on('click', '.arrow-up', function (e) {
+            changeRotation(1);
+        });
+        $(document).on('click', '.arrow-down', function (e) {
+            changeRotation(-1);
         });
 
         $('body').on('click', function (e) {

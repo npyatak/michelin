@@ -174,7 +174,10 @@ use yii\helpers\Html;
 <!--    </div>-->
 </div>
 <div id="tire">
-    <div class="arrows"></div>
+    <div class="arrows">
+        <div class="arrow-up"></div>
+        <div class="arrow-down"></div>
+    </div>
 </div>
 
 <div class="video-modal" id="video">

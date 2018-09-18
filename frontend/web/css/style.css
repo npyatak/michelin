@@ -1024,13 +1024,23 @@ header .main_menu span {
 }
 
 #tire .arrows {
-    background: url(../img/arrows.png) 50%/contain no-repeat;
     width: 18vw;
     height: 3vw;
     position: absolute;
     left: 50%;
     margin-left: -9vw;
     bottom: 12vw
+}
+#tire .arrows .arrow-up, #tire .arrows .arrow-down {
+    background: url(../img/arrow-down.png) 50%/contain no-repeat;
+    width: 3vw;
+    height: 3vw;
+    float: right;
+    cursor: pointer;
+}
+#tire .arrows .arrow-down {
+    background: url(../img/arrow-up.png) 50%/contain no-repeat;
+    float: left;
 }
 
 #tire .marker {
@@ -1904,5 +1914,32 @@ body.overflow {
         height: 60px;
         font-size: 25px;
         line-height: 60px;
+    }
+
+    .map-modal, .video-modal {
+        width: 100%;
+    }
+    #map {
+        width: 100%;
+    }
+    .video-modal-close, .map-modal-close {
+        left: calc(100% - 30px);
+    }
+    .index_page .city .text_block .city_img .video::after {
+        width: 100%;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+        background: -webkit-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+        background: -moz-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+        background: -o-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+        background: -ms-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+        background: linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
+    }
+
+    .city .scores {
+        display: none;
     }
 }
