@@ -63,8 +63,9 @@ $(window).on('load', function() {
 function openMap(coord) {
     $('body').addClass('overflow');
     $(document).find('.overlay').fadeIn(100);
-    var modal = $(document).find('.map-modal');
-    modal.fadeIn(100);
+    $('.map-modal').fadeIn(100);
+    $('.city').hide();
+    $('.main_screen, .main_top').show();
 
     coords = coord.split(',');
 
