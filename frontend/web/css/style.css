@@ -615,7 +615,7 @@ header .main_menu span {
 
 .index_page .city .text_block .city-title {
     min-height: 68px;
-    margin-left: -45px;
+    margin-left: -70px;
     padding-right: 140px;
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
@@ -627,6 +627,14 @@ header .main_menu span {
     font-weight: 700;
     text-transform: uppercase;
     margin-top: 70px
+}
+
+.actions-wrap {
+    -webkit-transform: skewx(24deg);
+    -moz-transform: skewx(24deg);
+    -ms-transform: skewx(24deg);
+    -o-transform: skewx(24deg);
+    transform: skewx(24deg);
 }
 
 .index_page .city .text_block .show_on_map {

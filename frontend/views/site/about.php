@@ -1,6 +1,6 @@
 <?php $this->params['bodyClass'] = 'about_page';?>
 
-<div class="page_wrapper ">
+<div class="page_wrapper about">
     <div class="about_page_inner">
         <div class="_250_contacts"></div>
         <div class="text">
@@ -21,8 +21,10 @@
                 <div>дороги русской зимы послушно лягут</div>
                 <div>вам под колёса!</div>
             </div>
-            <a class="btn btn-oblique" target="_blank" href="https://michelin.ru/RU/ru/tires/products/x-ice-north-4.html"><span>Подробнее</span></a>
-            <span class="btn btn-oblique play-video" id="about-play-video" data-id="VZNllpqMNCo"><span>Смотреть видео</span></span>
+            <div class="actions-wrap">
+                <a class="btn btn-oblique" target="_blank" href="https://michelin.ru/RU/ru/tires/products/x-ice-north-4.html"><span>Подробнее</span></a>
+                <span class="btn btn-oblique play-video" id="about-play-video" data-id="VZNllpqMNCo"><span>Смотреть видео</span></span>
+            </div>
         </div>
         <div class="about_tire"></div>
     </div>

@@ -281,6 +281,10 @@
         position: relative;
         height: inherit;
     }
+    .about_page .page_wrapper.about {
+        position: static;
+        padding-bottom: 210px;
+    }
     .about_page .page_wrapper .row {
         margin: 0;
     }
@@ -302,11 +306,18 @@
         height: 170px;
         margin-top: 40px;
         display: block;
-        position: relative;
-        top: 0;
-        right: 0;
+        position: absolute;
+        bottom: 0;
         background-size: contain;
         background-position: center;
+    }
+    .actions-wrap {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+        text-align: center;
     }
     .about_page ._250_contacts {
         width: 100%;
@@ -338,6 +349,14 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .actions-wrap {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+        text-align: center;
+    }
     .close-info-modal {
         position: absolute;
         left: 50%;
@@ -673,8 +692,15 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     iframe {
         width: 100% !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .actions-wrap>*:nth-child(1) {
+        margin-left: 28px;
+        margin-bottom: 15px;
     }
 }
