@@ -1032,7 +1032,7 @@ module.exports = (function () {
             $('.scores.scores_2').attr('data-score', data.score2);
             $('.scores.scores_3').attr('data-score', data.score3);
 
-            $('.show-map-link').attr('data-coord', data.coord);
+            $('.show-map-link').data('coord', data.coord);
 
             SimpleScrollbar.initAll();
         });

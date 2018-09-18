@@ -553,4 +553,29 @@
         transform: none;
         font-size: 19px;
     }
+
+    #tire .marker span {
+        display: none;
+    }
+    .index_page .city .text_block .show_on_map {
+        top: 30px;
+    }
+    .index_page .city .text_block .city-title {
+        margin: 0;
+        padding: 0;
+    }
+    .index_page .city .info_block {
+        width: 100%;
+    }
+    .index_page .city .info_block .characteristics {
+        margin: auto;
+        align-items: inherit;
+    }
+    .index_page .city .info_block .peoples {
+        margin: auto;
+        text-align: left;
+    }
+    .index_page .ss-content {
+        padding-right: 0;
+    }
 }
