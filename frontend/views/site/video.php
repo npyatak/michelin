@@ -13,7 +13,16 @@
 ];
 ?>
 
+<?php $this->params['bodyClass'] = 'about_page';?>
+
 <div class="page_wrapper">
+    <div class="text text_center">
+        <div class="like-p">
+            <div>Чтобы стать лучшим, смотри видео <b>в этом разделе</b>,</div>
+            <div>выполняй условия и получай призы</div>
+        </div>
+    </div>
+
     <div class="row main_screen">
     	<?php foreach ($videoArr as $v):?>
 	        <div class="video" style="background: url('https://img.youtube.com/vi/<?=$v;?>/maxresdefault.jpg') 0 0/cover;">

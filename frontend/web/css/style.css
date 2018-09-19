@@ -451,7 +451,7 @@ header .main_menu span {
         padding-top: 35px
     }
 
-    .index_page .main_screen .video {
+    .main_screen .video {
         width: 480px;
         height: 195px
     }
@@ -725,6 +725,9 @@ header .main_menu span {
     -o-transform: skewx(-24deg);
     transform: skewx(-24deg);
 }
+.index_page .city .info_block>div.characteristics .scores {
+    display: none;
+}
 .index_page .city .info_block>div.characteristics .skew-text,
 .index_page .city .info_block>div.characteristics .scores {
     -webkit-transform: skewx(24deg);
@@ -898,14 +901,14 @@ header .main_menu span {
     transform: skewX(-24deg)
 }
 
-.about_page .text .like-p {
+.text .like-p {
     color: #1b4c94;
     font-size: 25px;
     margin-bottom: 50px;
     line-height: 30px;
 }
 
-.about_page .text .like-p div {
+.text .like-p div {
     transform: skewX(24deg)
 }
 
@@ -1953,7 +1956,4 @@ body.overflow {
         background: linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
     }
 
-    .city .scores {
-        display: none;
-    }
 }
