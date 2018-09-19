@@ -634,7 +634,8 @@
         height: 202px;
         background-position: left center;
         display: block;
-        background-repeat: no-repeat
+        background-repeat: no-repeat;
+        margin:0;
     }
     .about_page .text {
         padding: 0 20px;
