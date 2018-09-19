@@ -10,75 +10,62 @@ use yii\helpers\Html;
         <a href="#" class="main_title"></a>
     </div>
 
-<!-- Modal -->
-<!-- <div class="modal fade" id="contest-video-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
     <?php if(Yii::$app->user->isGuest):?>
-        <div class="auth" style="display: block">
-            <div><span>Авторизуйся</span></div>
-            <div>для участия в викторине необходимо авторизоваться с использованием аккаунта социальной сети</div>
-            <?=\frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
-        </div>
-        <div class="overlay" style="display: block"></div>
-    <?php else:?>
         <div class="start-question">
             <div class="start-question-text">
-                <p>Прими участие в викторине и получи фору при старте второго этапа! Отвечай на вопросы правильно и не затягивай со временем. Первые топ-10 игроков получат приятный бонус в творческом конкурсе!</p>
-                <p>Лучшие результаты каждой недели будут награждены памятными сувенирами: абонементы, чемоданы, навигаторы, пледы и кружки!</p>
+                <p>Поддержи любимую команду даже на выездных матчах! <a href="<?=Url::toRoute(['site/video']);?>">Смотри</a> уникальные видео о самых красивых местах России, отвечай на вопросы Викторины и получи шанс выиграть стильные призы от Michelin, а также годовой абонемент на матчи своего любимого клуба!</p>
+                <p>Путешествуй со своей командой, путешествуй с Michlein!</p>
+                <!-- <p>Прими участие в викторине и получи фору при старте второго этапа! Отвечай на вопросы правильно и не затягивай со временем. Первые топ-10 игроков получат приятный бонус в творческом конкурсе!</p>
+                <p>Лучшие результаты каждой недели будут награждены памятными сувенирами: абонементы, чемоданы, навигаторы, пледы и кружки!</p> -->
             </div>
             <div class="text-center">
                 <a href="" class="start-question-btn">Начать</a>
             </div>
         </div>
 
-        <div id="question" style="display: none;">
+        <div class="auth" style="display: none;">
+            <div><span>Авторизуйся</span></div>
+            <div>для участия в викторине необходимо авторизоваться с использованием аккаунта социальной сети</div>
+            <?=\frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
+        </div>
+        <div class="overlay" style="display: none"></div>
+
+        <?php
+        $script = "
+            $(document).on('click', '.start-question-btn', function(e) {
+                $('.start-question').hide();
+                $('.auth').show();
+                $('.overlay').show();
+
+                return false;
+            })
+        ";?>
+    <?php else:?>
+        <div id="question">
             <?=$this->render('_question', ['question' => $question]);?>
         </div>
 
         <?php
         $script = "
-		$(document).on('click', '.answer', function(e) {
-			var question = $(this).closest('.question').data('question');
-			var answer = $(this).data('answer');
-	        $.ajax({
-	            type: 'GET',
-	            url: '".Url::toRoute(['site/contest-ajax'])."',
-	            data: 'question='+question+'&answer='+answer,
-	            success: function (data) {
-	            	if(data.status == 'redirect') {
-	                    window.location.href = '".Url::toRoute(['site/contest-result'])."';
-	                }
-	                $('#question').html(data);
-	            }
-	        });
+    		$(document).on('click', '.answer', function(e) {
+    			var question = $(this).closest('.question').data('question');
+    			var answer = $(this).data('answer');
+    	        $.ajax({
+    	            type: 'GET',
+    	            url: '".Url::toRoute(['site/contest-ajax'])."',
+    	            data: 'question='+question+'&answer='+answer,
+    	            success: function (data) {
+    	            	if(data.status == 'redirect') {
+    	                    window.location.href = '".Url::toRoute(['site/contest-result'])."';
+    	                }
+    	                $('#question').html(data);
+    	            }
+    	        });
 
-	        return false;
-	    });
-
-	    $(document).on('click', '.start-question-btn', function(e) {
-	    	$('.start-question').hide();
-	    	$('#question').show();
-
-	    	return false;
-	    })
-	";
-
-        $this->registerJs($script, yii\web\View::POS_END);?>
+    	        return false;
+    	    });
+    	";?>
     <?php endif;?>
 </div>
+
+<?php $this->registerJs($script, yii\web\View::POS_END);?>

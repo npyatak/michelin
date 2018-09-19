@@ -1,15 +1,15 @@
 <?php $videoArr = [
-	'042UyeWlC5I',
-	'jB4MyAc2ujQ',
-	'gtqMyLBQfJE',
-	'wRSDnBc-4-w',
-	'e7pYgyx7cWM',
-	'tCY8VXOZhK8',
-	'b4j0uABIbBc',
-	'WBMPt-EqKLo',
-	'xajxxDJUNxQ',
-	'pjLmtZViw8k',
-	'W0awU596rNo',
+	['id' => '042UyeWlC5I', 'image' => '/img/video/1.jpg'],
+	['id' => 'jB4MyAc2ujQ', 'image' => ''],
+	['id' => 'gtqMyLBQfJE', 'image' => ''],
+	['id' => 'wRSDnBc-4-w', 'image' => ''],
+	['id' => 'e7pYgyx7cWM', 'image' => ''],
+	['id' => 'tCY8VXOZhK8', 'image' => ''],
+	['id' => 'b4j0uABIbBc', 'image' => '/img/video/7.jpg'],
+	['id' => 'WBMPt-EqKLo', 'image' => ''],
+	['id' => 'xajxxDJUNxQ', 'image' => '/img/video/9.jpg'],
+	['id' => 'pjLmtZViw8k', 'image' => '/img/video/10.jpg'],
+	['id' => 'W0awU596rNo', 'image' => '/img/video/11.jpg'],
 ];
 ?>
 
@@ -27,9 +27,10 @@
     </div>
     <div class="row contast-cards">
     	<?php foreach ($videoArr as $key => $v):?>
-	        <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card" data-toggle="modal" data-target="#contest-video-1">
-	            <div class="contast-card-play-icon play-video" data-id="<?=$v?>"></div>
-	            <div class="contest-image" style="background: url('https://img.youtube.com/vi/<?=$v;?>/maxresdefault.jpg') 0 0/cover;"></div>
+    		<?php $image = $v['image'] ? $v['image'] : "https://img.youtube.com/vi/".$v['id']."/maxresdefault.jpg";?>
+	        <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card"">
+	            <div class="contast-card-play-icon play-video" data-id="<?=$v['id']?>"></div>
+	            <div class="contest-image" style="background: url(<?=$image;?>) 0 0/cover;"></div>
 	            <!-- <div class="contest-text text_center">Снегоходы</div> -->
 	        </div>
     	<?php endforeach;?>
