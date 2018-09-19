@@ -976,7 +976,7 @@ module.exports = (function () {
     }
 
     function changeRotation(offset) {
-	   if (!block_tire) {
+	   // if (!block_tire) {
         //if(!$('.city').is(':visible')) {
             tire_offset += offset;
 
@@ -999,7 +999,7 @@ module.exports = (function () {
 
 
             tire_div.addClass("frame-00" + frame_num);
-        }
+        // }
     }
 
 

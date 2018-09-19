@@ -976,7 +976,11 @@ module.exports = (function () {
     }
 
     function changeRotation(offset) {
-	   if (!block_tire) {
+<<<<<<< HEAD
+	   // if (!block_tire) {
+=======
+        if (!block_tire) {
+>>>>>>> 51d7f9aea97a1a8ce367fd76745ed302e07a00a7
         //if(!$('.city').is(':visible')) {
             tire_offset += offset;
 
@@ -999,21 +1003,21 @@ module.exports = (function () {
 
 
             tire_div.addClass("frame-00" + frame_num);
-        }
+        // }
     }
 
 
 
     function bindEvents() {
         $(document).on('wheel', function (e) {
-            if(!window.App.helper.getMobile()) {
+            //if(!window.App.helper.getMobile()) {
                 if (e.originalEvent.deltaY > 0) {
                     changeRotation(1);
                 }
                 else if (e.originalEvent.deltaY < 0) {
                     changeRotation(-1);
                 }
-            }
+            //}
         });
 
         $(document).on('click', '.arrow-up', function (e) {

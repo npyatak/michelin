@@ -50,7 +50,8 @@ use yii\helpers\Html;
             </div>
         </div>
     </div>
-    <div class="city">
+    <script> var block_tire = false; </script>
+    <div class="city" onmouseenter="block_tire=true;console.log(block_tire);" onmouseleave="block_tire=false;console.log(block_tire);">
         <div class="close-popup"><i class="fa fa-close"></i></div>
         <div class="text_block">
             <div class="city_img">
