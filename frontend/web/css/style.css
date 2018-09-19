@@ -1863,33 +1863,29 @@ body.overflow {
 }
 
 .close-popup {
-    display: none;
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #fff;
+    color: #222;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
 }
 
-@media (max-width: 1199px) {
-    .close-popup {
-        display: block;
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        background: #fff;
-        color: #222;
-        text-align: center;
-        z-index: 2;
-    }
-}
 @media (max-width: 768px) {
     .question,
     .start-question {

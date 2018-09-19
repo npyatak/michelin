@@ -941,7 +941,7 @@ module.exports = (function () {
             changeRotation(-1);
         });
 
-        $('body').on('click', function (e) {
+        /*$('body').on('click', function (e) {
             if($('.city').is(':visible') && e.target.className !== 'play-video' && e.target.className !== 'show-map-link') {
                 e.stopPropagation();
                 $('.main_screen, .main_top').show();
@@ -954,7 +954,7 @@ module.exports = (function () {
             if(e.target.className !== 'play-video' && e.target.className !== 'show-map-link') {
                 e.stopPropagation();
             }
-        });
+        });*/
 
         var isDragging = false;
         var previousMousePositionY = 0;
