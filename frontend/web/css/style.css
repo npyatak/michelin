@@ -518,7 +518,8 @@ header .main_menu span {
 
 @media (max-width: 768px) {
     .index_page .main_screen .video {
-        display: none
+        /*display: none*/
+        margin-bottom: 50px;
     }
 
     .index_page .main_screen .about, .index_page .main_screen .about .descr > div, .index_page .main_screen .about .title {
@@ -666,7 +667,7 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .text {
-    margin: 15px 0 15px 8px;
+    padding: 15px;
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
     -ms-transform: skewx(24deg);
@@ -675,7 +676,7 @@ header .main_menu span {
     font-size: 12px;
     font-family: Arial, sans-serif;
     line-height: 16px;
-    //color: #1c4e94;
+    /*//color: #1c4e94;*/
     color: #fff;
 }
 
@@ -928,7 +929,8 @@ header .main_menu span {
 .about_page .page_wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    height: 100vh;
+    /*height: 100vh;*/
+    overflow: hidden;
 }
 
 .about_page .start-block {
@@ -1629,7 +1631,7 @@ body.overflow {
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    z-index: 99;
+    z-index: 501;
 }
 .video-modal-close, .map-modal-close {
     position: absolute;
