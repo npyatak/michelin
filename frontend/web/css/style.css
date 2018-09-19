@@ -694,7 +694,7 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .text p {
-    margin: 20px 0
+    margin: 0;
 }
 
 .index_page .city .info_block {

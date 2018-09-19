@@ -284,6 +284,11 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionVideo()
+    {
+        return $this->render('video');
+    }
+
     public function actionCityList()
     {
         if(Yii::$app->request->isAjax) {
