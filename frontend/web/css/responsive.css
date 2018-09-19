@@ -9,6 +9,9 @@
     .show-desktop-mobile {
         display: block;
     }
+    .page_wrapper .city{
+        transform: scale(0.85);
+    }
 }
 
 @media (max-width: 1199px) {
@@ -34,6 +37,7 @@
     header>.start {
         display: none;
     }
+
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
     .show-mobile {
@@ -523,6 +527,9 @@
     html {
         height: auto;
         min-height: 100vh;
+    }
+    html{
+        overflow-x: hidden;
     }
     body {
         background: url(../img/bg.jpg);

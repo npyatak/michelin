@@ -1065,7 +1065,7 @@ header .main_menu span {
 }
 
 #tire {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 #tire .marker {
     display: none;
