@@ -22,7 +22,6 @@ $(document).ready(function () {
         })
         .on('click', '.play-video', function (e) {
             e.preventDefault();
-            $('.city').hide();
             $('.main_screen, .main_top').show();
             playVideo($(this).data('id'));
         })
@@ -79,7 +78,6 @@ function openMap(coord) {
     $('body').addClass('overflow');
     $(document).find('.overlay').fadeIn(100);
     $('.map-modal').fadeIn(100);
-    $('.city').hide();
     $('.main_screen, .main_top').show();
 
     coords = coord.split(',');

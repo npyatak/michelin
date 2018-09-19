@@ -257,7 +257,7 @@ header .main_menu span {
 }
 
 .index_page {
-    overflow: hidden
+    overflow: hidden;
 }
 
 .main_title {
@@ -471,7 +471,9 @@ header .main_menu span {
     }
 
     .index_page .main_screen .about .descr .btn {
-        margin-top: 25px
+        margin-top: 25px;
+        margin-bottom: 20px
+
     }
 }
 
@@ -738,7 +740,7 @@ header .main_menu span {
 }
 
 #tire .marker, .main_tire .text-label span {
-    font-weight: 700
+    font-weight: 700;
 }
 
 .index_page .city .info_block .characteristics {
@@ -1060,6 +1062,9 @@ header .main_menu span {
     float: left;
 }
 
+#tire {
+    overflow: hidden;
+}
 #tire .marker {
     display: none;
     position: absolute;
@@ -1071,7 +1076,10 @@ header .main_menu span {
     font-size: .7vw;
     text-transform: uppercase;
     color: #fff;
-    text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000
+    text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000;
+    
+
+    
 }
 
 #tire .marker.active {
@@ -1081,7 +1089,7 @@ header .main_menu span {
 
 #tire .marker.active:after {
     transform: skewX(24deg);
-    box-shadow: 0 0 33px 10px #fff;
+    /*box-shadow: 0 0 33px 10px #fff;*/
     position: absolute;
     left: 50%;
     display: block;
@@ -1863,33 +1871,30 @@ body.overflow {
 }
 
 .close-popup {
-    display: none;
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #fff;
+    color: #222;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow: 0 0 33px 10px #fff;
 }
 
-@media (max-width: 1199px) {
-    .close-popup {
-        display: block;
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        background: #fff;
-        color: #222;
-        text-align: center;
-        z-index: 2;
-    }
-}
 @media (max-width: 768px) {
     .question,
     .start-question {

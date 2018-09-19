@@ -482,6 +482,7 @@
         min-height: 175px !important;
         height: 175px !important;
         overflow-y: auto !important;
+        padding-right: 10px;
     }
     .index_page .city .text_block .city-title {
         -webkit-transform: none;
@@ -695,6 +696,7 @@
 @media (max-width: 768px) {
     iframe {
         width: 100% !important;
+        max-height: calc(100vw / 16 * 9);
     }
 }
 
