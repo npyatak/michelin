@@ -225,6 +225,7 @@ header .main_menu span {
     header {
         margin: 15px auto 25px
     }
+
 }
 
 .text_center {
@@ -474,7 +475,7 @@ header .main_menu span {
 
     .index_page .main_screen .about .descr .btn {
         margin-top: 25px;
-        margin-bottom: 20px
+        margin-bottom: 100px
 
     }
 }
@@ -891,7 +892,11 @@ header .main_menu span {
     background: url(../img/250_contacts.png);
     width: 456px;
     height: 223px;
-    margin: 0 0 -80px -120px
+    margin: 0 0 -80px -120px;
+
+}
+.about_page .about_page_inner .text{
+        max-width: 80%
 }
 
 .about_page h1 {
@@ -921,14 +926,26 @@ header .main_menu span {
     height: 79.5vh;
     position: absolute;
     right: 0;
-    bottom: 0
-}
+    bottom: 0;
 
+}
+@media (min-width: 768px) {
+    .about_page .about_tire {
+        background: url(../img/tire.png) 0 100%/contain no-repeat;
+        width: 52vw;
+        height: 79.5vh;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-position: right bottom;
+    }
+}
 .about_page .page_wrapper {
     max-width: 1200px;
     margin: 0 auto;
     /*height: 100vh;*/
-    overflow: hidden;
+    min-height: 100vh;
+    /*overflow: hidden;*/
 }
 
 .about_page .start-block {

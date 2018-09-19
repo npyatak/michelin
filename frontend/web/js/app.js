@@ -160,7 +160,7 @@ window.App = (function (app) {
             app.request.getTopPlayerList()
         ).then(function (player_list) {
 
-            let allow_replay = false;
+            var allow_replay = false;
 
             // TODO
             //if (app.model.stage.status == 'active' && !app.model.stage.played) {
@@ -199,7 +199,7 @@ window.App = (function (app) {
 
         $(".auth_only_link").click(function (e) {
             e.preventDefault();
-            let $this = $(this);
+            var $this = $(this);
 
             app.helper.authUser(function () {
                 location.href = $this.attr('href');
@@ -233,11 +233,11 @@ window.App = (function (app) {
 
     app.events.questionScreenEvents = function () {
 
-        let question_screen_html_jobj = $('#question-page');
+        var question_screen_html_jobj = $('#question-page');
 
         question_screen_html_jobj.find('.answer-item').click(app.controller.quizAnswerScreen);
 
-        let init_time_seconds = app.conf.time_limit_sec;
+        var init_time_seconds = app.conf.time_limit_sec;
 
         app.helper.initSimpleCounter(question_screen_html_jobj, init_time_seconds);
 
@@ -307,7 +307,7 @@ window.App = (function (app) {
 
     app.helper.showTimeoutPopup = function () {
 
-        let social_popup_html = app.helper.getPartialTemplateHTML('game_timeout_popup');
+        var social_popup_html = app.helper.getPartialTemplateHTML('game_timeout_popup');
         app.model.player.fetch();
         app.Popup.show(social_popup_html, null,
             function () {
@@ -472,13 +472,13 @@ window.App = (function (app) {
     app.auth = {};
 
     app.auth.showAuthPopup = function (end_callback) {
-        let html = $(app.helper.getPartialTemplateHTML('auth_popup'));
+        var html = $(app.helper.getPartialTemplateHTML('auth_popup'));
         app.auth.binds(html, end_callback);
         app.Popup.show(html);
     };
 
     app.auth.showEnterEmailPopup = function (end_callback) {
-        let html = $(app.helper.getPartialTemplateHTML('auth_popup_email'));
+        var html = $(app.helper.getPartialTemplateHTML('auth_popup_email'));
         app.auth.emailBinds(html, end_callback);
         app.Popup.show(html);
     };
@@ -544,12 +544,12 @@ window.App = (function (app) {
     app.helper.uploadBarcode = function (e) {
         e.preventDefault();
 
-        let url = app.conf.project_url + "/ajax/upload_barcode";
+        var url = app.conf.project_url + "/ajax/upload_barcode";
 
-        let img_input = $(".upload-form .upload-img-file");
-        let text_unput = $(".upload-form .enter_manual");
-        let send_btn = $(".upload-form .upload-send-btn");
-        let upload_inner = $(".upload-inner");
+        var img_input = $(".upload-form .upload-img-file");
+        var text_unput = $(".upload-form .enter_manual");
+        var send_btn = $(".upload-form .upload-send-btn");
+        var upload_inner = $(".upload-inner");
 
         if (!img_input.val() && !text_unput.val()) {
             return;
@@ -849,6 +849,85 @@ App.init();
 var SimpleScrollbar = require('simple-scrollbar');
 
 
+
+class Swipe {
+    constructor(element) {
+        this.xDown = null;
+        this.yDown = null;
+        this.element = typeof(element) === 'string' ? document.querySelector(element) : element;
+
+        this.element.addEventListener('touchstart', function(evt) {
+            this.xDown = evt.touches[0].clientX;
+            this.yDown = evt.touches[0].clientY;
+        }.bind(this), false);
+
+    }
+
+    onLeft(callback) {
+        this.onLeft = callback;
+
+        return this;
+    }
+
+    onRight(callback) {
+        this.onRight = callback;
+
+        return this;
+    }
+
+    onUp(callback) {
+        this.onUp = callback;
+
+        return this;
+    }
+
+    onDown(callback) {
+        this.onDown = callback;
+
+        return this;
+    }
+
+    handleTouchMove(evt) {
+        if ( ! this.xDown || ! this.yDown ) {
+            return;
+        }
+
+        var xUp = evt.touches[0].clientX;
+        var yUp = evt.touches[0].clientY;
+
+        this.xDiff = this.xDown - xUp;
+        this.yDiff = this.yDown - yUp;
+
+        if ( Math.abs( this.xDiff ) > Math.abs( this.yDiff ) ) { // Most significant.
+            if ( this.xDiff > 0 ) {
+                this.onLeft();
+            } else {
+                this.onRight();
+            }
+        } else {
+            if ( this.yDiff > 0 ) {
+                this.onUp();
+            } else {
+                this.onDown();
+            }
+        }
+
+        // Reset values.
+        this.xDown = null;
+        this.yDown = null;
+    }
+
+    run() {
+        this.element.addEventListener('touchmove', function(evt) {
+            this.handleTouchMove(evt);
+            // console.log(this.handleTouchMove(evt));
+        }.bind(this), false);
+    }
+}
+
+
+
+
 module.exports = (function () {
 
 
@@ -897,7 +976,7 @@ module.exports = (function () {
     }
 
     function changeRotation(offset) {
-	if (!block_tire) {
+	   // if (!block_tire) {
         //if(!$('.city').is(':visible')) {
             tire_offset += offset;
 
@@ -920,8 +999,10 @@ module.exports = (function () {
 
 
             tire_div.addClass("frame-00" + frame_num);
-        }
+        // }
     }
+
+
 
     function bindEvents() {
         $(document).on('wheel', function (e) {
@@ -1048,6 +1129,17 @@ module.exports = (function () {
         });
 
     }
+
+    var swiper = new Swipe('.page_wrapper');
+    swiper.onUp(function() { 
+        console.log("up")
+        changeRotation(1); 
+    }).run();
+    swiper.onDown(function() { 
+        console.log("down")
+        changeRotation(-1); 
+    }).run();
+    // swiper.run( );
 
     return {
         init: init

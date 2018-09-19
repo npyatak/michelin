@@ -10,7 +10,12 @@ function playVideo(id) {
     window.player.playVideo();
 }
 
+
+
+
 $(document).ready(function () {
+
+
 
     $(this)
         .on('click', '.map-modal-close', function (e) {
@@ -69,11 +74,16 @@ $(window).on('load', function() {
         }
     },2000)
 });
- 
+
+// let map = 'undefined';
 
 function openMap(coord) {
     if(typeof map !== 'undefined') {
-        map.destroy();
+        try {
+            map.destroy();
+        } catch (err) {
+          console.log("Не получилось удалить карту или она не существуетж");
+        }
     }
     //$('#map').html('');
     $('body').addClass('overflow');

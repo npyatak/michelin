@@ -730,5 +730,6 @@
     .about_page ._250_contacts{
         margin: 0;
         background-position: left center;
+        background-size: contain;
     }
 }
