@@ -532,10 +532,6 @@ header .main_menu span {
     margin-left: -600px
 }
 
-.index_page .city[data-type="1"] .text_block .text {
-    display: none
-}
-
 /*.index_page .city[data-type="1"] .text_block .city_img iframe {
     display: block
 }*/
