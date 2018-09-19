@@ -1017,7 +1017,8 @@ module.exports = (function () {
                 $('.city').find('.play-video').hide();
             }
 
-            $('.main_screen, .main_top').hide();
+            // $('.main_screen, .main_top').hide();
+            $('.main_screen, .main_top').css("opacity","0");
             $(".city").show();
 
             $(".city").attr('data-type', data.type);

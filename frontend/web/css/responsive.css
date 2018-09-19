@@ -346,9 +346,20 @@
         font-size: 15px;
         display: inline;
     }
+    .video .play-video{
+        margin-left: 0;
+        /*margin-top: 50px;*/
+        z-index: 500
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+        .video .play-video{
+        margin-left: 0;
+        margin-top: 20px;
+        z-index: 500;
+
+    }
     .actions-wrap {
         -webkit-transform: none;
         -moz-transform: none;

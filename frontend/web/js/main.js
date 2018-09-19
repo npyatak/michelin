@@ -22,7 +22,8 @@ $(document).ready(function () {
         })
         .on('click', '.play-video', function (e) {
             e.preventDefault();
-            $('.main_screen, .main_top').show();
+            // $('.main_screen, .main_top').show();
+            $('.main_screen, .main_top').css("opacity","1");
             playVideo($(this).data('id'));
         })
         .on('click', '.video-modal-close', function (e) {
@@ -78,7 +79,8 @@ function openMap(coord) {
     $('body').addClass('overflow');
     $(document).find('.overlay').fadeIn(100);
     $('.map-modal').fadeIn(100);
-    $('.main_screen, .main_top').show();
+    // $('.main_screen, .main_top').show();
+    $('.main_screen, .main_top').css("opacity","1");
 
     coords = coord.split(',');
 
@@ -108,7 +110,8 @@ $('.city').find(".niceScroll").slimScroll({
 });
 
 $('.close-popup').click(function () {
-    $('.main_screen, .main_top').show();
+    // $('.main_screen, .main_top').show();
+    $('.main_screen, .main_top').css("opacity","1");
     $(".marker").removeClass('active');
     $(".city").hide();
 });

@@ -387,6 +387,7 @@ header .main_menu span {
     width: 634px;
     height: 260px;
     overflow: hidden;
+    background-position: center;
 }
 
 .video .play-video {
@@ -403,7 +404,7 @@ header .main_menu span {
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    margin-left: 30px;
+    /*margin-left: 30px;*/
     cursor: pointer;
     z-index: 1;
 }
@@ -443,7 +444,8 @@ header .main_menu span {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    font-family: Michelin, Arial, sans-serif
+    font-family: Michelin, Arial, sans-serif;
+    display: block;
 }
 
 @media (max-height: 800px) {
@@ -506,7 +508,7 @@ header .main_menu span {
     }
 
     .index_page .main_screen .about .descr > div {
-        display: inline
+        display: block;
     }
 
     .index_page .main_screen .about .descr .btn {
