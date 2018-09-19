@@ -84,10 +84,10 @@ use yii\helpers\Html;
         </div>
         <div class="info_block row">
             <div class="characteristics row">
-                <div>
-                    <div class="skew-text">характеристики шины,</div>
-                    <div class="skew-text">которые проявятся</div>
-                    <div class="skew-text">в этой точке</div>
+                <div> 
+                    <div class="skew-text">особенности </div>
+                    <div class="skew-text">дорожного покрытия</div>
+                    <div class="skew-text">в данной точке</div>
                 </div>
                 <div>
                     <div class="scores scores_1"></div>

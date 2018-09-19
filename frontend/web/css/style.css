@@ -730,9 +730,7 @@ header .main_menu span {
     -o-transform: skewx(-24deg);
     transform: skewx(-24deg);
 }
-.index_page .city .info_block>div.characteristics .scores {
-    display: none;
-}
+
 .index_page .city .info_block>div.characteristics .skew-text,
 .index_page .city .info_block>div.characteristics .scores {
     -webkit-transform: skewx(24deg);
