@@ -9,13 +9,72 @@ use yii\helpers\Html;
     <div class="row text_center">
         <a href="#" class="main_title"></a>
     </div>
+    <div class="row text_center">
+        <div class="col ruli_zimoi_label">
+            <p>Чтобы стать лучшим, смотри видео <strong>в этом разделе</strong>,</p>
+    	    <p>выполняй условия и получай крутые призы</p>
+        </div>
+    </div>
+    <div class="row contast-cards">
+        <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card" data-toggle="modal" data-target="#contest-video-1">
+            <div class="contast-card-play-icon"></div>
+            <div class="contest-image"></div>
+            <div class="contest-text text_center">Снегоходы</div>
+        </div>
+        <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card" data-toggle="modal" data-target="#contest-video-2">
+            <div class="contast-card-play-icon"></div>
+            <div class="contest-image"></div>
+            <div class="contest-text text_center">Музей РЖД</div>
+        </div>
+        <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card" data-toggle="modal" data-target="#contest-video-3">
+            <div class="contast-card-play-icon"></div>
+            <div class="contest-image"></div>
+            <div class="contest-text text_center">Рудники</div>
+        </div>
+        <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card" data-toggle="modal" data-target="#contest-video-4">
+            <div class="contast-card-play-icon"></div>
+            <div class="contest-image"></div>
+            <div class="contest-text text_center">Снегоходы</div>
+        </div>
+        <div class="mcol-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4  col-lg-4 contast-card" data-toggle="modal" data-target="#contest-video-5">
+            <div class="contast-card-play-icon"></div>
+            <div class="contest-image"></div>
+            <div class="contest-text text_center">Снегоходы</div>
+        </div>
+        <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card" data-toggle="modal" data-target="#contest-video-6">
+            <div class="contast-card-play-icon"></div>
+            <div class="contest-image"></div>
+            <div class="contest-text text_center">Снегоходы</div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="contest-video-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <?php if(Yii::$app->user->isGuest):?>
-        <div class="auth" style="display: block">
+        <!--<div class="auth" style="display: block">
             <div><span>Авторизуйся</span></div>
             <div>для участия в викторине необходимо авторизоваться с использованием аккаунта социальной сети</div>
             <?=\frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
         </div>
-        <div class="overlay" style="display: block"></div>
+        <div class="overlay" style="display: block"></div>-->
     <?php else:?>
         <div class="start-question">
             <div class="start-question-text">
