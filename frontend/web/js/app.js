@@ -1037,54 +1037,22 @@ module.exports = (function () {
 
             $(function() {          
                 //Enable swiping...
-                $('#tire').swipe( {
-                    //Generic swipe handler for all directions
-                    // swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-                    //     var offset = Math.round(distance / 5);
-                    //     console.log(offset);
-                    //     if (direction == "down") {
-                    //         changeRotation(-offset);
-                    //     }
-                    //     if (direction == "up") {
-                    //         changeRotation(offset);
-                    //     }
-                    // },
-                    swipeStatus:function(event, phase, direction, distance, duration, fingerCount) {
-                      //Here we can check the:
-                      //phase : 'start', 'move', 'end', 'cancel'
-                      //direction : 'left', 'right', 'up', 'down'
-                      //distance : Distance finger is from initial touch point in px
-                      //duration : Length of swipe in MS 
-                      //fingerCount : the number of fingers used
-                        var offset = Math.round(distance / 5);
-                        if(direction == "down") {
-                            changeRotation(-offset);
-                        } else if(direction == "up") {
-                            changeRotation(offset);
-                        }
-                    },
-                    threshold:100,
-                    //maxTimeThreshold:2500,
-                    fingers:'all'
-                    //Default is 75px, set to 0 for demo so any distance triggers swipe
-                   //threshold:0
+                $('#tire').swipe({
+                        swipeStatus:function(event, phase, direction, distance, duration, fingerCount) {
+                            if(!$('.city').is(':visible')) {
+                                var offset = Math.round(distance / 5);
+                                if(direction == "down") {
+                                    changeRotation(-offset);
+                                } else if(direction == "up") {
+                                    changeRotation(offset);
+                                }
+                            }
+                        },
+                        threshold:30,
+                        fingers:'all'
                 });
             });
         /*END Swipe*/
-
-        /*$('#tire').swipe({
-            //Generic swipe handler for all directions
-            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-                if (direction == "down") {
-                    changeRotation(-1);
-                }
-                if (direction == "up") {
-                    changeRotation(1);
-                }
-            },
-            //Default is 75px, set to 0 for demo so any distance triggers swipe
-           threshold:0
-        });*/
 
 
         $(document).on('click', '.arrow-up', function (e) {
