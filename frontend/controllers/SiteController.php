@@ -293,7 +293,7 @@ class SiteController extends Controller
     {
         if(Yii::$app->request->isAjax) {
             Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-            $cities = City::find()->all();
+            $cities = City::find()->orderBy('name')->all();
 
             $citiesArr = [];
             foreach ($cities as $c) {
@@ -341,7 +341,7 @@ class SiteController extends Controller
         return $this->redirect('/');
     }
 
-    public function actionDraw() {
+   /* public function actionDraw() {
         $arr = [
             ['tire' => '00', 'marker' => 1, 'css' => 'left: 16.5%; top: 32%'],
             ['tire' => '00', 'marker' => 2, 'css' => 'left: 27.5%; top: 40%'],
@@ -459,5 +459,5 @@ class SiteController extends Controller
                 }';
             echo '</br>';
         }
-    }
+    }*/
 }
