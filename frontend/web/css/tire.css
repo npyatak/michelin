@@ -1,0 +1,254 @@
+#tire {
+    position: fixed;
+    bottom: -10vw;
+    display: block;
+    background: url(../img/sprite.png) no-repeat;
+    text-align: left;
+    width: 100%;
+    background-size: 100%;
+    height: 23.91vw;
+    z-index: 5;
+    transform-origin: 0 0
+}
+
+#tire .arrows {
+    width: 18vw;
+    height: 3vw;
+    position: absolute;
+    left: 50%;
+    margin-left: -9vw;
+    bottom: 12vw
+}
+#tire .arrows .arrow-up, #tire .arrows .arrow-down {
+    background: url(../img/arrow-down.png) 50%/contain no-repeat;
+    width: 3vw;
+    height: 3vw;
+    float: right;
+    cursor: pointer;
+}
+#tire .arrows .arrow-down {
+    background: url(../img/arrow-up.png) 50%/contain no-repeat;
+    float: left;
+}
+
+#tire {
+    /*overflow: hidden;*/
+}
+#tire .marker {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    width: 200px;
+    margin-left: -100px;
+    text-align: center;
+    transform: skewX(-24deg);
+    font-size: .7vw;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000;
+    
+
+    
+}
+
+#tire .marker.active {
+    color: #fdec79;
+    background: #0451a0
+}
+
+#tire .marker.active:after {
+    transform: skewX(24deg);
+    /*box-shadow: 0 0 33px 10px #fff;*/
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    top: -67px;
+    margin-left: -45px;
+    z-index: -1;
+    border-radius: 50%;
+    content: " "
+}
+
+#tire .marker span {
+    transform: skewX(24deg);
+    padding: 2px 4px;
+    display: inline-block
+}
+
+#tire .marker:before {
+    transform: skewX(24deg);
+    position: absolute;
+    left: 50%;
+    content: " ";
+    display: block;
+    background: url(../img/marker.png) 50%/contain no-repeat;
+    width: 2.7vw;
+    padding-top: 3.93vw;
+    margin-top: -4.2vw;
+    margin-left: -2.7vw
+}
+
+#tire .marker_type_1:before {
+    background-image: url(../img/marker_b.png)
+}
+
+#tire.frame-000, #tire.frame-0013, #tire.frame-0026, #tire.frame-0039, #tire.frame-0052, #tire.frame-0065, #tire.frame-0078
+{ background-position: 0 0 }
+#tire.frame-001, #tire.frame-0014, #tire.frame-0027, #tire.frame-0040, #tire.frame-0053, #tire.frame-0066, #tire.frame-0079
+{ background-position: 0 5.263158% }
+#tire.frame-002, #tire.frame-0015, #tire.frame-0028, #tire.frame-0041, #tire.frame-0054, #tire.frame-0067, #tire.frame-0080
+{ background-position: 0 10.526316% }
+#tire.frame-003, #tire.frame-0016, #tire.frame-0029, #tire.frame-0042, #tire.frame-0055, #tire.frame-0068, #tire.frame-0081
+{ background-position: 0 15.789474% }
+#tire.frame-004, #tire.frame-0017, #tire.frame-0030, #tire.frame-0043, #tire.frame-0056, #tire.frame-0069, #tire.frame-0082
+{ background-position: 0 21.052632% }
+#tire.frame-005, #tire.frame-0018, #tire.frame-0031, #tire.frame-0044, #tire.frame-0057, #tire.frame-0070, #tire.frame-0083
+{ background-position: 0 26.315789% }
+#tire.frame-006, #tire.frame-0019, #tire.frame-0032, #tire.frame-0045, #tire.frame-0058, #tire.frame-0071, #tire.frame-0084
+{ background-position: 0 31.578947% }
+#tire.frame-007, #tire.frame-0020, #tire.frame-0033, #tire.frame-0046, #tire.frame-0059, #tire.frame-0072, #tire.frame-0085
+{ background-position: 0 36.842105% }
+#tire.frame-008, #tire.frame-0021, #tire.frame-0034, #tire.frame-0047, #tire.frame-0060, #tire.frame-0073, #tire.frame-0086
+{ background-position: 0 42.105263% }
+#tire.frame-009, #tire.frame-0022, #tire.frame-0035, #tire.frame-0048, #tire.frame-0061, #tire.frame-0074, #tire.frame-0087
+{ background-position: 0 47.368421% }
+#tire.frame-0010, #tire.frame-0023, #tire.frame-0036, #tire.frame-0049, #tire.frame-0062, #tire.frame-0075, #tire.frame-0088
+{ background-position: 0 52.631579% }
+#tire.frame-0011, #tire.frame-0024, #tire.frame-0037, #tire.frame-0050, #tire.frame-0063, #tire.frame-0076, #tire.frame-0089
+{ background-position: 0 57.894737% }
+#tire.frame-0012, #tire.frame-0025, #tire.frame-0038, #tire.frame-0051, #tire.frame-0064, #tire.frame-0077, #tire.frame-0090
+{ background-position: 0 68.421053% }
+
+
+#tire.frame-000 .marker1, #tire.frame-0013 .marker16, #tire.frame-0026 .marker31, #tire.frame-0039 .marker46, #tire.frame-0052 .marker61, #tire.frame-0065 .marker76, #tire.frame-0078 .marker91
+{ display: block; left: 16.5%; top: 32% }
+#tire.frame-000 .marker2, #tire.frame-0013 .marker17, #tire.frame-0026 .marker32, #tire.frame-0039 .marker47, #tire.frame-0052 .marker62, #tire.frame-0065 .marker77, #tire.frame-0078 .marker92
+{ display: block; left: 27.5%; top: 40% }
+#tire.frame-000 .marker3, #tire.frame-0013 .marker18, #tire.frame-0026 .marker33, #tire.frame-0039 .marker48, #tire.frame-0052 .marker63, #tire.frame-0065 .marker78, #tire.frame-0078 .marker93
+{ display: block; left: 64.5%; top: 25% }
+#tire.frame-000 .marker4, #tire.frame-0013 .marker19, #tire.frame-0026 .marker34, #tire.frame-0039 .marker49, #tire.frame-0052 .marker64, #tire.frame-0065 .marker79, #tire.frame-0078 .marker94
+{ display: block; left: 87%; top: 47% }
+#tire.frame-000 .marker5, #tire.frame-0013 .marker20, #tire.frame-0026 .marker35, #tire.frame-0039 .marker50, #tire.frame-0052 .marker65, #tire.frame-0065 .marker80, #tire.frame-0078 .marker95
+{ display: block; left: 29.4%; top: 14% }
+#tire.frame-000 .marker6, #tire.frame-0013 .marker21, #tire.frame-0026 .marker36, #tire.frame-0039 .marker51, #tire.frame-0052 .marker66, #tire.frame-0065 .marker81, #tire.frame-0078 .marker96
+{ display: block; left: 72.7%; top: 21% }
+#tire.frame-000 .marker7, #tire.frame-0013 .marker22, #tire.frame-0026 .marker37, #tire.frame-0039 .marker52, #tire.frame-0052 .marker67, #tire.frame-0065 .marker82, #tire.frame-0078 .marker97
+{ display: block; left: 42.3%; top: 7% }
+#tire.frame-001 .marker1, #tire.frame-0014 .marker16, #tire.frame-0027 .marker31, #tire.frame-0040 .marker46, #tire.frame-0053 .marker61, #tire.frame-0066 .marker76, #tire.frame-0079 .marker91
+{ display: block; left: 14.3%; top: 41% }
+#tire.frame-001 .marker2, #tire.frame-0014 .marker17, #tire.frame-0027 .marker32, #tire.frame-0040 .marker47, #tire.frame-0053 .marker62, #tire.frame-0066 .marker77, #tire.frame-0079 .marker92
+{ display: block; left: 26.2%; top: 50% }
+#tire.frame-001 .marker3, #tire.frame-0014 .marker18, #tire.frame-0027 .marker33, #tire.frame-0040 .marker48, #tire.frame-0053 .marker63, #tire.frame-0066 .marker78, #tire.frame-0079 .marker93
+{ display: block; left: 65.5%; top: 33% }
+#tire.frame-001 .marker5, #tire.frame-0014 .marker20, #tire.frame-0027 .marker35, #tire.frame-0040 .marker50, #tire.frame-0053 .marker65, #tire.frame-0066 .marker80, #tire.frame-0079 .marker95
+{ display: block; left: 28.2%; top: 18% }
+#tire.frame-001 .marker6, #tire.frame-0014 .marker21, #tire.frame-0027 .marker36, #tire.frame-0040 .marker51, #tire.frame-0053 .marker66, #tire.frame-0066 .marker81, #tire.frame-0079 .marker96
+{ display: block; left: 74.2%; top: 27% }
+#tire.frame-001 .marker7, #tire.frame-0014 .marker22, #tire.frame-0027 .marker37, #tire.frame-0040 .marker52, #tire.frame-0053 .marker67, #tire.frame-0066 .marker82, #tire.frame-0079 .marker97
+{ display: block; left: 41.8%; top: 9% }
+#tire.frame-001 .marker8, #tire.frame-0014 .marker23, #tire.frame-0027 .marker38, #tire.frame-0040 .marker53, #tire.frame-0053 .marker68, #tire.frame-0066 .marker83, #tire.frame-0079 .marker98
+{ display: block; left: 67.4%; top: 11% }
+#tire.frame-002 .marker1, #tire.frame-0015 .marker16, #tire.frame-0028 .marker31, #tire.frame-0041 .marker46, #tire.frame-0054 .marker61, #tire.frame-0067 .marker76, #tire.frame-0080 .marker91
+{ display: block; left: 12%; top: 50% }
+#tire.frame-002 .marker3, #tire.frame-0015 .marker18, #tire.frame-0028 .marker33, #tire.frame-0041 .marker48, #tire.frame-0054 .marker63, #tire.frame-0067 .marker78, #tire.frame-0080 .marker93
+{ display: block; left: 66.6%; top: 41% }
+#tire.frame-002 .marker5, #tire.frame-0015 .marker20, #tire.frame-0028 .marker35, #tire.frame-0041 .marker50, #tire.frame-0054 .marker65, #tire.frame-0067 .marker80, #tire.frame-0080 .marker95
+{ display: block; left: 26.8%; top: 22% }
+#tire.frame-002 .marker6, #tire.frame-0015 .marker21, #tire.frame-0028 .marker36, #tire.frame-0041 .marker51, #tire.frame-0054 .marker66, #tire.frame-0067 .marker81, #tire.frame-0080 .marker96
+{ display: block; left: 75.7%; top: 34% }
+#tire.frame-002 .marker7, #tire.frame-0015 .marker22, #tire.frame-0028 .marker37, #tire.frame-0041 .marker52, #tire.frame-0054 .marker67, #tire.frame-0067 .marker82, #tire.frame-0080 .marker97
+{ display: block; left: 41.3%; top: 12% }
+#tire.frame-002 .marker8, #tire.frame-0015 .marker23, #tire.frame-0028 .marker38, #tire.frame-0041 .marker53, #tire.frame-0054 .marker68, #tire.frame-0067 .marker83, #tire.frame-0080 .marker98
+{ display: block; left: 68.5%; top: 16% }
+#tire.frame-002 .marker9, #tire.frame-0015 .marker24, #tire.frame-0028 .marker39, #tire.frame-0041 .marker54, #tire.frame-0054 .marker69, #tire.frame-0067 .marker84, #tire.frame-0080 .marker99
+{ display: block; left: 54%; top: 7% }
+#tire.frame-003 .marker3, #tire.frame-0016 .marker18, #tire.frame-0029 .marker33, #tire.frame-0042 .marker48, #tire.frame-0055 .marker63, #tire.frame-0068 .marker78, #tire.frame-0081 .marker93
+{ display: block; left: 68%; top: 52% }
+#tire.frame-003 .marker5, #tire.frame-0016 .marker20, #tire.frame-0029 .marker35, #tire.frame-0042 .marker50, #tire.frame-0055 .marker65, #tire.frame-0068 .marker80, #tire.frame-0081 .marker95
+{ display: block; left: 25.5%; top: 29% }
+#tire.frame-003 .marker6, #tire.frame-0016 .marker21, #tire.frame-0029 .marker36, #tire.frame-0042 .marker51, #tire.frame-0055 .marker66, #tire.frame-0068 .marker81, #tire.frame-0081 .marker96
+{ display: block; left: 77.7%; top: 45% }
+#tire.frame-003 .marker7, #tire.frame-0016 .marker22, #tire.frame-0029 .marker37, #tire.frame-0042 .marker52, #tire.frame-0055 .marker67, #tire.frame-0068 .marker82, #tire.frame-0081 .marker97
+{ display: block; left: 40.8%; top: 16% }
+#tire.frame-003 .marker8, #tire.frame-0016 .marker23, #tire.frame-0029 .marker38, #tire.frame-0042 .marker53, #tire.frame-0055 .marker68, #tire.frame-0068 .marker83, #tire.frame-0081 .marker98
+{ display: block; left: 69.5%; top: 22% }
+#tire.frame-003 .marker9, #tire.frame-0016 .marker24, #tire.frame-0029 .marker39, #tire.frame-0042 .marker54, #tire.frame-0055 .marker69, #tire.frame-0068 .marker84, #tire.frame-0081 .marker99
+{ display: block; left: 54.5%; top: 9% }
+#tire.frame-003 .marker10, #tire.frame-0016 .marker25, #tire.frame-0029 .marker40, #tire.frame-0042 .marker55, #tire.frame-0055 .marker70, #tire.frame-0068 .marker85, #tire.frame-0081 .marker100
+{ display: block; left: 32.4%; top: 14% }
+#tire.frame-004 .marker5, #tire.frame-0017 .marker20, #tire.frame-0030 .marker35, #tire.frame-0043 .marker50, #tire.frame-0056 .marker65, #tire.frame-0069 .marker80, #tire.frame-0082 .marker95
+{ display: block; left: 23.5%; top: 38% }
+#tire.frame-004 .marker7, #tire.frame-0017 .marker22, #tire.frame-0030 .marker37, #tire.frame-0043 .marker52, #tire.frame-0056 .marker67, #tire.frame-0069 .marker82, #tire.frame-0082 .marker97
+{ display: block; left: 40.3%; top: 22% }
+#tire.frame-004 .marker8, #tire.frame-0017 .marker23, #tire.frame-0030 .marker38, #tire.frame-0043 .marker53, #tire.frame-0056 .marker68, #tire.frame-0069 .marker83, #tire.frame-0082 .marker98
+{ display: block; left: 71%; top: 29% }
+#tire.frame-004 .marker9, #tire.frame-0017 .marker24, #tire.frame-0030 .marker39, #tire.frame-0043 .marker54, #tire.frame-0056 .marker69, #tire.frame-0069 .marker84, #tire.frame-0082 .marker99
+{ display: block; left: 54.6%; top: 13% }
+#tire.frame-004 .marker10, #tire.frame-0017 .marker25, #tire.frame-0030 .marker40, #tire.frame-0043 .marker55, #tire.frame-0056 .marker70, #tire.frame-0069 .marker85, #tire.frame-0082 .marker100
+{ display: block; left: 31.3%; top: 18% }
+#tire.frame-005 .marker5, #tire.frame-0018 .marker20, #tire.frame-0031 .marker35, #tire.frame-0044 .marker50, #tire.frame-0057 .marker65, #tire.frame-0070 .marker80, #tire.frame-0083 .marker95
+{ display: block; left: 21.8%; top: 49% }
+#tire.frame-005 .marker7, #tire.frame-0018 .marker22, #tire.frame-0031 .marker37, #tire.frame-0044 .marker52, #tire.frame-0057 .marker67, #tire.frame-0070 .marker82, #tire.frame-0083 .marker97
+{ display: block; left: 39.6%; top: 31% }
+#tire.frame-005 .marker8, #tire.frame-0018 .marker23, #tire.frame-0031 .marker38, #tire.frame-0044 .marker53, #tire.frame-0057 .marker68, #tire.frame-0070 .marker83, #tire.frame-0083 .marker98
+{ display: block; left: 72.5%; top: 38% }
+#tire.frame-005 .marker9, #tire.frame-0018 .marker24, #tire.frame-0031 .marker39, #tire.frame-0044 .marker54, #tire.frame-0057 .marker69, #tire.frame-0070 .marker84, #tire.frame-0083 .marker99
+{ display: block; left: 55%; top: 19% }
+#tire.frame-005 .marker10, #tire.frame-0018 .marker25, #tire.frame-0031 .marker40, #tire.frame-0044 .marker55, #tire.frame-0057 .marker70, #tire.frame-0070 .marker85, #tire.frame-0083 .marker100
+{ display: block; left: 30%; top: 24.5% }
+#tire.frame-005 .marker11, #tire.frame-0018 .marker26, #tire.frame-0031 .marker41, #tire.frame-0044 .marker56, #tire.frame-0057 .marker71, #tire.frame-0070 .marker86, #tire.frame-0083 .marker101
+{ display: block; left: 74.4%; top: 13% }
+#tire.frame-006 .marker7, #tire.frame-0019 .marker22, #tire.frame-0032 .marker37, #tire.frame-0045 .marker52, #tire.frame-0058 .marker67, #tire.frame-0071 .marker82, #tire.frame-0084 .marker97
+{ display: block; left: 38.7%; top: 41% }
+#tire.frame-006 .marker8, #tire.frame-0019 .marker23, #tire.frame-0032 .marker38, #tire.frame-0045 .marker53, #tire.frame-0058 .marker68, #tire.frame-0071 .marker83, #tire.frame-0084 .marker98
+{ display: block; left: 74.1%; top: 51% }
+#tire.frame-006 .marker9, #tire.frame-0019 .marker24, #tire.frame-0032 .marker39, #tire.frame-0045 .marker54, #tire.frame-0058 .marker69, #tire.frame-0071 .marker84, #tire.frame-0084 .marker99
+{ display: block; left: 55.3%; top: 26% }
+#tire.frame-006 .marker10, #tire.frame-0019 .marker25, #tire.frame-0032 .marker40, #tire.frame-0045 .marker55, #tire.frame-0058 .marker70, #tire.frame-0071 .marker85, #tire.frame-0084 .marker100
+{ display: block; left: 28.6%; top: 32% }
+#tire.frame-006 .marker11, #tire.frame-0019 .marker26, #tire.frame-0032 .marker41, #tire.frame-0045 .marker56, #tire.frame-0058 .marker71, #tire.frame-0071 .marker86, #tire.frame-0084 .marker101
+{ display: block; left: 75.8%; top: 17% }
+#tire.frame-006 .marker12, #tire.frame-0019 .marker27, #tire.frame-0032 .marker42, #tire.frame-0045 .marker57, #tire.frame-0058 .marker72, #tire.frame-0071 .marker87, #tire.frame-0084 .marker102
+{ display: block; left: 37.4%; top: 12% }
+#tire.frame-007 .marker9, #tire.frame-0020 .marker24, #tire.frame-0033 .marker39, #tire.frame-0046 .marker54, #tire.frame-0059 .marker69, #tire.frame-0072 .marker84, #tire.frame-0085 .marker99
+{ display: block; left: 55.5%; top: 36% }
+#tire.frame-007 .marker10, #tire.frame-0020 .marker25, #tire.frame-0033 .marker40, #tire.frame-0046 .marker55, #tire.frame-0059 .marker70, #tire.frame-0072 .marker85, #tire.frame-0085 .marker100
+{ display: block; left: 27.1%; top: 43% }
+#tire.frame-007 .marker11, #tire.frame-0020 .marker26, #tire.frame-0033 .marker41, #tire.frame-0046 .marker56, #tire.frame-0059 .marker71, #tire.frame-0072 .marker86, #tire.frame-0085 .marker101
+{ display: block; left: 77.2%; top: 22% }
+#tire.frame-007 .marker12, #tire.frame-0020 .marker27, #tire.frame-0033 .marker42, #tire.frame-0046 .marker57, #tire.frame-0059 .marker72, #tire.frame-0072 .marker87, #tire.frame-0085 .marker102
+{ display: block; left: 36.6%; top: 15% }
+#tire.frame-008 .marker9, #tire.frame-0021 .marker24, #tire.frame-0034 .marker39, #tire.frame-0047 .marker54, #tire.frame-0060 .marker69, #tire.frame-0073 .marker84, #tire.frame-0086 .marker99
+{ display: block; left: 56%; top: 47% }
+#tire.frame-008 .marker11, #tire.frame-0021 .marker26, #tire.frame-0034 .marker41, #tire.frame-0047 .marker56, #tire.frame-0060 .marker71, #tire.frame-0073 .marker86, #tire.frame-0086 .marker101
+{ display: block; left: 78.9%; top: 28% }
+#tire.frame-008 .marker12, #tire.frame-0021 .marker27, #tire.frame-0034 .marker42, #tire.frame-0047 .marker57, #tire.frame-0060 .marker72, #tire.frame-0073 .marker87, #tire.frame-0086 .marker102
+{ display: block; left: 35.6%; top: 20% }
+#tire.frame-009 .marker11, #tire.frame-0022 .marker26, #tire.frame-0035 .marker41, #tire.frame-0048 .marker56, #tire.frame-0061 .marker71, #tire.frame-0074 .marker86, #tire.frame-0087 .marker101
+{ display: block; left: 80.9%; top: 36% }
+#tire.frame-009 .marker12, #tire.frame-0022 .marker27, #tire.frame-0035 .marker42, #tire.frame-0048 .marker57, #tire.frame-0061 .marker72, #tire.frame-0074 .marker87, #tire.frame-0087 .marker102
+{ display: block; left: 34.9%; top: 27% }
+#tire.frame-009 .marker13, #tire.frame-0022 .marker28, #tire.frame-0035 .marker43, #tire.frame-0048 .marker58, #tire.frame-0061 .marker73, #tire.frame-0074 .marker88, #tire.frame-0087 .marker103
+{ display: block; left: 54.3%; top: 9% }
+#tire.frame-0010 .marker11, #tire.frame-0023 .marker26, #tire.frame-0036 .marker41, #tire.frame-0049 .marker56, #tire.frame-0062 .marker71, #tire.frame-0075 .marker86, #tire.frame-0088 .marker101
+{ display: block; left: 83.1%; top: 46% }
+#tire.frame-0010 .marker12, #tire.frame-0023 .marker27, #tire.frame-0036 .marker42, #tire.frame-0049 .marker57, #tire.frame-0062 .marker72, #tire.frame-0075 .marker87, #tire.frame-0088 .marker102
+{ display: block; left: 33.8%; top: 38% }
+#tire.frame-0010 .marker13, #tire.frame-0023 .marker28, #tire.frame-0036 .marker43, #tire.frame-0049 .marker58, #tire.frame-0062 .marker73, #tire.frame-0075 .marker88, #tire.frame-0088 .marker103
+{ display: block; left: 54.5%; top: 12% }
+#tire.frame-0010 .marker14, #tire.frame-0023 .marker29, #tire.frame-0036 .marker44, #tire.frame-0049 .marker59, #tire.frame-0062 .marker74, #tire.frame-0075 .marker89, #tire.frame-0088 .marker104
+{ display: block; left: 36.8%; top: 14% }
+#tire.frame-0011 .marker12, #tire.frame-0024 .marker27, #tire.frame-0037 .marker42, #tire.frame-0050 .marker57, #tire.frame-0063 .marker72, #tire.frame-0076 .marker87, #tire.frame-0089 .marker102
+{ display: block; left: 32.5%; top: 49% }
+#tire.frame-0011 .marker13, #tire.frame-0024 .marker28, #tire.frame-0037 .marker43, #tire.frame-0050 .marker58, #tire.frame-0063 .marker73, #tire.frame-0076 .marker88, #tire.frame-0089 .marker103
+{ display: block; left: 54.8%; top: 17% }
+#tire.frame-0011 .marker14, #tire.frame-0024 .marker29, #tire.frame-0037 .marker44, #tire.frame-0050 .marker59, #tire.frame-0063 .marker74, #tire.frame-0076 .marker89, #tire.frame-0089 .marker104
+{ display: block; left: 35.8%; top: 19% }
+#tire.frame-0012 .marker13, #tire.frame-0025 .marker28, #tire.frame-0038 .marker43, #tire.frame-0051 .marker58, #tire.frame-0064 .marker73, #tire.frame-0077 .marker88, #tire.frame-0090 .marker103
+{ display: block; left: 55.9%; top: 42% }
+#tire.frame-0012 .marker14, #tire.frame-0025 .marker29, #tire.frame-0038 .marker44, #tire.frame-0051 .marker59, #tire.frame-0064 .marker74, #tire.frame-0077 .marker89, #tire.frame-0090 .marker104
+{ display: block; left: 36.1%; top: 17% }
+#tire.frame-0012 .marker15, #tire.frame-0025 .marker30, #tire.frame-0038 .marker45, #tire.frame-0051 .marker60, #tire.frame-0064 .marker75, #tire.frame-0077 .marker90, #tire.frame-0090 .marker105
+{ display: block; left: 32.8%; top: 47% }
