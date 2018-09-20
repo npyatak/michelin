@@ -72,6 +72,18 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .text_block .video .play-video {
+        top: auto;
+        width: 40px;
+        height: 40px;
+        left: 30px;
+        bottom: 20px;
+        -webkit-transform: translateX(0px) translateY(0px);
+        -moz-transform: translateX(0px) translateY(0px);
+        -ms-transform: translateX(0px) translateY(0px);
+        -o-transform: translateX(0px) translateY(0px);
+        transform: translateX(0px) translateY(0px);
+    }
     .close-info-modal {
         position: absolute;
         left: 50%;
@@ -358,6 +370,17 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .text_block .video .play-video {
+        top: 40px;
+        left: 8px;
+        width: 40px;
+        height: 40px;
+        -webkit-transform: translateX(0px) translateY(0px);
+        -moz-transform: translateX(0px) translateY(0px);
+        -ms-transform: translateX(0px) translateY(0px);
+        -o-transform: translateX(0px) translateY(0px);
+        transform: translateX(0px) translateY(0px);
+    }
     .slimScrollBar,
     .slimScrollRail {
         display: none !important;
@@ -386,7 +409,7 @@
         width: 100%;
         transform: none;
         left: 0;
-        top: 140px;
+        top: 58px;
         margin-left: 0;
     }
     .city .city-inner {
