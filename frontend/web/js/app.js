@@ -1026,11 +1026,11 @@ module.exports = (function () {
                     }
                 }
             });*/
-            $('#tire').on("swipetop", function(e) {
+            $(document).on("swipetop", '#tire', function(e) {
                 changeRotation(1);
-                // else if (e.originalEvent.deltaY < 0) {
-                //     changeRotation(-1);
-                // }
+            });
+            $(document).on("swipebottom", '#tire', function(e) {
+                changeRotation(-1);
             });
         }
 
