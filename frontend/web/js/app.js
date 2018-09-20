@@ -1002,19 +1002,31 @@ module.exports = (function () {
         }
     }
 
-
-
     function bindEvents() {
-        $(document).on('wheel', function (e) {
-            if(!window.App.helper.getMobile()) {
-                if (e.originalEvent.deltaY > 0) {
-                    changeRotation(1);
+
+        if($(window).width() > 1199){
+            $(document).on('wheel', function (e) {
+                if(!window.App.helper.getMobile()) {
+                    if (e.originalEvent.deltaY > 0) {
+                        changeRotation(1);
+                    }
+                    else if (e.originalEvent.deltaY < 0) {
+                        changeRotation(-1);
+                    }
                 }
-                else if (e.originalEvent.deltaY < 0) {
-                    changeRotation(-1);
+            });
+        }else{
+            $(document).on('touchmove', function (e) {
+                if(!window.App.helper.getMobile()) {
+                    if (e.originalEvent.deltaY > 0) {
+                        changeRotation(1);
+                    }
+                    else if (e.originalEvent.deltaY < 0) {
+                        changeRotation(-1);
+                    }
                 }
-            }
-        });
+            });
+        }
 
         $(document).on('click', '.arrow-up', function (e) {
             changeRotation(1);
