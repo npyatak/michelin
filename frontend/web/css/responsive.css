@@ -37,6 +37,9 @@
     header>.start {
         display: none;
     }
+    .start-question .text-center{
+        transform: skewX(-24deg);
+    }
 
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
