@@ -10,7 +10,49 @@ function playVideo(id) {
     window.player.playVideo();
 }
 
+function loadCityData(city_id) {
+    $.when(window.App.request.getCityData(city_id)).then(function (data) {
+        $(".marker").removeClass('active');
 
+        if (data.type == 1) {
+            $('.city').find('.play-video').attr('data-id', data.yt_id).show();
+            $('.city').find('.text_block').addClass('show-video');
+            //window.player.loadVideoById(data.yt_id);
+            //playVideo(data.yt_id);
+            //video_url = 'https://www.youtube.com/embed/' + data.yt_id + '?rel=0&amp;controls=0&amp;showinfo=0';
+        } else {
+            $('.city').find('.play-video').hide();
+            $('.city').find('.text_block').removeClass('show-video');
+        }
+
+        $('.main_screen, .main_top').css("opacity","0");
+        $(".city").show();
+
+        $(".city").attr('data-type', data.type);
+
+
+        $('.text_block').find(".city-title").html(data.name);
+        $('.text_block').find(".wrap").html(data.descr);
+        $('.text_block').find(".city_img .video").css("background-image", "url('/img/city/" + city_id + ".jpg')");
+        $('.text_block').find(".text").attr('ss-container', true);
+
+        var str = '';
+        if(!$.isEmptyObject(data.people)) {
+            $.each(data.people, function(index, value){
+                str += '<div class="'+value.class+'">'+value.name+'</div>';
+            });
+        }
+        $('.city .peoples').html(str);
+
+        $('.scores.scores_1').attr('data-score', data.score1);
+        $('.scores.scores_2').attr('data-score', data.score2);
+        $('.scores.scores_3').attr('data-score', data.score3);
+
+        $('.show-map-link').data('coord', data.coord);
+
+        SimpleScrollbar.initAll();
+    });
+}
 
 
 $(document).ready(function () {

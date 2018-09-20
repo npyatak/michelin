@@ -75,9 +75,11 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($cityId = null)
     {
-        return $this->render('index');
+        return $this->render('index', [
+            'cityId' => $cityId,
+        ]);
     }
 
     public function actionLogin() {

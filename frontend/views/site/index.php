@@ -52,12 +52,11 @@ use yii\helpers\Html;
             </div>
         </div>
     </div>
-    <script> var block_tire = false; </script>
-    <div class="city" onmouseenter="block_tire=true;console.log(block_tire);" onmouseleave="block_tire=false;console.log(block_tire);">
+
+    <div class="city">
         <div class="close-popup"><i class="fa fa-close"></i></div>
         <div class="text_block">
             <div class="city_img">
-                <!-- <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
                 <div class="video" data-id="">
                     <div id="launch-video" class="play-video" data-id=""></div>
                 </div>
@@ -202,3 +201,12 @@ use yii\helpers\Html;
     </div>
 </div>
 <div class="overlay"></div>
+
+
+<?php if($cityId) {
+    $script = "
+        loadCityData($cityId);
+    ";
+
+    $this->registerJs($script, yii\web\View::POS_END);
+}?>

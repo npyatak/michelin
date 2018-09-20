@@ -18,9 +18,9 @@ class AppAsset extends AssetBundle
         'css/menu.css?v=17.09_v2'
     ];
     public $js = [
-        'js/app.js?v=20.09_v3',
+        'js/app.js?v=20.09_v4',
         'js/jquery.slimscroll.js?v=16.09_v3',
-        'js/main.js?v=19.09_v1',
+        'js/main.js?v=19.09_v4',
         'js/menu.js?v=16.09_v1'
     ];
     public $depends = [
