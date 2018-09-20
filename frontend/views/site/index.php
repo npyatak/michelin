@@ -191,7 +191,7 @@ use yii\helpers\Html;
 <div class="video-modal" id="video">
     <div class="modalType2-content">
         <div class="video-modal-close"></div>
-        <!--<div id="ytplayer"></div>-->
+        <div id="ytplayer"></div>
     </div>
 </div>
 <div class="map-modal" id="map-modal">
