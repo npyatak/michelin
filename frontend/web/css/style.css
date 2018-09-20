@@ -684,6 +684,12 @@ header .main_menu span {
 .index_page .city .text_block .slimScrollDiv {
     height: 140px !important;
 }
+.index_page .city .text_block .slimScrollBar {
+    opacity: 0 !important;
+}
+.index_page .city .text_block .slimScrollDiv:hover .slimScrollBar {
+    opacity: .4 !important;
+}
 .index_page .city .text_block .wrap {
     max-width: 465px;
     padding-bottom: 10px;
