@@ -13,7 +13,7 @@ function playVideo(id) {
         <iframe id="ytplayer"
             width="640"
             height="360"
-            src="https://www.youtube.com/embed/${id}??autoplay=1&rel=0&controls=0&showinfo=0"
+            src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&controls=0&showinfo=0"
             frameborder="0"
             allow="autoplay;encrypted-media"
             allowfullscreen>
