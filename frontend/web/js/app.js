@@ -1016,7 +1016,7 @@ module.exports = (function () {
                 }
             });
         }else{
-            $(document).on('touchmove', function (e) {
+            /*$(document).on('touchmove', function (e) {
                 if(!window.App.helper.getMobile()) {
                     if (e.originalEvent.deltaY > 0) {
                         changeRotation(1);
@@ -1025,6 +1025,12 @@ module.exports = (function () {
                         changeRotation(-1);
                     }
                 }
+            });*/
+            $('#tire').on("swipetop", function(e) {
+                changeRotation(1);
+                // else if (e.originalEvent.deltaY < 0) {
+                //     changeRotation(-1);
+                // }
             });
         }
 

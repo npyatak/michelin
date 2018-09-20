@@ -4,6 +4,7 @@ use yii\helpers\Html;
 ?>
 
 <?php $this->params['bodyClass'] = 'index_page';?>
+<?php $this->registerJsFile('/js/jquery.mobile-1.5.0-alpha.1.min.js', ['depends' => [\yii\web\JqueryAsset::className()]]);?>
 
 <?=\frontend\widgets\share\ShareWidget::widget([
     'share' => [

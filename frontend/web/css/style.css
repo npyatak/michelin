@@ -2027,3 +2027,6 @@ body.overflow {
     }
 
 }
+.ui-loader {
+    display: none;
+}
