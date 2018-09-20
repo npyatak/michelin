@@ -967,7 +967,7 @@ module.exports = (function () {
     }
 
     function changeRotation(offset) {
-	   if (!block_tire) {
+	   //if (!block_tire) {
         //if(!$('.city').is(':visible')) {
             tire_offset += offset;
 
@@ -997,7 +997,7 @@ module.exports = (function () {
             // $.each($('.marker:visible'), function(index, marker) {
             //     console.log($(marker).position());
             // });
-        }
+        //}
     }
 
     function bindEvents() {
