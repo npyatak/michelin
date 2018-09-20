@@ -341,7 +341,7 @@ class SiteController extends Controller
         return $this->redirect('/');
     }
 
-    public function actioDraw() {
+    public function actionDraw() {
         $arr = [
             ['tire' => '00', 'marker' => 1, 'css' => 'left: 16.5%; top: 32%'],
             ['tire' => '00', 'marker' => 2, 'css' => 'left: 27.5%; top: 40%'],
@@ -411,13 +411,21 @@ class SiteController extends Controller
         ];
 
         foreach ($arr as $v) {
-            echo "
-            #tire.frame-00$ .marker1, #tire.frame-0013 .marker16 {
-                display: block;
-                left: 16.5%;
-                top: 32%
+            for ($i=0; $i < 7; $i++) { 
+                $tire = (int)$v['tire'] + 13 * $i;
+                $marker = $v['marker'] + 15 * $i;
+                echo '
+                #tire.frame-00'.$tire.' .marker'.$marker;
+                if($i != 7) {
+                    echo ', ';
+                }
             }
-            ";
+            echo '</br>';
+            echo ' {
+                    display: block;
+                    '.$v['css'].'
+                }';
+            echo '</br>';
         }
     }
 }

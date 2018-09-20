@@ -1040,11 +1040,12 @@ module.exports = (function () {
                 $('#tire').swipe( {
                     //Generic swipe handler for all directions
                     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                        var offset = Math.round(distance / 5);
                         if (direction == "down") {
-                            changeRotation(-1);
+                            changeRotation(-offset);
                         }
                         if (direction == "up") {
-                            changeRotation(1);
+                            changeRotation(offset);
                         }
                     },
                     //Default is 75px, set to 0 for demo so any distance triggers swipe
