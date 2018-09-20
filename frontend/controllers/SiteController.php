@@ -340,4 +340,84 @@ class SiteController extends Controller
 
         return $this->redirect('/');
     }
+
+    public function actioDraw() {
+        $arr = [
+            ['tire' => '00', 'marker' => 1, 'css' => 'left: 16.5%; top: 32%'],
+            ['tire' => '00', 'marker' => 2, 'css' => 'left: 27.5%; top: 40%'],
+            ['tire' => '00', 'marker' => 3, 'css' => 'left: 64.5%; top: 25%'],
+            ['tire' => '00', 'marker' => 4, 'css' => 'left: 87%; top: 47%'],
+            ['tire' => '00', 'marker' => 5, 'css' => 'left: 29.4%; top: 14%'],
+            ['tire' => '00', 'marker' => 6, 'css' => 'left: 72.7%; top: 21%'],
+            ['tire' => '00', 'marker' => 7, 'css' => 'left: 42.3%; top: 7%'],
+            ['tire' => '01', 'marker' => 1, 'css' => 'left: 14.3%; top: 41%'],
+            ['tire' => '01', 'marker' => 2, 'css' => 'left: 26.2%; top: 50%'],
+            ['tire' => '01', 'marker' => 3, 'css' => 'left: 65.5%; top: 33%'],
+            ['tire' => '01', 'marker' => 5, 'css' => 'left: 28.2%; top: 18%'],
+            ['tire' => '01', 'marker' => 6, 'css' => 'left: 74.2%; top: 27%'],
+            ['tire' => '01', 'marker' => 7, 'css' => 'left: 41.8%; top: 9%'],
+            ['tire' => '01', 'marker' => 8, 'css' => 'left: 67.4%; top: 11%'],
+            ['tire' => '02', 'marker' => 1, 'css' => 'left: 12%; top: 50%'],
+            ['tire' => '02', 'marker' => 3, 'css' => 'left: 66.6%; top: 41%'],
+            ['tire' => '02', 'marker' => 5, 'css' => 'left: 26.8%; top: 22%'],
+            ['tire' => '02', 'marker' => 6, 'css' => 'left: 75.7%; top: 34%'],
+            ['tire' => '02', 'marker' => 7, 'css' => 'left: 41.3%; top: 12%'],
+            ['tire' => '02', 'marker' => 8, 'css' => 'left: 68.5%; top: 16%'],
+            ['tire' => '02', 'marker' => 9, 'css' => 'left: 54%; top: 7%'],
+            ['tire' => '03', 'marker' => 3, 'css' => 'left: 68%; top: 52%'],
+            ['tire' => '03', 'marker' => 5, 'css' => 'left: 25.5%; top: 29%'],
+            ['tire' => '03', 'marker' => 6, 'css' => 'left: 77.7%; top: 45%'],
+            ['tire' => '03', 'marker' => 7, 'css' => 'left: 40.8%; top: 16%'],
+            ['tire' => '03', 'marker' => 8, 'css' => 'left: 69.5%; top: 22%'],
+            ['tire' => '03', 'marker' => 9, 'css' => 'left: 54.5%; top: 9%'],
+            ['tire' => '03', 'marker' => 10, 'css' => 'left: 32.4%; top: 14%'],
+            ['tire' => '04', 'marker' => 5, 'css' => 'left: 23.5%; top: 38%'],
+            ['tire' => '04', 'marker' => 7, 'css' => 'left: 40.3%; top: 22%'],
+            ['tire' => '04', 'marker' => 8, 'css' => 'left: 71%; top: 29%'],
+            ['tire' => '04', 'marker' => 9, 'css' => 'left: 54.6%; top: 13%'],
+            ['tire' => '04', 'marker' => 10, 'css' => 'left: 31.3%; top: 18%'],
+            ['tire' => '05', 'marker' => 5, 'css' => 'left: 21.8%; top: 49%'],
+            ['tire' => '05', 'marker' => 7, 'css' => 'left: 39.6%; top: 31%'],
+            ['tire' => '05', 'marker' => 8, 'css' => 'left: 72.5%; top: 38%'],
+            ['tire' => '05', 'marker' => 9, 'css' => 'left: 55%; top: 19%'],
+            ['tire' => '05', 'marker' => 10, 'css' => 'left: 30%; top: 24.5%'],
+            ['tire' => '05', 'marker' => 11, 'css' => 'left: 74.4%; top: 13%'],
+            ['tire' => '06', 'marker' => 7, 'css' => 'left: 38.7%; top: 41%'],
+            ['tire' => '06', 'marker' => 8, 'css' => 'left: 74.1%; top: 51%'],
+            ['tire' => '06', 'marker' => 9, 'css' => 'left: 55.3%; top: 26%'],
+            ['tire' => '06', 'marker' => 10, 'css' => 'left: 28.6%; top: 32%'],
+            ['tire' => '06', 'marker' => 11, 'css' => 'left: 75.8%; top: 17%'],
+            ['tire' => '06', 'marker' => 12, 'css' => 'left: 37.4%; top: 12%'],
+            ['tire' => '07', 'marker' => 9, 'css' => 'left: 55.5%; top: 36%'],
+            ['tire' => '07', 'marker' => 10, 'css' => 'left: 27.1%; top: 43%'],
+            ['tire' => '07', 'marker' => 11, 'css' => 'left: 77.2%; top: 22%'],
+            ['tire' => '07', 'marker' => 12, 'css' => 'left: 36.6%; top: 15%'],
+            ['tire' => '08', 'marker' => 9, 'css' => 'left: 56%; top: 47%'],
+            ['tire' => '08', 'marker' => 11, 'css' => 'left: 78.9%; top: 28%'],
+            ['tire' => '08', 'marker' => 12, 'css' => 'left: 35.6%; top: 20%'],
+            ['tire' => '09', 'marker' => 11, 'css' => 'left: 80.9%; top: 36%'],
+            ['tire' => '09', 'marker' => 12, 'css' => 'left: 34.9%; top: 27%'],
+            ['tire' => '09', 'marker' => 13, 'css' => 'left: 54.3%; top: 9%'],
+            ['tire' => '10', 'marker' => 11, 'css' => 'left: 83.1%; top: 46%'],
+            ['tire' => '10', 'marker' => 12, 'css' => 'left: 33.8%; top: 38%'],
+            ['tire' => '10', 'marker' => 13, 'css' => 'left: 54.5%; top: 12%'],
+            ['tire' => '10', 'marker' => 14, 'css' => 'left: 36.8%; top: 14%'],
+            ['tire' => '11', 'marker' => 12, 'css' => 'left: 32.5%; top: 49%'],
+            ['tire' => '11', 'marker' => 13, 'css' => 'left: 54.8%; top: 17%'],
+            ['tire' => '11', 'marker' => 14, 'css' => 'left: 35.8%; top: 19%'],
+            ['tire' => '12', 'marker' => 13, 'css' => 'left: 55.9%; top: 42%'],
+            ['tire' => '12', 'marker' => 14, 'css' => 'left: 36.1%; top: 17%'],
+            ['tire' => '12', 'marker' => 15, 'css' => 'left: 32.8%; top: 47%'],
+        ];
+
+        foreach ($arr as $v) {
+            echo "
+            #tire.frame-00$ .marker1, #tire.frame-0013 .marker16 {
+                display: block;
+                left: 16.5%;
+                top: 32%
+            }
+            ";
+        }
+    }
 }
