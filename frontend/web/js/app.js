@@ -1110,11 +1110,13 @@ module.exports = (function () {
 
             if (data.type == 1) {
                 $('.city').find('.play-video').attr('data-id', data.yt_id).show();
+                $('.city').find('.text_block').addClass('show-video');
                 //window.player.loadVideoById(data.yt_id);
                 //playVideo(data.yt_id);
                 //video_url = 'https://www.youtube.com/embed/' + data.yt_id + '?rel=0&amp;controls=0&amp;showinfo=0';
             } else {
                 $('.city').find('.play-video').hide();
+                $('.city').find('.text_block').removeClass('show-video');
             }
 
             // $('.main_screen, .main_top').hide();
@@ -1122,6 +1124,7 @@ module.exports = (function () {
             $(".city").show();
 
             $(".city").attr('data-type', data.type);
+
 
             text_block.find(".city-title").html(data.name);
             text_block.find(".wrap").html(data.descr);

@@ -681,7 +681,10 @@ header .main_menu span {
     color: #fff;
 }
 
-.index_page .city .text_block .wrap{
+.index_page .city .text_block .slimScrollDiv {
+    height: 140px !important;
+}
+.index_page .city .text_block .wrap {
     max-width: 465px;
     padding-bottom: 10px;
     max-height: 140px;
@@ -691,9 +694,9 @@ header .main_menu span {
 .index_page .ss-content {
     padding-right: 80px;
 }
-.index_page .ss-content .slimScrollRail {
-    height: 175px !important;
-}
+/*.index_page .ss-content .slimScrollRail {*/
+    /*height: 175px !important;*/
+/*}*/
 
 .index_page .city .text_block .text p {
     margin: 0;
