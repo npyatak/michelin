@@ -1282,6 +1282,7 @@ body.overflow {
     text-shadow: 1px 1px 5px white;
 }
 .contest-text {
+    height: 40px;
     margin-top: 16px;
     color: rgb(4,81,160);
     font-size: 14px;
