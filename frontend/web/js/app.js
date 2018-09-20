@@ -1038,14 +1038,14 @@ module.exports = (function () {
             $(function() {          
                 $('#tire').swipe({
                         swipeStatus:function(event, phase, direction, distance, duration, fingerCount) {
-                            if(!$('.city').is(':visible')) {
+                            //if(!$('.city').is(':visible')) {
                                 var offset = Math.round(distance / 10);
                                 if(direction == "down") {
                                     changeRotation(-offset);
                                 } else if(direction == "up") {
                                     changeRotation(offset);
                                 }
-                            }
+                            //}
                         },
                         threshold:30,
                         fingers:'all'
