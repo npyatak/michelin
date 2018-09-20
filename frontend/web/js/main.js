@@ -6,8 +6,19 @@ function playVideo(id) {
     var modal = $(document).find('.video-modal');
     modal.fadeIn(100);
 
-    window.player.loadVideoById(id);
-    window.player.playVideo();
+    // window.player.loadVideoById(id);
+    // window.player.playVideo();
+    
+    $('#video .modalType2-content').append(`
+        <iframe id="ytplayer"
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&controls=0&showinfo=0"
+            frameborder="0"
+            allow="autoplay;encrypted-media"
+            allowfullscreen>
+        </iframe>
+    `);
 }
 
 function loadCityData(city_id) {
@@ -78,7 +89,8 @@ $(document).ready(function () {
             $(this).closest('.video-modal').fadeOut(100);
             $('body').removeClass('overflow');
             $(document).find('.overlay').fadeOut(100);
-            window.player.stopVideo();
+            // window.player.stopVideo();
+            $('#ytplayer').remove();
             $('.marker').removeClass('active');
         })
         .on('click', '.show-map-link', function(e) {
