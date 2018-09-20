@@ -700,9 +700,9 @@ header .main_menu span {
 .index_page .ss-content {
     padding-right: 80px;
 }
-/*.index_page .ss-content .slimScrollRail {*/
-    /*height: 175px !important;*/
-/*}*/
+.index_page .ss-content .slimScrollRail {
+    opacity: 0 !important;
+}
 
 .index_page .city .text_block .text p {
     margin: 0;
