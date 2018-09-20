@@ -679,9 +679,9 @@
     }
     .index_page .city .text_block .city-title {
         position: relative;
-        margin: 0;
-        padding: 0;
-        margin-top: 105px;
+        margin: 105px 0 0 0;
+        padding: 0 15px;
+        text-align: center;
     }
     .index_page .city .info_block {
         width: 100%;
