@@ -1026,13 +1026,28 @@ module.exports = (function () {
                     }
                 }
             });*/
-            $(document).on("swipetop", '#tire', function(e) {
-                changeRotation(1);
-            });
-            $(document).on("swipebottom", '#tire', function(e) {
-                changeRotation(-1);
-            });
+            // $(document).on("swipetop", '#tire', function(e) {
+            //     changeRotation(1);
+            // });
+            // $(document).on("swipebottom", '#tire', function(e) {
+            //     changeRotation(-1);
+            // });
         }
+
+        $(document).on("swipe", '#tire', function(e) {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == "down") {
+                    changeRotation(-1);
+                }
+                if (direction == "up") {
+                    changeRotation(1);
+                }
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+           threshold:0
+        });
+
 
         $(document).on('click', '.arrow-up', function (e) {
             changeRotation(1);
