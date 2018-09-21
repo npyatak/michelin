@@ -1282,6 +1282,7 @@ body.overflow {
     text-shadow: 1px 1px 5px white;
 }
 .contest-text {
+    height: 40px;
     margin-top: 16px;
     color: rgb(4,81,160);
     font-size: 14px;
@@ -1305,7 +1306,15 @@ body.overflow {
     background: #004F9E;
     padding: 10px 35px;
     color: #FFE921;
-    font-size: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+.about_page .text .like-p a{
+    color: #fff
+}
+.about_page .text .start-question-btn span{
+    display: inline-block;
+    transform: skewX(24deg);
 }
 .start-question-btn:hover {
     text-decoration: none;

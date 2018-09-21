@@ -12,6 +12,10 @@
     .page_wrapper .city{
         transform: scale(0.85);
     }
+    .about_page .text .like-p span{
+        display: block;
+        transform: skewX(24deg);
+    }
 }
 
 @media (max-width: 1199px) {

@@ -31,7 +31,7 @@ use yii\helpers\Html;
     </div>
     <div class="row main_screen">
         <div class="video">
-            <div id="launch-video" class="play-video" data-id="3K76Y5qBzfw"></div>
+            <div id="launch-video" class="play-video" data-id="VZNllpqMNCo"></div>
         </div>
         <div class="about">
             <div class="title">О проекте</div>
