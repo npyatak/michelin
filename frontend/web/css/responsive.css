@@ -19,6 +19,7 @@
 }
 
 @media (max-width: 1199px) {
+
     .about_page .about_tire {
         background-size: cover;
         width: 100%;
@@ -377,6 +378,9 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    #tire .marker:before{
+        transform: skewX(24deg) scale(1.5);
+    }
     .text_block .video .play-video {
         top: 115px;
         width: 40px;
