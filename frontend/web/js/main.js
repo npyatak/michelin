@@ -52,6 +52,30 @@ function loadCityData(city_id) {
 
         SimpleScrollbar.initAll();
     });
+    console.log(city_id);
+    $(".niceScroll").slimScroll({
+        destroy: true
+    });
+    $(".niceScroll").css("height","auto");
+    setTimeout(function() { 
+        console.log($(".niceScroll").height());
+        if( $(".niceScroll").height() > "130" ){
+            $('.city').find(".niceScroll").slimScroll({
+                height: "140px",
+                size: '5px',
+                position: 'right',
+                color: '#fff',
+                alwaysVisible: true,
+                railVisible: true,
+                railColor: '#5D84BD',
+                railOpacity: 0.3,
+                wheelStep: 10,
+                allowPageScroll: true,
+                disableFadeOut: false
+            });
+        }
+    }, 200);
+
 }
 
 
@@ -148,18 +172,6 @@ function openMap(coord) {
     map.geoObjects.add(myPlacemark);
 }
 
-$('.city').find(".niceScroll").slimScroll({
-    size: '5px',
-    position: 'right',
-    color: '#fff',
-    alwaysVisible: true,
-    railVisible: true,
-    railColor: '#5D84BD',
-    railOpacity: 0.3,
-    wheelStep: 10,
-    allowPageScroll: true,
-    disableFadeOut: false
-});
 
 $('.close-popup').click(function () {
     // $('.main_screen, .main_top').show();
