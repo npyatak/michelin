@@ -71,7 +71,7 @@ function loadCityData(city_id) {
                 railOpacity: 0.3,
                 wheelStep: 10,
                 allowPageScroll: true,
-                disableFadeOut: false
+                disableFadeOut: true
             });
         }
     }, 200);
