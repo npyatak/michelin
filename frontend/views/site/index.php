@@ -16,7 +16,7 @@ use yii\helpers\Html;
     'showButtons' => false,
 ]);?>
 
-<script src="//api-maps.yandex.ru/2.1/?lang=en_RU" type="text/javascript"></script>
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 <div class="page_wrapper">
 

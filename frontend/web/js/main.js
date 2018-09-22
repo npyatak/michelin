@@ -159,9 +159,8 @@ function openMap(coord) {
 
     map = new ymaps.Map('map', {
             center: coords,
-            zoom: 10
-        }, {
-            searchControlProvider: 'yandex#search'
+            zoom: 10,
+            controls: ['zoomControl', 'fullscreenControl']
         });
 
     myPlacemark = new ymaps.Placemark(map.getCenter());

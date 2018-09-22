@@ -16,7 +16,7 @@ use common\models\City;
 
 	<div class="overlay"></div>
 
-<script src="//api-maps.yandex.ru/2.1/?lang=en_RU" type="text/javascript"></script>
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 <?php 
 $videoCitiesCoords = [];
@@ -55,10 +55,9 @@ $script = "
     ymaps.ready(function () {
 	    map = new ymaps.Map('big-map', {
 	            center: [66.4167, 94.2500],
-	            zoom: 3
-	        }, {
-	            searchControlProvider: 'yandex#search'
-	        });
+	            zoom: 3,
+	            controls: ['zoomControl', 'fullscreenControl']
+	    	});
 
 	    videoCities = new ymaps.GeoObjectCollection();
 
@@ -72,6 +71,7 @@ $script = "
 		map.geoObjects.add(videoCities);
 
 		videoCities.events.add('click', function (e) {
+			$('.city').hide();
 			playVideo(e.get('target').properties.get('videoId'));
 		});
 
