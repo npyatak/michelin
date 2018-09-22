@@ -267,6 +267,15 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionMap()
+    {
+        $cities = City::find()->where(['type' => City::TYPE_VIDEO])->andWhere(['not', ['coord' => '']])->all();
+
+        return $this->render('map', [
+            'cities' => $cities,
+        ]);
+    }
+
     public function actionContestResult()
     {
         $week = $this->currentWeek;
