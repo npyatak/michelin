@@ -269,7 +269,7 @@ class SiteController extends Controller
 
     public function actionMap()
     {
-        $cities = City::find()->where(['type' => City::TYPE_VIDEO])->andWhere(['not', ['coord' => '']])->all();
+        $cities = City::find()/*->where(['type' => City::TYPE_VIDEO])*/->where(['not', ['coord' => '']])->all();
 
         return $this->render('map', [
             'cities' => $cities,

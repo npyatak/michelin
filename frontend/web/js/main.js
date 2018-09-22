@@ -52,7 +52,7 @@ function loadCityData(city_id) {
 
         SimpleScrollbar.initAll();
     });
-    console.log(city_id);
+
     $(".niceScroll").slimScroll({
         destroy: true
     });
@@ -80,9 +80,6 @@ function loadCityData(city_id) {
 
 
 $(document).ready(function () {
-
-
-
     $(this)
         .on('click', '.map-modal-close', function (e) {
             e.preventDefault();

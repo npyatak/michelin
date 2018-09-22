@@ -528,7 +528,7 @@ header .main_menu span {
     }
 }
 
-.index_page .city {
+.city {
     display: none;
     top: 140px;
     position: absolute;
@@ -538,15 +538,15 @@ header .main_menu span {
     margin-left: -600px
 }
 
-/*.index_page .city[data-type="1"] .text_block .city_img iframe {
+/*.city[data-type="1"] .text_block .city_img iframe {
     display: block
 }*/
 
-.index_page .city[data-type="1"] .text_block .city_img div {
+.city[data-type="1"] .text_block .city_img div {
     display: block
 }
 
-.index_page .city .text_block {
+.city .text_block {
     overflow: hidden;
     //background: #fff;
     background: rgba(4, 81, 160, 1);
@@ -561,7 +561,7 @@ header .main_menu span {
     box-sizing: border-box
 }
 
-.index_page .city .text_block .city_img {
+.city .text_block .city_img {
     width: 520px;
     overflow: hidden;
     position: absolute;
@@ -569,12 +569,12 @@ header .main_menu span {
     height: 100%
 }
 
-.index_page .city .text_block .city_img div {
+.city .text_block .city_img div {
     display: block;
     content: "";
     //background: url(../img/city/1.jpg) 50%/cover no-repeat
 }
-.index_page .city .text_block .city_img .video::after {
+.city .text_block .city_img .video::after {
     content: "";
     display: block;
     position: absolute;
@@ -595,11 +595,11 @@ header .main_menu span {
     z-index: 0;
 }
 
-.index_page .city .text_block .city_img iframe {
+.city .text_block .city_img iframe {
     display: none
 }
 
-.index_page .city .text_block .city_img > * {
+.city .text_block .city_img > * {
     -webkit-transform: skewX(24deg);
     -moz-transform: skewX(24deg);
     -ms-transform: skewX(24deg);
@@ -609,13 +609,13 @@ header .main_menu span {
     width: calc(100% + 180px);
 }
 
-.index_page .city .text_block .city_img .video {
+.city .text_block .city_img .video {
     position: absolute;
     top: 0;
     left: -90px;
 }
 
-.index_page .city .text_block .city-title {
+.city .text_block .city-title {
     min-height: 68px;
     margin-left: -70px;
     padding-right: 140px;
@@ -639,7 +639,7 @@ header .main_menu span {
     transform: skewx(24deg);
 }
 
-.index_page .city .text_block .show_on_map {
+.city .text_block .show_on_map {
     cursor: pointer;
     position: absolute;
     top: 0;
@@ -654,7 +654,7 @@ header .main_menu span {
     background: #0451a0
 }
 
-.index_page .city .text_block .show_on_map a {
+.city .text_block .show_on_map a {
     display: block;
     padding-right: 25px;
     box-sizing: border-box;
@@ -667,7 +667,7 @@ header .main_menu span {
     color: #fff;
 }
 
-.index_page .city .text_block .text {
+.city .text_block .text {
     padding: 15px;
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
@@ -681,16 +681,16 @@ header .main_menu span {
     color: #fff;
 }
 
-.index_page .city .text_block .slimScrollDiv {
+.city .text_block .slimScrollDiv {
     /*height: 140px !important;*/
 }
-.index_page .city .text_block .slimScrollBar {
+.city .text_block .slimScrollBar {
     opacity: 0 !important;
 }
-.index_page .city .text_block .slimScrollDiv:hover .slimScrollBar {
+.city .text_block .slimScrollDiv:hover .slimScrollBar {
     opacity: .4 !important;
 }
-.index_page .city .text_block .wrap {
+.city .text_block .wrap {
     max-width: 465px;
     /*padding-bottom: 10px;*/
     /*max-height: 140px;*/
@@ -704,11 +704,11 @@ header .main_menu span {
     opacity: 0 !important;
 }
 
-.index_page .city .text_block .text p {
+.city .text_block .text p {
     margin: 0;
 }
 
-.index_page .city .info_block {
+.city .info_block {
     position: absolute;
     bottom: 0;
     left: 16px;
@@ -726,14 +726,14 @@ header .main_menu span {
     -o-transform: skewx(-24deg);
     transform: skewx(-24deg);
 }
-.index_page .city .info_block>div {
+.city .info_block>div {
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
     -ms-transform: skewx(24deg);
     -o-transform: skewx(24deg);
     transform: skewx(24deg);
 }
-.index_page .city .info_block>div.characteristics>div {
+.city .info_block>div.characteristics>div {
     -webkit-transform: skewx(-24deg);
     -moz-transform: skewx(-24deg);
     -ms-transform: skewx(-24deg);
@@ -741,8 +741,8 @@ header .main_menu span {
     transform: skewx(-24deg);
 }
 
-.index_page .city .info_block>div.characteristics .skew-text,
-.index_page .city .info_block>div.characteristics .scores {
+.city .info_block>div.characteristics .skew-text,
+.city .info_block>div.characteristics .scores {
     -webkit-transform: skewx(24deg);
     -moz-transform: skewx(24deg);
     -ms-transform: skewx(24deg);
@@ -754,88 +754,88 @@ header .main_menu span {
     font-weight: 700;
 }
 
-.index_page .city .info_block .characteristics {
+.city .info_block .characteristics {
     font-size: inherit;
     text-transform: uppercase;
     padding-top: 5px
 }
 
-.index_page .city .info_block .characteristics > div {
+.city .info_block .characteristics > div {
     font-size: inherit;
     width: 140px;
     padding-bottom: 10px;
 }
 
-.index_page .city .info_block .characteristics > div:nth-child(1) {
+.city .info_block .characteristics > div:nth-child(1) {
     width: 200px;
     padding-top: 5px
 }
 
-.index_page .city .info_block .characteristics > div .scores {
+.city .info_block .characteristics > div .scores {
     margin-left: -7px;
     padding-bottom: 10px
 }
 
-.index_page .city .info_block .characteristics > div .scores:after, .index_page .city .info_block .characteristics > div .scores:before {
+.city .info_block .characteristics > div .scores:after, .city .info_block .characteristics > div .scores:before {
     display: inline-block;
     content: " ";
     background: url(../img/snow_flake_blue.png);
     height: 15px
 }
 
-.index_page .city .info_block .characteristics > div .scores:before {
+.city .info_block .characteristics > div .scores:before {
     opacity: .4;
     width: 95px
 }
 
-.index_page .city .info_block .characteristics > div .scores:after {
+.city .info_block .characteristics > div .scores:after {
     width: 0
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="1"]:before {
+.city .info_block .characteristics > div .scores[data-score="1"]:before {
     width: 76px
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="1"]:after {
+.city .info_block .characteristics > div .scores[data-score="1"]:after {
     width: 19px
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="2"]:before {
+.city .info_block .characteristics > div .scores[data-score="2"]:before {
     width: 57px
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="2"]:after, .index_page .city .info_block .characteristics > div .scores[data-score="3"]:before {
+.city .info_block .characteristics > div .scores[data-score="2"]:after, .city .info_block .characteristics > div .scores[data-score="3"]:before {
     width: 38px
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="3"]:after {
+.city .info_block .characteristics > div .scores[data-score="3"]:after {
     width: 57px
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="4"]:before {
+.city .info_block .characteristics > div .scores[data-score="4"]:before {
     width: 19px
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="4"]:after {
+.city .info_block .characteristics > div .scores[data-score="4"]:after {
     width: 76px
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="5"]:before {
+.city .info_block .characteristics > div .scores[data-score="5"]:before {
     width: 0
 }
 
-.index_page .city .info_block .characteristics > div .scores[data-score="5"]:after {
+.city .info_block .characteristics > div .scores[data-score="5"]:after {
     width: 95px
 }
 
-.index_page .city .info_block .peoples {
+.city .info_block .peoples {
     float: right;
     padding-right: 80px;
     padding-bottom: 5px;
     font-size: inherit
 }
 
-.index_page .city .info_block .peoples > div {
+.city .info_block .peoples > div {
     font-size: inherit;
     display: inline-block;
     vertical-align: top;
@@ -847,7 +847,7 @@ header .main_menu span {
     padding-top: 22px
 }
 
-.index_page .city .info_block .peoples > div:before {
+.city .info_block .peoples > div:before {
     margin-top: -22px;
     margin-right: 10px;
     float: left;
@@ -861,31 +861,31 @@ header .main_menu span {
     border: 2px solid #FFF
 }
 
-.index_page .city .info_block .peoples .savin {
+.city .info_block .peoples .savin {
     max-width: 170px
 }
 
-.index_page .city .info_block .peoples .savin:before {
+.city .info_block .peoples .savin:before {
     background-image: url(../img/savin.jpg)
 }
 
-.index_page .city .info_block .peoples .chesnokova {
+.city .info_block .peoples .chesnokova {
     max-width: 190px
 }
 
-.index_page .city .info_block .peoples .chebatkov, .index_page .city .info_block .peoples .kovinov {
+.city .info_block .peoples .chebatkov, .city .info_block .peoples .kovinov {
     max-width: 180px
 }
 
-.index_page .city .info_block .peoples .chesnokova:before {
+.city .info_block .peoples .chesnokova:before {
     background-image: url(../img/chesnokova.jpg)
 }
 
-.index_page .city .info_block .peoples .chebatkov:before {
+.city .info_block .peoples .chebatkov:before {
     background-image: url(../img/chebatkov.jpg)
 }
 
-.index_page .city .info_block .peoples .kovinov:before {
+.city .info_block .peoples .kovinov:before {
     background-image: url(../img/kovinov.jpg)
 }
 
@@ -1497,7 +1497,7 @@ body.overflow {
     .video-modal-close, .map-modal-close {
         left: calc(100% - 30px);
     }
-    .index_page .city .text_block .city_img .video::after {
+    .city .text_block .city_img .video::after {
         width: 100%;
         -webkit-transform: none;
         -moz-transform: none;

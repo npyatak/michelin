@@ -45,12 +45,6 @@ window.App = (function (app) {
             });
         });
 
-
-        $(document).on('click', ' .text-label ', function () {
-            console.log(this);
-        });
-
-
         $(function () {
             $(".main_menu a[href='" + location.pathname + "']").addClass('active');
         });
@@ -920,7 +914,6 @@ class Swipe {
     run() {
         this.element.addEventListener('touchmove', function(evt) {
             this.handleTouchMove(evt);
-            // console.log(this.handleTouchMove(evt));
         }.bind(this), false);
     }
 }
@@ -989,14 +982,6 @@ module.exports = (function () {
             }
 
             tire_div.addClass("frame-00" + frame_num);
-            console.log(frame_num);
-
-            // console.log($('.marker:visible').length);
-            // //$.each('.marker:visible'), function(e) {}
-
-            // $.each($('.marker:visible'), function(index, marker) {
-            //     console.log($(marker).position());
-            // });
         //}
     }
 

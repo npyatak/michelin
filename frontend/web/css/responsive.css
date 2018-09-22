@@ -100,7 +100,7 @@
         left: 50%;
         bottom: -50px;
     }
-    .index_page .city {
+    .city {
         position: fixed;
         width: auto;
         transform: none;
@@ -118,7 +118,7 @@
         width: calc(100% - 40px);
         margin: 0 auto;
     }
-    .index_page .city .text_block {
+    .city .text_block {
         transform: none;
         position: relative;
         margin: 0;
@@ -127,7 +127,7 @@
         width: 100%;
         height: calc(100% - 127px);
     }
-    .index_page .city .text_block .city_img {
+    .city .text_block .city_img {
         position: absolute;
         top: 0;
         left: 0;
@@ -135,18 +135,18 @@
         height: 100%;
         overflow: hidden;
     }
-    .index_page .city .text_block .left {
+    .city .text_block .left {
         width: 50%;
         height: 100%;
         display: block;
     }
-    .index_page .city .text_block .right {
+    .city .text_block .right {
         width: 50%;
         height: 100%;
         padding: 0 10px;
         display: block;
     }
-    .index_page .city .info_block {
+    .city .info_block {
         margin: 0;
         transform: none;
         padding: 60px 20px 5px;
@@ -155,11 +155,11 @@
         right: 0;
         width: auto;
     }
-    .index_page .city .info_block>div {
+    .city .info_block>div {
         transform: none!important;
         width: 100%;
     }
-    .index_page .city .info_block .characteristics {
+    .city .info_block .characteristics {
         display: -webkit-flex;
         display: -moz-flex;
         display: flex;
@@ -167,27 +167,27 @@
         justify-content: space-between;
         padding: 0 25px;
     }
-    .index_page .city .info_block .characteristics::before,
-    .index_page .city .info_block .characteristics::after {
+    .city .info_block .characteristics::before,
+    .city .info_block .characteristics::after {
         display: none;
     }
-    .index_page .city .info_block .characteristics > div:nth-child(1) {
+    .city .info_block .characteristics > div:nth-child(1) {
         transform: none!important;
         width: auto;
     }
-    .index_page .city .info_block>div.characteristics .skew-text {
+    .city .info_block>div.characteristics .skew-text {
         transform: none!important;
     }
-    .index_page .city .info_block .characteristics > div .scores {
+    .city .info_block .characteristics > div .scores {
         transform: none!important;
     }
-    .index_page .city .text {
+    .city .text {
         transform: none!important;
     }
-    .index_page .city .info_block>div.characteristics>div {
+    .city .info_block>div.characteristics>div {
         transform: none!important;
     }
-    .index_page .city .text_block .wrap {
+    .city .text_block .wrap {
         -webkit-transform: translateX(38px)!important;
         -moz-transform: translateX(38px)!important;
         -ms-transform: translateX(38px)!important;
@@ -206,7 +206,7 @@
     .wrap.niceScroll {
         height: auto !important;
     }
-    .index_page .city .text_block .city-title {
+    .city .text_block .city-title {
         transform: none;
         position: relative;
         z-index: 1;
@@ -214,18 +214,18 @@
         padding: 0 25px;
         text-align: center;
     }
-    .index_page .city .text_block .show_on_map a {
+    .city .text_block .show_on_map a {
         transform: none;
     }
-    .index_page .city .text_block .city_img > * {
+    .city .text_block .city_img > * {
         width: 100%;
         height: 100%;
         transform: none;
     }
-    .index_page .city .text_block .city_img .video {
+    .city .text_block .city_img .video {
         left: 0;
     }
-    .index_page .city .text_block .city_img .video::after {
+    .city .text_block .city_img .video::after {
         width: 100%;
         -webkit-transform: none;
         -moz-transform: none;
@@ -238,7 +238,7 @@
         background: -ms-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
         background: linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
     }
-    .index_page .city .info_block .peoples {
+    .city .info_block .peoples {
         position: absolute;
         bottom: calc(100% - 48px);
         right: 25px;
@@ -412,7 +412,7 @@
         left: 50%;
         bottom: -50px;
     }
-    .index_page .city {
+    .city {
         position: absolute;
         width: 100%;
         transform: none;
@@ -428,7 +428,7 @@
         width: calc(100% - 20px);
         margin: 0 auto;
     }
-    .index_page .city .text_block {
+    .city .text_block {
         transform: none;
         position: relative;
         margin: 0;
@@ -440,32 +440,32 @@
         justify-content: center;
         flex-direction: column;
     }
-    .index_page .city .text_block .city_img {
+    .city .text_block .city_img {
         width: 100%;
         overflow: hidden;
         position: relative;
         left: initial;
         height: 100%;
     }
-    .index_page .city .text_block .left {
+    .city .text_block .left {
         width: 100%;
         height: 100%;
         display: block;
     }
-    .index_page .city .text_block .right {
+    .city .text_block .right {
         width: 100%;
         height: 100%;
         padding: 0 10px;
         display: block;
     }
-    .index_page .city .info_block {
+    .city .info_block {
         position: relative;
         margin: 0;
         transform: none;
         padding: 20px;
         left: inherit;
     }
-    .index_page .city .info_block>div {
+    .city .info_block>div {
         -webkit-transform: none!important;
         -moz-transform: none!important;
         -ms-transform: none!important;
@@ -473,7 +473,7 @@
         transform: none!important;
         width: 100%;
     }
-    .index_page .city .info_block .characteristics {
+    .city .info_block .characteristics {
         display: -webkit-flex;
         display: -moz-flex;
         display: flex;
@@ -484,10 +484,10 @@
         -webkit-flex-direction: column;
         flex-direction: column;
     }
-    .index_page .city .info_block .characteristics::before {
+    .city .info_block .characteristics::before {
         display: none;
     }
-    .index_page .city .info_block .characteristics > div:nth-child(1) {
+    .city .info_block .characteristics > div:nth-child(1) {
         -webkit-transform: none!important;
         -moz-transform: none!important;
         -ms-transform: none!important;
@@ -495,35 +495,35 @@
         transform: none!important;
         width: auto;
     }
-    .index_page .city .info_block>div.characteristics .skew-text {
+    .city .info_block>div.characteristics .skew-text {
         -webkit-transform: none!important;
         -moz-transform: none!important;
         -ms-transform: none!important;
         -o-transform: none!important;
         transform: none!important;
     }
-    .index_page .city .info_block .characteristics > div .scores {
+    .city .info_block .characteristics > div .scores {
         -webkit-transform: none!important;
         -moz-transform: none!important;
         -ms-transform: none!important;
         -o-transform: none!important;
         transform: none!important;
     }
-    .index_page .city .text {
+    .city .text {
         -webkit-transform: none!important;
         -moz-transform: none!important;
         -ms-transform: none!important;
         -o-transform: none!important;
         transform: none!important;
     }
-    .index_page .city .info_block>div.characteristics>div {
+    .city .info_block>div.characteristics>div {
         -webkit-transform: none!important;
         -moz-transform: none!important;
         -ms-transform: none!important;
         -o-transform: none!important;
         transform: none!important;
     }
-    .index_page .city .text_block .wrap {
+    .city .text_block .wrap {
         -webkit-transform: none!important;
         -moz-transform: none!important;
         -ms-transform: none!important;
@@ -534,7 +534,7 @@
         overflow-y: auto !important;
         padding-right: 10px;
     }
-    .index_page .city .text_block .city-title {
+    .city .text_block .city-title {
         -webkit-transform: none;
         -moz-transform: none;
         -ms-transform: none;
@@ -544,13 +544,13 @@
         font-size: 15px;
         min-height: inherit;
     }
-    .index_page .city .text_block .show_on_map a {
+    .city .text_block .show_on_map a {
         transform: none;
     }
-    .index_page .city .text_block .city_img > * {
+    .city .text_block .city_img > * {
         transform: none;
     }
-    .index_page .city .info_block .peoples {
+    .city .info_block .peoples {
         float: none;
         padding-right: 0;
         padding-bottom: 0;
@@ -679,7 +679,7 @@
     #tire .marker span {
         display: none;
     }
-    .index_page .city .text_block .city_img {
+    .city .text_block .city_img {
         position: absolute;
         top: 0;
         left: 0;
@@ -687,31 +687,31 @@
         height: 100%;
         overflow: hidden;
     }
-    .index_page .city .text_block .show_on_map {
+    .city .text_block .show_on_map {
         top: 40px;
         left: calc(50% - 110px);
     }
-    .index_page .city .text_block .city-title {
+    .city .text_block .city-title {
         position: relative;
         margin: 105px 0 0 0;
         padding: 0 15px;
         text-align: center;
     }
-    .index_page .city .info_block {
+    .city .info_block {
         width: 100%;
     }
-    .index_page .city .info_block .characteristics {
+    .city .info_block .characteristics {
         margin: auto;
         align-items: inherit;
     }
-    .index_page .city .info_block .peoples {
+    .city .info_block .peoples {
         margin: auto;
         text-align: left;
     }
     .index_page .ss-content {
         padding-right: 0;
     }
-    .index_page .city .text_block .city_img .video {
+    .city .text_block .city_img .video {
         width: 100%;
         -webkit-transform: none;
         -moz-transform: none;
@@ -720,7 +720,7 @@
         transform: none;
         left: 0;
     }
-    .index_page .city .text_block .city_img .video:after {
+    .city .text_block .city_img .video:after {
         -webkit-transform: none;
         -moz-transform: none;
         -ms-transform: none;

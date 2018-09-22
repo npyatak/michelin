@@ -1,56 +1,99 @@
-<div id="map" style="width: 100%; height: 100vh;"></div>
+<?php 
+use common\models\City;
+?>
 
-<div class="video-modal" id="video">
-    <div class="modalType2-content">
-        <div class="video-modal-close"></div>
-        <div id="ytplayer"></div>
-    </div>
-</div>
+<div class="page_wrapper">
+    <?=$this->render('_city_popup_block', ['showMap' => false]);?>
 
-<div class="overlay"></div>
+	<div id="big-map" style="width: 100%; height: 100vh;"></div>
+
+	<div class="video-modal" id="video">
+	    <div class="modalType2-content">
+	        <div class="video-modal-close"></div>
+	        <div id="ytplayer"></div>
+	    </div>
+	</div>
+
+	<div class="overlay"></div>
 
 <script src="//api-maps.yandex.ru/2.1/?lang=en_RU" type="text/javascript"></script>
 
-<?php $coords = [];
+<?php 
+$videoCitiesCoords = [];
 $videoIds = [];
+$imageCitiesCoords = [];
+$cityIds = [];
+
 foreach ($cities as $city) {
-	$coords[] = '['.$city->coord.']';
-	$videoIds[] = '"'.$city->video_yt_id.'"';
+	if($city->type == City::TYPE_VIDEO) {
+		$videoCitiesCoords[] = '['.$city->coord.']';
+		$videoIds[] = '"'.$city->video_yt_id.'"';
+	} else {
+		$imageCitiesCoords[] = '['.$city->coord.']';
+		$cityIds[] = '"'.$city->id.'"';
+	}
 }
-$coords = implode(', ', $coords);
+$videoCitiesCoords = implode(', ', $videoCitiesCoords);
 $videoIds = implode(', ', $videoIds);
+$imageCitiesCoords = implode(', ', $imageCitiesCoords);
+$cityIds = implode(', ', $cityIds);
+
 $script = "
 	var videoIds = [
 		$videoIds
 	];
+	var cityIds = [
+		$cityIds
+	];
+    var videoCitiesCoords = [
+	    $videoCitiesCoords
+	];
+    var imageCitiesCoords = [
+	    $imageCitiesCoords
+	];
 
     ymaps.ready(function () {
-	    map = new ymaps.Map('map', {
+	    map = new ymaps.Map('big-map', {
 	            center: [66.4167, 94.2500],
 	            zoom: 3
 	        }, {
 	            searchControlProvider: 'yandex#search'
 	        });
 
-	    var coords = [
-		    $coords
-		],
+	    videoCities = new ymaps.GeoObjectCollection();
 
-	    myCollection = new ymaps.GeoObjectCollection({}, {
-
-	    });
-
-		for (var i = 0; i < coords.length; i++) {
-		    myCollection.add(new ymaps.Placemark(coords[i], {
+		for (var i = 0; i < videoCitiesCoords.length; i++) {
+		    videoCities.add(new ymaps.Placemark(videoCitiesCoords[i], {
 		    	hasBaloon: false,
 		    	videoId: videoIds[i],
 		    }));
 		}
 
-		map.geoObjects.add(myCollection);
+		map.geoObjects.add(videoCities);
 
-		myCollection.events.add('click', function (e) {
+		videoCities.events.add('click', function (e) {
 			playVideo(e.get('target').properties.get('videoId'));
+		});
+
+	    imageCities = new ymaps.GeoObjectCollection();
+
+		for (var i = 0; i < imageCitiesCoords.length; i++) {
+		    imageCities.add(new ymaps.Placemark(imageCitiesCoords[i], 
+		    	{
+			    	hasBaloon: false,
+			    	iconColor: 'yellow',
+			    	cityId: cityIds[i],
+			    }, 
+			    {
+			    	iconColor: 'yellow'
+				}
+			));
+		}
+
+		map.geoObjects.add(imageCities);
+
+		imageCities.events.add('click', function (e) {
+			loadCityData(e.get('target').properties.get('cityId'));
 		});
 	});
 ";?>
