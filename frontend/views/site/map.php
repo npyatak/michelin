@@ -58,23 +58,7 @@ $script = "
 	            zoom: 3,
 	            controls: ['zoomControl', 'fullscreenControl']
 	    	});
-
-	    videoCities = new ymaps.GeoObjectCollection();
-
-		for (var i = 0; i < videoCitiesCoords.length; i++) {
-		    videoCities.add(new ymaps.Placemark(videoCitiesCoords[i], {
-		    	hasBaloon: false,
-		    	videoId: videoIds[i],
-		    }));
-		}
-
-		map.geoObjects.add(videoCities);
-
-		videoCities.events.add('click', function (e) {
-			$('.city').hide();
-			playVideo(e.get('target').properties.get('videoId'));
-		});
-
+	    
 	    imageCities = new ymaps.GeoObjectCollection();
 
 		for (var i = 0; i < imageCitiesCoords.length; i++) {
@@ -94,6 +78,22 @@ $script = "
 
 		imageCities.events.add('click', function (e) {
 			loadCityData(e.get('target').properties.get('cityId'));
+		});
+
+	    videoCities = new ymaps.GeoObjectCollection();
+
+		for (var i = 0; i < videoCitiesCoords.length; i++) {
+		    videoCities.add(new ymaps.Placemark(videoCitiesCoords[i], {
+		    	hasBaloon: false,
+		    	videoId: videoIds[i],
+		    }));
+		}
+
+		map.geoObjects.add(videoCities);
+
+		videoCities.events.add('click', function (e) {
+			$('.city').hide();
+			playVideo(e.get('target').properties.get('videoId'));
 		});
 	});
 ";?>
