@@ -1127,14 +1127,14 @@ body.overflow {
     padding: 50px;
     z-index: 99;
 }
-.auth>div:nth-child(1) {
+.auth>div:nth-child(2) {
     margin-bottom: 20px;
     font-size: 29px;
     color: #ffe500;
     font-family: "MichelinSemiBold", sans-serif;
     text-align: center;
 }
-.auth>div:nth-child(2) {
+.auth>div:nth-child(3) {
     margin-bottom: 20px;
     font-size: 12px;
     line-height: 21px;
@@ -1144,10 +1144,10 @@ body.overflow {
     text-align: center;
     text-transform: uppercase;
 }
-.auth>div:nth-child(3) {
+.auth>div:nth-child(4) {
     text-align: center;
 }
-.auth>div:nth-child(3) a {
+.auth>div:nth-child(4) a {
     display: inline-block;
     margin: 0 10px;
     width: 50px;
@@ -1156,12 +1156,12 @@ body.overflow {
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
-.auth>div:nth-child(3) a.vk {
+.auth>div:nth-child(4) a.vk {
     background: url('../img/vk.png') no-repeat center;
     -webkit-background-size: contain;
     background-size: contain;
 }
-.auth>div:nth-child(3) a.fb {
+.auth>div:nth-child(4) a.fb {
     background: url('../img/facebook.png') no-repeat center;
     -webkit-background-size: contain;
     background-size: contain;

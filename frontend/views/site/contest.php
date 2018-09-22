@@ -31,6 +31,7 @@ use yii\helpers\Html;
         </div>
 
         <div class="auth" style="display: none;">
+            <div class="close-popup"><i class="fa fa-close"></i></div>
             <div><span>Авторизуйся</span></div>
             <div>для участия в викторине необходимо авторизоваться с использованием аккаунта социальной сети</div>
             <?=\frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
@@ -45,7 +46,15 @@ use yii\helpers\Html;
                 $('.overlay').show();
 
                 return false;
-            })
+            });
+
+            $(document).on('click', '.auth .close-popup', function(e) {
+                $('.start-question').show();
+                $('.auth').hide();
+                $('.overlay').hide();
+
+                return false;
+            });
         ";?>
     <?php else:?>
         <div id="question">
