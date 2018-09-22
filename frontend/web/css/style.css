@@ -682,7 +682,7 @@ header .main_menu span {
 }
 
 .index_page .city .text_block .slimScrollDiv {
-    height: 140px !important;
+    /*height: 140px !important;*/
 }
 .index_page .city .text_block .slimScrollBar {
     opacity: 0 !important;
@@ -692,9 +692,9 @@ header .main_menu span {
 }
 .index_page .city .text_block .wrap {
     max-width: 465px;
-    padding-bottom: 10px;
-    max-height: 140px;
-    height: 140px !important;
+    /*padding-bottom: 10px;*/
+    /*max-height: 140px;*/
+    /*height: 140px !important;*/
     overflow: auto;
 }
 .index_page .ss-content {
@@ -941,7 +941,7 @@ header .main_menu span {
 @media (min-width: 768px) {
     .about_page .about_tire {
         background: url(../img/tire.png) 0 100%/contain no-repeat;
-        width: 52vw;
+        width: 46vw;
         height: 79.5vh;
         position: absolute;
         right: 0;
