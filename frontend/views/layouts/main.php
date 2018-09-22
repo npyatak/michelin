@@ -103,6 +103,9 @@ AppAsset::register($this);
                     <a href="http://michelin.promo-group.org/pdf/rules_michelin_31.08.2018_v8.pdf">
                         Правила
                     </a>
+                    <a href="<?=Url::toRoute(['site/map']);?>">
+                        Карта
+                    </a>
                 </nav>
             </div>
         </div>
