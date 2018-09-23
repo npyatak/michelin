@@ -57,8 +57,8 @@ function loadCityData(city_id) {
         destroy: true
     });
     $(".niceScroll").css("height","auto");
+    
     setTimeout(function() { 
-        console.log($(".niceScroll").height());
         if( $(".niceScroll").height() > "130" ){
             $('.city').find(".niceScroll").slimScroll({
                 height: "140px",

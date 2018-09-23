@@ -20,27 +20,27 @@ use common\models\City;
 
 <?php 
 $videoCitiesCoords = [];
-$videoIds = [];
+$videoCityIds = [];
 $imageCitiesCoords = [];
 $cityIds = [];
 
 foreach ($cities as $city) {
 	if($city->type == City::TYPE_VIDEO) {
 		$videoCitiesCoords[] = '['.$city->coord.']';
-		$videoIds[] = '"'.$city->video_yt_id.'"';
+		$videoCityIds[] = '"'.$city->id.'"';
 	} else {
 		$imageCitiesCoords[] = '['.$city->coord.']';
 		$cityIds[] = '"'.$city->id.'"';
 	}
 }
 $videoCitiesCoords = implode(', ', $videoCitiesCoords);
-$videoIds = implode(', ', $videoIds);
+$videoCityIds = implode(', ', $videoCityIds);
 $imageCitiesCoords = implode(', ', $imageCitiesCoords);
 $cityIds = implode(', ', $cityIds);
 
 $script = "
-	var videoIds = [
-		$videoIds
+	var videoCityIds = [
+		$videoCityIds
 	];
 	var cityIds = [
 		$cityIds
@@ -85,15 +85,14 @@ $script = "
 		for (var i = 0; i < videoCitiesCoords.length; i++) {
 		    videoCities.add(new ymaps.Placemark(videoCitiesCoords[i], {
 		    	hasBaloon: false,
-		    	videoId: videoIds[i],
+		    	cityId: videoCityIds[i],
 		    }));
 		}
 
 		map.geoObjects.add(videoCities);
 
 		videoCities.events.add('click', function (e) {
-			$('.city').hide();
-			playVideo(e.get('target').properties.get('videoId'));
+			loadCityData(e.get('target').properties.get('cityId'));
 		});
 	});
 ";?>
