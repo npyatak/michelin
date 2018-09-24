@@ -685,7 +685,7 @@ header .main_menu span {
     /*height: 140px !important;*/
 }
 .city .text_block .slimScrollBar {
-    opacity: 0 !important;
+    /*opacity: 0 !important;*/
 }
 .city .text_block .slimScrollDiv:hover .slimScrollBar {
     opacity: .4 !important;
