@@ -120,7 +120,7 @@ $(window).on('load', function() {
         player = new YT.Player('ytplayer', {
             height: '360',
             width: '640',
-            videoId: 'VZNllpqMNCo',
+            videoId: '042UyeWlC5I',
             playerVars: {
                 controls: 0,
                 rel: 0,
