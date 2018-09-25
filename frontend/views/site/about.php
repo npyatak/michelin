@@ -22,7 +22,7 @@
                 <div>вам под колёса!</div>
             </div>
             <div class="actions-wrap">
-                <a class="btn btn-oblique" target="_blank" href="https://michelin.ru/RU/ru/tires/products/x-ice-north-4.html"><span>Подробнее</span></a>
+                <a class="btn btn-oblique" target="_blank" href="https://www.michelin.ru/auto/tyres/x-ice-north-4"><span>Подробнее</span></a>
                 <span class="btn btn-oblique play-video" id="about-play-video" data-id="VZNllpqMNCo"><span>Смотреть видео</span></span>
             </div>
         </div>
