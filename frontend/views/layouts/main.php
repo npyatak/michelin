@@ -130,6 +130,15 @@ AppAsset::register($this);
 
     <?= $content;?>
 
+    <?php $preUrl = Yii::$app->params['preUrl'];
+    $script = "
+            window.App.state.request_pre_url = '$preUrl';
+        ";
+
+        $this->registerJs($script, yii\web\View::POS_END);
+    ?>
+
+
 <?php $this->endBody() ?>
 </body>
 </html>
