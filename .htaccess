@@ -20,12 +20,22 @@ RewriteRule ^(admin)/$ /$1 [R=301,L]
 RewriteCond %{REQUEST_URI} ^/admin
 RewriteRule ^admin(/.+)?$ /backend/web/$1 [L,PT]
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^(.+)/$
-RewriteRule ^(.+)/$ /$1 [R=301,L]
+RewriteCond %{REQUEST_URI} ^/michelin2018/michelin2018/$
+RewriteRule ^(michelin2018/michelin2018)/$ /michelin2018 [R=302,L]
+RewriteCond %{REQUEST_URI} ^/michelin2018/michelin2018(/.+)?$
+RewriteRule ^michelin2018/michelin2018(/.+)?$ /michelin2018$1 [R=302,L]
+
+#RewriteCond %{REQUEST_URI} ^/michelin2018/$
+#RewriteRule ^(michelin2018)/$ /$1 [R=301,L]
+#RewriteCond %{REQUEST_URI} ^/michelin2018
+#RewriteRule ^michelin2018(/.+)?$ /frontend/web/$1 [L,PT]
 
 RewriteCond %{REQUEST_URI} ^.*$
 RewriteRule ^(.*)$ /frontend/web/$1
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # www.site.com -> site.com
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
