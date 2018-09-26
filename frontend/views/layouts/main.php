@@ -68,8 +68,8 @@ AppAsset::register($this);
             <div class="mobile-menu__top">
                 <a href="<?=Url::home();?>" class="logo"></a>
                 <a href="#" class="toggle-menu show-ipad-mobile">
-                    <img src="./img/helpers/menu-open.svg" class="fa-bars now-active" />
-                    <img src="./img/helpers/menu-close.svg" class="fa-times" />
+                    <img src="<?=Url::toRoute('/img/helpers/menu-open.svg');?>" class="fa-bars now-active" />
+                    <img src="<?=Url::toRoute('/img/helpers/menu-close.svg');?>" class="fa-times" />
                 </a>
             </div>
             <div class="hidden-menu hidden">
