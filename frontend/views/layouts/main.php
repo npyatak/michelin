@@ -57,7 +57,7 @@ AppAsset::register($this);
             <a href="<?=Url::toRoute(['site/contest']);?>">
                 Конкурс
             </a>
-            <a href="http://michelin.promo-group.org/pdf/rules_michelin_31.08.2018_v8.pdf">
+            <a href="http://michelin.promo-group.org/pdf/rules_michelin.pdf">
                 Правила
             </a>
             <a href="<?=Url::toRoute(['site/map']);?>">
@@ -100,7 +100,7 @@ AppAsset::register($this);
                     <a href="<?=Url::toRoute(['site/contest']);?>">
                         Конкурс
                     </a>
-                    <a href="http://michelin.promo-group.org/pdf/rules_michelin_31.08.2018_v8.pdf">
+                    <a href="http://michelin.promo-group.org/pdf/rules_michelin.pdf">
                         Правила
                     </a>
                     <a href="<?=Url::toRoute(['site/map']);?>">
@@ -132,10 +132,10 @@ AppAsset::register($this);
 
     <?php $preUrl = Yii::$app->params['preUrl'];
     $script = "
-            window.App.state.request_pre_url = '$preUrl';
+            window.pre_url = '$preUrl';
         ";
 
-        $this->registerJs($script, yii\web\View::POS_END);
+        $this->registerJs($script, yii\web\View::POS_HEAD);
     ?>
 
 

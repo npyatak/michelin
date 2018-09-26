@@ -820,14 +820,14 @@ window.App = (function (app) {
     app.request.getCityNames = function (callback, failCallback) {
 
         return $.ajax({
-            url: app.state.request_pre_url + '/city-list'
+            url: window.pre_url + '/city-list'
         }).done(callback).fail(failCallback);
 
     };
     app.request.getCityData = function (city_id, callback, failCallback) {
 
         return $.ajax({
-            url: app.state.request_pre_url + '/city-data/' + city_id
+            url: window.pre_url + '/city-data/' + city_id
         }).done(callback).fail(failCallback);
 
     };
