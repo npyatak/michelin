@@ -33,7 +33,7 @@ function loadCityData(city_id) {
 
         $('.text_block').find(".city-title").html(data.name);
         $('.text_block').find(".wrap").html(data.descr);
-        $('.text_block').find(".city_img .video").css("background-image", "url('/img/city/" + city_id + ".jpg')");
+        $('.text_block').find(".city_img .video").css("background-image", "url('"+window.pre_url+"/img/city/" + city_id + ".jpg')");
         $('.text_block').find(".text").attr('ss-container', true);
 
         var str = '';
