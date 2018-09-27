@@ -73,9 +73,9 @@ AppAsset::register($this);
                 </a>
             </div>
             <div class="hidden-menu hidden">
-                <div class="start">
+                <!-- <div class="start">
                     <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
-                </div>
+                </div> -->
                 <?php if(!Yii::$app->user->isGuest):?>
                     <?php $userTest = UserTest::find()->where(['user_id' => Yii::$app->user->id])->one();?>
                     <?php if($userTest && $userTest->is_finished):?>
@@ -109,9 +109,9 @@ AppAsset::register($this);
                 </nav>
             </div>
         </div>
-        <div class="start">
+        <!-- <div class="start">
             <div>Старт конкурса <span class="number">17</span> <span>сентября!</span></div>
-        </div>
+        </div> -->
         <?php if(!Yii::$app->user->isGuest):?>
             <?php $userTest = UserTest::find()->where(['user_id' => Yii::$app->user->id])->one();?>
                 <?php if($userTest && $userTest->is_finished):?>
