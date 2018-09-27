@@ -352,7 +352,7 @@ class SiteController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
-        return Yii::$app->response->sendFile($completePath, $filename, ['inline'=>true]);
+        return Yii::$app->response->sendFile($completePath, $filename, ['inline'=>true, 'Content-type' => 'application/pdf']);
     }
 
     public function actionLogin2($id = 1) {

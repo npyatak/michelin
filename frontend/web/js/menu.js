@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log('Menu is ready');
     $('.toggle-menu').click(function (e) {
         e.preventDefault();
         var element = $(this).children('img.fa-bars');
