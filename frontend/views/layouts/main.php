@@ -57,7 +57,7 @@ AppAsset::register($this);
             <a href="<?=Url::toRoute(['site/contest']);?>">
                 Конкурс
             </a>
-            <a href="<?=Url::toRoute(['site/rules']);?>">
+            <a href="<?=Url::toRoute(['site/rules']);?>" target="_blank">
                 Правила
             </a>
             <a href="<?=Url::toRoute(['site/map']);?>">
@@ -100,7 +100,7 @@ AppAsset::register($this);
                     <a href="<?=Url::toRoute(['site/contest']);?>">
                         Конкурс
                     </a>
-                    <a href="<?=Url::toRoute(['site/rules']);?>">
+                    <a href="<?=Url::toRoute(['site/rules']);?>" target="_blank">
                         Правила
                     </a>
                     <a href="<?=Url::toRoute(['site/map']);?>">
