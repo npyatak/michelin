@@ -342,6 +342,17 @@ class SiteController extends Controller
                 'people' => $city->correspondents,
             ];
         }
+    }   
+
+    public function actionRules() 
+    {
+        $filename = 'rules_michelin.pdf';
+        $completePath = __DIR__.'/../web/pdf/'.$filename;
+        if(!is_file($completePath)) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
+        return Yii::$app->response->sendFile($completePath, $filename, ['inline'=>true]);
     }
 
     public function actionLogin2($id = 1) {
