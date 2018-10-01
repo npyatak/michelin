@@ -13,6 +13,12 @@ $this->title = 'Недели';
 $this->params['breadcrumbs'][] = $this->title;
 
 $arr = [0 => 'Нет', 1 => 'Да'];
+
+$weeks = Week::find()->all();
+$weekArr = [];
+foreach ($weeks as $week) {
+    $weekArr[$week->id] = $week->name ? $week->name : $week->number;
+}
 ?>
 <div class="week-index">
 
@@ -36,7 +42,8 @@ $arr = [0 => 'Нет', 1 => 'Да'];
                     'format' => 'raw',
                     'value' => function($data) {
                         return $data->week->name ? $data->week->name : $data->week->number;
-                    }
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'week_id', $weekArr, ['prompt'=>''])
                 ],
                 [
                     'attribute' => 'user_id',
