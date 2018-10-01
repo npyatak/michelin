@@ -1515,3 +1515,35 @@ body.overflow {
 .ui-loader {
     display: none;
 }
+.winners {
+    max-width: 800px;
+    margin: auto;
+    font-family: MichelinSemiBold;
+    text-align: center;
+}
+.winners .title {
+    color: #ffe921;
+    font-size: 45px;
+    margin: 70px 0 50px 0;
+}
+.winners .elem {
+    display: inline-block;
+    margin: 12px 40px 12px 0;
+    padding: 5px 0 10px 15px;
+    vertical-align: top;
+    background-color: #004f9e;
+    width: 310px;
+    height: 75px;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+}
+.winners .elem .name {
+    font-size: 22px;
+    font-weight: bold;
+}
+.winners .elem .week {
+    font-family: Arial;
+    margin-top: 5px;
+    font-size: 16px;
+}

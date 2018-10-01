@@ -267,6 +267,15 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionWinners()
+    {
+        $winners = UserTest::find()->where(['is_finished' => 1])->orderBy('week_id, score DESC, time DESC')->joinWith('user')->groupBy('week_id')->all();
+
+        return $this->render('winners', [
+            'winners' => $winners,
+        ]);
+    }
+
     public function actionMap()
     {
         $cities = City::find()/*->where(['type' => City::TYPE_VIDEO])*/->where(['not', ['coord' => '']])->all();
