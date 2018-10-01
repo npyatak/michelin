@@ -9,7 +9,7 @@ use common\models\Week;
 /* @var $searchModel common\models\search\WeekSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Недели';
+$this->title = 'Результаты';
 $this->params['breadcrumbs'][] = $this->title;
 
 $arr = [0 => 'Нет', 1 => 'Да'];
@@ -23,10 +23,7 @@ foreach ($weeks as $week) {
 <div class="week-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Добавить неделю', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    
     <?php Pjax::begin(); ?>    
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
