@@ -63,6 +63,9 @@ AppAsset::register($this);
             <a href="<?=Url::toRoute(['site/map']);?>">
                 Карта
             </a>
+            <a href="<?=Url::toRoute(['site/winners']);?>">
+                Победители
+            </a>
         </nav>
         <div class="mobile-menu show-ipad-mobile">
             <div class="mobile-menu__top">
@@ -105,6 +108,9 @@ AppAsset::register($this);
                     </a>
                     <a href="<?=Url::toRoute(['site/map']);?>">
                         Карта
+                    </a>
+                    <a href="<?=Url::toRoute(['site/winners']);?>">
+                        Победители
                     </a>
                 </nav>
             </div>
