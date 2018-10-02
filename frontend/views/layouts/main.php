@@ -146,6 +146,18 @@ AppAsset::register($this);
 
 
 <?php $this->endBody() ?>
+
+<!-- DMP CODE -->
+<script type='text/javascript'>
+  (function (window, document) {
+    var elem = document.createElement('script');
+    elem.src = '//x01.aidata.io/pixel.js?pixel=4974832&v=' + Date.now();
+    elem.type='text/javascript';elem.async = true;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(elem, s);
+  })(window, window.document);
+</script>
+
 </body>
 </html>
 <?php $this->endPage() ?>
