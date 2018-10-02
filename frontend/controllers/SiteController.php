@@ -269,18 +269,10 @@ class SiteController extends Controller
 
     public function actionWinners()
     {
-        $finishedWeekIds = [];
-        $weeks = Week::find()->all();
-        foreach ($weeks as $week) {
-            if($week->status == Week::STATUS_FINISHED) {
-                $finishedWeekIds[] = $week->id;
-            }
-        }
-        
-        $winners = UserTest::find()->where(['is_finished' => 1])->andWhere(['in', 'week_id', $finishedWeekIds])->orderBy('week_id, score DESC, time DESC')->joinWith('user')->groupBy('week_id')->all();
+        $weekWinners = Week::find()->where(['not', ['winner_id' => null]])->joinWith('winner')->all();
 
         return $this->render('winners', [
-            'winners' => $winners,
+            'weekWinners' => $weekWinners,
         ]);
     }
 

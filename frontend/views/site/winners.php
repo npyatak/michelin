@@ -1,3 +1,7 @@
+<?php
+use yii\helpers\Url;
+?>
+
 <?php $this->title = 'Лидеры викторины';?>
 
 <div class="page_wrapper">
@@ -7,16 +11,16 @@
 	    </div>
 	</div>
 
-	<?php if($winners):?>
+	<?php if($weekWinners):?>
 		<div class="winners">
 			<h1 class="title text-center"><?=$this->title;?></h1>
-			<?php foreach ($winners as $winner):?>
+			<?php foreach ($weekWinners as $w):?>
 				<div class="elem">
-					<div class="name"><?=$winner->user->fullName;?></div>
-					<div class="week">Этап <?=$winner->week->number;?></div>
+					<div class="name"><?=$w->winner->fullName;?></div>
+					<div class="week">Этап <?=$w->number;?></div>
 				</div>
 			<?php endforeach;?>
 		</div>
 	<?php endif;?>
-	<div class="text-center mt-5"><a class="btn btn-oblique" href="/"><span>На главную</span></a></div>
+	<div class="text-center mt-5"><a class="btn btn-oblique" href="<?=Url::home();?>"><span>На главную</span></a></div>
 </div>

@@ -42,7 +42,7 @@ class Week extends \yii\db\ActiveRecord
     {
         return [
             [['number', 'name', 'dateStartFormatted', 'dateEndFormatted'], 'required'],
-            [['number'], 'integer'],
+            [['number', 'winner_id'], 'integer'],
             [['description'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['image'], 'string', 'max' => 255],
@@ -66,6 +66,7 @@ class Week extends \yii\db\ActiveRecord
             'date_end' => 'Дата окончания этапа',
             'dateStartFormatted' => 'Дата начала этапа',
             'dateEndFormatted' => 'Дата окончания этапа',
+            'winner_id' => 'Победитель',
         ];
     }
 
@@ -162,5 +163,10 @@ class Week extends \yii\db\ActiveRecord
             11 => ['ноябрь', 'ноября'],
             12 => ['декабрь', 'декабря'],
         ];
+    }
+
+    public function getWinner()
+    {
+        return $this->hasOne(User::className(), ['id' => 'winner_id']);
     }
 }

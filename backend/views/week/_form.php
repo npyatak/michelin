@@ -6,6 +6,15 @@ use yii\widgets\ActiveForm;
 use common\components\CustomCKEditor;
 use kartik\datetime\DateTimePicker;
 use common\components\ElfinderInput;
+use common\models\UserTest;
+
+$users = [];
+$userTests = UserTest::find()->where(['week_id' => $model->id, 'is_finished' => 1])->joinWith('user')->all();
+if(!empty($userTests)) {
+    foreach ($userTests as $ut) {
+        $users[$ut->user->id] = $ut->user->fullName.' ('.$ut->right_answers.' прав. '.date('i:s:ms', $ut->time).')';
+    }
+}
 ?>
 
 <div class="week-form">
@@ -54,6 +63,14 @@ use common\components\ElfinderInput;
     </div>
 
     <?= $form->field($model, 'description')->textarea() ?>
+
+    <?php if(!empty($users)):?>
+    <div class="row">
+        <div class="col-sm-6">
+            <?= $form->field($model, 'winner_id')->dropDownList($users, ['prompt' => '...']) ?>
+        </div>
+    </div>
+    <?php endif;?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
