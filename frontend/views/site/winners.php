@@ -22,5 +22,5 @@ use yii\helpers\Url;
 			<?php endforeach;?>
 		</div>
 	<?php endif;?>
-	<div class="text-center mt-5"><a class="btn btn-oblique" href="<?=Url::home();?>"><span>На главную</span></a></div>
+	<div class="text-center mt-5"><a class="btn btn-oblique" href="<?=Url::toRoute(['site/index']);?>"><span>На главную</span></a></div>
 </div>
