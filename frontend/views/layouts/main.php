@@ -51,7 +51,7 @@ AppAsset::register($this);
             <a href="<?=Url::toRoute(['site/index']);?>">
                 Рули зимой
             </a>
-            <a href="https://xin4.michelin.ru?utm_source=match_tv&utm_medium=tyre_page&utm_campaign=rulizimoy">
+            <a href="<?=Url::toRoute(['site/about']);?>">
                 О шине
             </a>
             <a href="<?=Url::toRoute(['site/contest']);?>">
@@ -97,7 +97,7 @@ AppAsset::register($this);
                     <a href="<?=Url::toRoute(['site/index']);?>">
                         Рули зимой
                     </a>
-                    <a href="https://xin4.michelin.ru?utm_source=match_tv&utm_medium=tyre_page&utm_campaign=rulizimoy">
+                    <a href="<?=Url::toRoute(['site/about']);?>">
                         О шине
                     </a>
                     <a href="<?=Url::toRoute(['site/contest']);?>">
