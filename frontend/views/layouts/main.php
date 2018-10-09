@@ -51,7 +51,7 @@ AppAsset::register($this);
             <a href="<?=Url::toRoute(['site/index']);?>">
                 Рули зимой
             </a>
-            <a href="<?=Url::toRoute(['site/about']);?>">
+            <a href="https://xin4.michelin.ru?utm_source=match_tv&utm_medium=tyre_page&utm_campaign=rulizimoy">
                 О шине
             </a>
             <a href="<?=Url::toRoute(['site/contest']);?>">
@@ -97,7 +97,7 @@ AppAsset::register($this);
                     <a href="<?=Url::toRoute(['site/index']);?>">
                         Рули зимой
                     </a>
-                    <a href="<?=Url::toRoute(['site/about']);?>">
+                    <a href="https://xin4.michelin.ru?utm_source=match_tv&utm_medium=tyre_page&utm_campaign=rulizimoy">
                         О шине
                     </a>
                     <a href="<?=Url::toRoute(['site/contest']);?>">
@@ -156,6 +156,16 @@ AppAsset::register($this);
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(elem, s);
   })(window, window.document);
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126451207-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126451207-1');
 </script>
 
 </body>

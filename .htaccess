@@ -4,11 +4,9 @@ Options -Indexes
 Options FollowSymlinks
 RewriteEngine on
 
-#RewriteCond %{ENV:HTTPS} !on
-#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 #AuthType Basic
 #AuthName "Password Protected Area"
@@ -33,8 +31,8 @@ RewriteRule ^(michelin2018)/$ /$1 [R=301,L]
 RewriteCond %{REQUEST_URI} ^/michelin2018
 RewriteRule ^michelin2018(/.+)?$ /frontend/web/$1 [L,PT]
 
-#RewriteCond %{REQUEST_URI} ^.*$
-#RewriteRule ^(.*)$ /frontend/web/$1
+RewriteCond %{REQUEST_URI} ^.*$
+RewriteRule ^(.*)$ /frontend/web/$1
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} ^(.+)/$

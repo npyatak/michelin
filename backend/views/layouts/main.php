@@ -43,6 +43,11 @@ AppAsset::register($this);
                 ['label' => 'Результаты', 'url' => ['/user-test']],
             ]
         ],
+        ['label' => 'Творческий конкурс', 'items' => [
+                ['label' => 'Этапы', 'url' => ['/contest-stage']],
+                ['label' => 'Работы', 'url' => ['/post']],
+            ]
+        ],
         ['label' => 'Города', 'url' => ['/city']],
         ['label' => 'Страницы', 'url' => ['/page']],
     ];

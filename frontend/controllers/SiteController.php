@@ -5,10 +5,12 @@ use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\NotFoundHttpException;
+use yii\web\ForbiddenHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
+use yii\web\UploadedFile;
 use frontend\models\ContactForm;
 
 use common\models\City;
@@ -17,6 +19,9 @@ use common\models\Week;
 use common\models\UserTest;
 use common\models\Question;
 use common\models\Answer;
+use common\models\Post;
+use common\models\search\PostSearch;
+use common\models\ContestStage;
 
 /**
  * Site controller
@@ -33,10 +38,10 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
+                'only' => ['login', 'logout'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['login', 'index'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -355,13 +360,13 @@ class SiteController extends Controller
 
     public function actionRules() 
     {
-        $filename = 'rules_michelin.pdf';
-        $completePath = __DIR__.'/../web/pdf/'.$filename;
+        $file = 'rules_michelin.pdf';
+        $completePath = __DIR__.'/../web/pdf/'.$file;
         if(!is_file($completePath)) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
-        return Yii::$app->response->sendFile($completePath, $filename, ['inline'=>true, 'Content-type' => 'application/pdf', 'Content-Disposition' => 'attachment']);
+        return Yii::$app->response->sendFile($completePath, $file, ['inline'=>true, 'Content-type' => 'application/pdf', 'Content-Disposition' => 'attachment']);
     }
 
     public function actionLogin2($id = 1) {
