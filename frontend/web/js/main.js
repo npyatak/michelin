@@ -15,7 +15,7 @@ function loadCityData(city_id) {
         $(".marker").removeClass('active');
 
         if (data.type == 1) {
-            $('.city').find('.play-video').attr('data-id', data.yt_id).show();
+            $('.city').find('.play-video').attr('data-id', data.yt_id).trigger("refresh").show();
             $('.city').find('.text_block').addClass('show-video');
             //window.player.loadVideoById(data.yt_id);
             //playVideo(data.yt_id);
@@ -48,7 +48,7 @@ function loadCityData(city_id) {
         $('.scores.scores_2').attr('data-score', data.score2);
         $('.scores.scores_3').attr('data-score', data.score3);
 
-        $('.show-map-link').data('coord', data.coord);
+        $('.show-map-link').attr('data-coord', data.coord);
 
         SimpleScrollbar.initAll();
     });
@@ -92,7 +92,7 @@ $(document).ready(function () {
             e.preventDefault();
             // $('.main_screen, .main_top').show();
             // $('.main_screen, .main_top').css("opacity","1");
-            playVideo($(this).data('id'));
+            playVideo($(this).attr('data-id'));
         })
         .on('click', '.video-modal-close', function (e) {
             e.preventDefault();
@@ -104,7 +104,7 @@ $(document).ready(function () {
         })
         .on('click', '.show-map-link', function(e) {
             e.preventDefault();
-            openMap($(this).data('coord'));
+            openMap($(this).attr('data-coord'));
         });
 });
 

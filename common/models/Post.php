@@ -118,11 +118,11 @@ class Post extends \yii\db\ActiveRecord
     }
 
     public function getSrcPath() {
-        return __DIR__ . '/../../frontend/web/uploads/post/'.$this->user_id.'/';
+        return __DIR__ . '/../../frontend/web/uploads/post/';
     }
 
     public function getSrcUrl() {
-        return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->user_id.'/'.$this->media);
+        return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->media);
     }
 
     // public static function getImageUrl($user_id, $media) {

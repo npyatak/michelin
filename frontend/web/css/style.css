@@ -1352,7 +1352,7 @@ body.overflow {
     display: block;
     clear: both;
 }
-.upload-inner form .image {
+.upload-inner form .image, .field-post-mediafile {
     float: left;
     width: 325px;
     height: 200px;
@@ -1372,7 +1372,7 @@ body.overflow {
 .upload-inner form .form-text {
     float: left;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 60px;
     padding: 20px;
     background: #E8EDF4;
 }
@@ -1857,4 +1857,21 @@ body.overflow {
 }
 .mt-5{
     margin-top: 20px;
+}
+.fileinput {
+    width: 325px;
+}
+.fileinput .thumbnail {
+    width: 325px!important;
+    height: 200px;
+    background-color: #1D4D94;
+    border: none;
+}
+.fileinput-preview {
+    max-width: 100%!important;
+} 
+.fileinput .btn {
+    width: 49%;
+    vertical-align: top;
+    margin-top: 0;
 }

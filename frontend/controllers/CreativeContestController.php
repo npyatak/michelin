@@ -20,6 +20,7 @@ use common\models\UserTest;
 use common\models\Question;
 use common\models\Answer;
 use common\models\Post;
+use common\models\PostAction;
 use common\models\search\PostSearch;
 use common\models\ContestStage;
 
@@ -36,6 +37,8 @@ class CreativeContestController extends Controller
 
     public function actionIndex()
     {
+        $pageSize = 100;
+        $newPost = null;
         $contestStage = $this->currentContestStage;
         if($contestStage == null) {
             return $this->redirect('index');
@@ -47,17 +50,29 @@ class CreativeContestController extends Controller
         $params['Post']['status'] = Post::STATUS_ACTIVE;
 
         $dataProvider = $searchModel->search($params);
+        $dataProvider->query->joinWith('user');
         $dataProvider->sort = [
             'defaultOrder' => ['score' => SORT_DESC],
             //'defaultOrder' => ['created_at'=>SORT_DESC],
             'attributes' => ['created_at', 'score'],
         ];
         $dataProvider->pagination = [
-            'pageSize' => 100,
+            'pageSize' => $pageSize,
         ];
+
+        if (Yii::$app->request->isAjax && isset($_GET['page'])) {
+            $dataProvider->pagination = [
+                'page' => $_GET['page'],
+                'pageSize' => $pageSize,
+            ];
+            return $this->renderAjax('_posts', [
+                'dataProvider' => $dataProvider,
+            ]);
+        }
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'newPost' => $newPost,
         ]);
     }
 
@@ -103,4 +118,51 @@ class CreativeContestController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionPostData($id)
+    {
+        if(Yii::$app->request->isAjax) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $post = Post::find()->where(['post.id' => $id])->joinWith('user')->one();
+            if($post === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+            
+            return  [
+                'score' => $post->score,
+                'fullName' => $post->user->fullName,
+                'id' => $post->id,
+                'yt_id' => $post->yt_id,
+                'text' => $post->text,
+                'url' => Url::to($post->url, true),
+                'srcUrl' => $post->srcUrl,
+            ];
+        }
+    } 
+
+    public function actionUserAction($id, $type=null) {        
+        if(Yii::$app->request->isAjax) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            switch ($type) {
+                case 'vk':
+                    $type = PostAction::TYPE_SHARE_VK;
+                    break;
+                case 'fb':
+                    $type = PostAction::TYPE_SHARE_FB;
+                    break;                
+                default:
+                    $type = PostAction::TYPE_LIKE;
+                    break;
+            }
+            $post = Post::findOne($id);
+            if($post !== null && $post->userCan($type)) {
+                PostAction::create($id, $type);
+
+                $newScore = Post::find()->select('score')->where(['id' => $id])->column();
+                return ['status' => 'success', 'score' => $newScore];
+            } else {
+                return ['status' => 'error'];
+            }
+        }
+    } 
 }

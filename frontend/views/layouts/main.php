@@ -19,6 +19,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
 
+    <?php if($_SERVER['HTTP_HOST'] != 'michelin.local'):?>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -33,6 +34,7 @@ AppAsset::register($this);
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TG6PTDF');</script>
     <!-- End Google Tag Manager -->
+    <?php endif;?>
 
     <?php $this->head() ?>
 </head>
@@ -147,6 +149,7 @@ AppAsset::register($this);
 
 <?php $this->endBody() ?>
 
+<?php if($_SERVER['HTTP_HOST'] != 'michelin.local'):?>
 <!-- DMP CODE -->
 <script type='text/javascript'>
   (function (window, document) {
@@ -167,6 +170,7 @@ AppAsset::register($this);
 
   gtag('config', 'UA-126451207-1');
 </script>
+<?php endif;?>
 
 </body>
 </html>

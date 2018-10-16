@@ -56,6 +56,10 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@eauth/messages',
                 ],
+                'file-input' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => dirname(__FILE__).'/../../vendor/2amigos/yii2-file-input-widget/src/messages/',
+                ],
             ],
         ],
         'log' => [

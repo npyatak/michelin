@@ -19,7 +19,7 @@ return [
             'class' => 'yii\web\urlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-        ],  
+        ], 
     ],
 
     'controllerMap' => [

@@ -34,7 +34,8 @@
         "2amigos/yii2-file-upload-widget": "~1.0",
         "kartik-v/yii2-editable": "1.7.6",
         "kartik-v/yii2-grid": "@dev",
-        "kop/yii2-scroll-pager": "dev-master"
+        "kop/yii2-scroll-pager": "dev-master",
+        "2amigos/yii2-file-input-widget": "~1.0"
     },
     "config": {
         "process-timeout": 1800,
