@@ -170,6 +170,8 @@ AppAsset::register($this);
 
   gtag('config', 'UA-126451207-1');
 </script>
+
+<img src="http://ads.adfox.ru/243543/getCode?p1=bwtla&p2=fohy&pfc=bwpaj&pfb=fydog&puid1=&puid2=&puid3=&puid4=&puid5=&puid6=&puid7=&puid8=&puid9=&puid10=&puid11=&puid12=&puid13=&puid16=&puid19=&puid20=&puid21=&puid22=&puid23=&puid24=&puid25=&puid60=&puid62=&puid63=&pr=[RANDOM]&ptrc=b">
 <?php endif;?>
 
 </body>
