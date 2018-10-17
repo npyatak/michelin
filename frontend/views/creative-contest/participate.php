@@ -38,6 +38,5 @@ $this->title = 'Поделиться историей';
         <?php ActiveForm::end(); ?>
     </div>
 </div>
-
-
+<div class="overlay" style="display:block"></div>
 

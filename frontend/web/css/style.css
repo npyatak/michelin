@@ -1308,6 +1308,7 @@ body.overflow {
     -ms-transition: .25s;
     -o-transition: .25s;
     transition: .25s;
+    z-index: 99;
 }
 .upload-form.active {
     -webkit-transform: translateY(0);
@@ -1346,6 +1347,11 @@ body.overflow {
     -ms-transform: skew(24deg);
     -o-transform: skew(24deg);
     transform: skew(24deg);
+}
+.upload-inner .has-error .form-control {
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 .upload-inner form::after {
     content: '';
@@ -1859,7 +1865,9 @@ body.overflow {
     margin-top: 20px;
 }
 .fileinput {
+    position: relative;
     width: 325px;
+    height: 100%;
 }
 .fileinput .thumbnail {
     width: 325px!important;
@@ -1874,4 +1882,80 @@ body.overflow {
     width: 49%;
     vertical-align: top;
     margin-top: 0;
+}
+.fileinput>div>span.btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border: 1px dashed #A6AB68;
+}
+.fileinput>div>span.btn:hover {
+    background: rgba(5,81,160,.2);
+}
+.fileinput>div>span.btn .fileinput-new {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160px;
+    -webkit-transform: translate(-50%,-50%) skewX(24deg);
+    -moz-transform: translate(-50%,-50%) skewX(24deg);
+    -ms-transform: translate(-50%,-50%) skewX(24deg);
+    -o-transform: translate(-50%,-50%) skewX(24deg);
+    transform: translate(-50%,-50%) skewX(24deg);
+    font: 13px 'MichelinSemiBold';
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: normal;
+    text-align: center;
+}
+.fileinput>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.fileinput>div>.btn span.fileinput-exists {
+    display: none !important;
+}
+.fileinput.fileinput-exists>div>span.btn {
+    display: none !important;
+}
+.fileinput>div>a.btn {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 160px;
+}
+.fileinput>div>a.btn::after {
+    content: 'Удалить';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) skewX(24deg);
+    -moz-transform: translate(-50%,-50%) skewX(24deg);
+    -ms-transform: translate(-50%,-50%) skewX(24deg);
+    -o-transform: translate(-50%,-50%) skewX(24deg);
+    transform: translate(-50%,-50%) skewX(24deg);
+    background: #0551A0;
+    padding: 0 10px;
+}
+.fileinput>div>a.btn:hover {
+    background: #0551A0;
+}
+.fileinput>div>a.btn:hover::after {
+    color: #fff;
+}
+.fileinput .thumbnail > img {
+    min-width: 100%;
 }

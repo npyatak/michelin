@@ -135,7 +135,11 @@ $(window).on('load', function() {
             $('#about-play-video').click()
             // playVideo($(this).data('id'));
         }
-    },2000)
+    },2000);
+
+    $('.fileinput').find('span.fileinput-new')
+        .html('Прикрепить фото или видео +')
+        .css({'display':'block'});
 });
 
 // let map = 'undefined';
