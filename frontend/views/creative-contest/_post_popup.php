@@ -1,34 +1,31 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+
+use common\models\Post;
 ?>
-<div class="city" data-id="">
+<div class="city" data-id="<?=$model ? $model->id : '';?>" style="<?=$model ? 'display: block;' : '';?>">
     <div class="close-popup"><i class="fa fa-close"></i></div>
-    <div class="text_block">
+    <div class="text_block <?=($model && $model->type == Post::TYPE_VIDEO) ? 'show-video' : '';?>">
         <div class="city_img">
-            <div class="video" data-id="">
-                <div id="launch-video" class="play-video" data-id=""></div>
+            <div class="video" style="<?=$model ? 'background-image: url('.$model->srcUrl.');' : '';?>">
+                <div id="launch-video" class="play-video" data-id="<?=$model ? $model->yt_id : '';?>" style="<?=($model && $model->type == Post::TYPE_IMAGE) ? 'display: none;' : '';?>"></div>
             </div>
         </div>
         <div class="city-title"></div>
         <div class="text">
-            <div class="wrap niceScroll"></div>
+            <div class="wrap niceScroll"><?=$model ? $model->text : '';?></div>
         </div>
     </div>
     <div class="info_block row">
         <div class="characteristics row">
             <div class="link"> 
-                <div>
-                    <div class="copy-wrap">
-                    </div>  
-                </div>
+                <?=$model ? Url::to($model->url, true) : '';?>
             </div>
-            <div>
-            </div>
-            <div>
-            </div>
+            <div></div>
+            <div></div>
             <div class="score">
-                Баллы: <span></span>
+                Баллы: <span><?=$model ? $model->score : '';?></span>
                 <?php if(Yii::$app->user->isGuest):?>
                     <?=Html::a('Голосовать', null, [
                         'class' => 'login-modal-btn',
@@ -41,7 +38,7 @@ use yii\helpers\Html;
             </div>
         </div>
         <div class="peoples row sss">
-            <div></div>
+            <div><?=$model ? $model->user->fullName : '';?></div>
         </div>
     </div>
 </div>

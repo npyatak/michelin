@@ -25,7 +25,7 @@ $this->title = 'Поделиться историей';
                 'customView' => '@frontend/views/creative-contest/_fileinput_custom_view.php',
             ])->label(false);?>
 
-            <?= $form->field($model, 'yt_id', ['template' => '<div class="form-link">{label}<div>{input}</div></div>'])->textInput()->label('или ссылка на видео на youtube') ?>
+            <?= $form->field($model, 'link', ['template' => '<div class="form-link">{label}<div>{input}</div></div>'])->textInput()->label('или ссылка на видео на youtube') ?>
 
             <?= $form->field($model, 'text', ['template' => '<div class="form-text">{label}<div>{input}</div></div>'])->textarea()->label('ваша история:') ?>
 

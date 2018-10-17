@@ -5,6 +5,16 @@ use yii\widgets\ListView;
 use kop\y2sp\ScrollPager;
 ?>
 
+<?php if(Yii::$app->user->isGuest):?>
+    <div class="auth" style="display: none;">
+        <div class="close-popup"><i class="fa fa-close"></i></div>
+        <div><span>Авторизуйся</span></div>
+        <div>для голосования необходимо авторизоваться с использованием аккаунта социальной сети</div>
+        <?=\frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
+    </div>
+    <div class="overlay" style="display: none"></div>
+<?php endif;?>
+
 <?php if($newPost):?>
 <div class="confirm-upload">
     <div class="confirm-title">Ссылка на историю</div>
@@ -39,7 +49,15 @@ use kop\y2sp\ScrollPager;
     </div>
 </div>
     
-<?=$this->render('_post_popup', ['showMap' => false]);?>
+<?=$this->render('_post_popup', ['model' => $model, 'showMap' => false]);?>
+
+<div class="video-modal" id="video">
+    <div class="modalType2-content">
+        <div class="video-modal-close"></div>
+        <div id="ytplayer"></div>
+    </div>
+</div>
+<div class="overlay"></div>
 
 <?php
 $script = "
@@ -62,7 +80,7 @@ $script = "
     });
 
     $(document).on('click', '.item', function(e) {
-        var id = $(this).data('id');
+        var id = $(this).attr('data-id');
         var item = $(this);
         $.ajax({
             data: 'id='+id,
@@ -70,7 +88,7 @@ $script = "
             type: 'get',
             success: function(data) {
                 $('.city').data('id', data.id);
-                if (data.type == 1) {
+                if (data.type == 2) {
                     $('.city').find('.play-video').attr('data-id', data.yt_id).show();
                     $('.city').find('.text_block').addClass('show-video');
                 } else {
@@ -80,7 +98,7 @@ $script = "
                 $('.main_screen, .main_top').css('opacity','0');
                 $('.city').show();
 
-                $('.text_block').find('.wrap').html(data.text);
+                $('.text_block .wrap').html(data.text);
                 $('.link').html(data.url);
 
                 $('.text_block').find('.city_img .video').css('background-image', 'url('+data.srcUrl+')');
@@ -89,6 +107,8 @@ $script = "
                 $('.city .peoples').html('<div>'+data.fullName+'</div>');
 
                 $('.score span').html(data.score);
+
+                history.pushState(null, null, '".Url::toRoute(['creative-contest/index'])."?id='+id);
             }
         });
 
@@ -107,7 +127,13 @@ $script = "
             }
         });
     });
-";?>
+
+    $(document).on('click', '.login-modal-btn', function(e) {
+        $('.auth').show();
+        $('.overlay').show();
+    });
+";
+?>
         
 
 <?php $this->registerJs($script, yii\web\View::POS_END);?>

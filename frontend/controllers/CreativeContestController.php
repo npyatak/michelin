@@ -35,7 +35,7 @@ class CreativeContestController extends Controller
         $this->currentContestStage = ContestStage::getCurrent();
     }
 
-    public function actionIndex()
+    public function actionIndex($id = null)
     {
         $pageSize = 100;
         $newPost = null;
@@ -46,14 +46,12 @@ class CreativeContestController extends Controller
 
         $searchModel = new PostSearch();
         $params = Yii::$app->request->queryParams;
-        $params['Post']['contest_stage_id'] = $contestStage->id;
-        $params['Post']['status'] = Post::STATUS_ACTIVE;
+        $params['PostSearch']['contest_stage_id'] = $contestStage->id;
 
         $dataProvider = $searchModel->search($params);
-        $dataProvider->query->joinWith('user');
+        $dataProvider->query->andWhere(['post.status' => Post::STATUS_ACTIVE])->joinWith('user');
         $dataProvider->sort = [
             'defaultOrder' => ['score' => SORT_DESC],
-            //'defaultOrder' => ['created_at'=>SORT_DESC],
             'attributes' => ['created_at', 'score'],
         ];
         $dataProvider->pagination = [
@@ -70,9 +68,15 @@ class CreativeContestController extends Controller
             ]);
         }
 
+        $model = null;
+        if($id) {
+            $model = Post::findOne($id);
+        }
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'newPost' => $newPost,
+            'model' => $model,
         ]);
     }
 
@@ -93,6 +97,7 @@ class CreativeContestController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->user_id = Yii::$app->user->id;
             $model->contest_stage_id = $contestStage->id;
+            $model->status = Post::STATUS_NEW;
             
             if($model->save()) {
                 $path = $model->srcPath;
@@ -104,11 +109,14 @@ class CreativeContestController extends Controller
                     }
 
                     $model->media = $model->mediaFile->name;
-                    $model->type = in_array($model->mediaFile->extension, ['jpg', 'png', 'jpeg']) ? Post::TYPE_IMAGE : Post::TYPE_VIDEO;
-                    $model->save(false, ['media', 'type']);
+                    $model->type = in_array($model->mediaFile->extension, ['jpg', 'png', 'jpeg']) ? Post::TYPE_IMAGE : Post::TYPE_VIDEO;          
 
                     $model->mediaFile->saveAs($path.$model->media);
+                } else {
+                    $model->type = Post::TYPE_VIDEO;
                 }
+
+                $model->save(false, ['media', 'type']);
 
                 return $this->redirect(['index']);
             }
@@ -136,6 +144,7 @@ class CreativeContestController extends Controller
                 'text' => $post->text,
                 'url' => Url::to($post->url, true),
                 'srcUrl' => $post->srcUrl,
+                'type' => $post->type,
             ];
         }
     } 

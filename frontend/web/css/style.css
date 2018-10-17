@@ -979,11 +979,11 @@ header .main_menu span {
     background: #f1f1f1;
     margin-right: 2.3%;
     margin-bottom: 2.3%;
-    -webkit-transform: skewX(-24deg);
+    /*-webkit-transform: skewX(-24deg);
     -moz-transform: skewX(-24deg);
     -ms-transform: skewX(-24deg);
     -o-transform: skewX(-24deg);
-    transform: skewX(-24deg);
+    transform: skewX(-24deg);*/
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;

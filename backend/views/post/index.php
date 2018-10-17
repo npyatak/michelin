@@ -51,12 +51,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'media',
                     'format' => 'raw',
                     'value' => function($data) {
-                        if($data->type == Post::TYPE_IMAGE) {
+                        //if($data->type == Post::TYPE_IMAGE) {
                             return Html::img($data->srcUrl, ['width' => '200px']);
-                        }
-                        return $data->media;
+                        //}
+                        //return $data->media;
                     }
                 ],
+                'yt_id',
                 [
                     'attribute' => 'score',
                     'format' => 'raw',

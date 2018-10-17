@@ -19,6 +19,7 @@ class Post extends \yii\db\ActiveRecord
     const TYPE_VIDEO = 2;
 
     public $mediaFile;
+    public $link;
 
     public $x;
     public $y;
@@ -52,6 +53,7 @@ class Post extends \yii\db\ActiveRecord
             ['text', 'required', 'when' => function($model) {
                 return ($model->mediaFile == null && $model->yt_id == null);
             }, 'message' => 'Необходимо заполнить выбрать изображение/видео или заполнить текст'],
+            ['link', 'checkLink'],
         ];
     }
 
@@ -84,12 +86,52 @@ class Post extends \yii\db\ActiveRecord
         ];
     }
 
+    public function checkLink($attribute, $model) {
+        $key = $this->parseUrl();
+
+        if(!$key) {
+            $this->addError($attribute, 'Указана не верная ссылка');
+        } elseif(self::find()->where(['yt_id' => $key])->count() > 0) {
+            $this->addError($attribute, 'Это видео уже было загружено');
+        }
+    }
+
     public function afterDelete() {
         $path = $this->srcPath;
         if(file_exists($path.$this->media) && is_file($path.$this->media)) {
             unlink($path.$this->media);
         }
         return parent::afterDelete();
+    }
+
+    public function beforeSave($insert) {
+        if($this->link) {
+            $this->yt_id = $this->parseUrl();
+        } 
+
+        return parent::beforeSave($insert);
+    }
+
+    public function parseUrl() {
+        $key = null;
+        $urlParts = parse_url(trim($this->link));
+        
+        if(in_array($urlParts['host'], ['youtube.com', 'www.youtube.com'])) {
+            parse_str($urlParts['query'], $queryParts);
+
+            if(isset($queryParts['v'])) {
+                $key = $queryParts['v'];
+            } elseif (strripos($urlParts['path'], 'embed')) {
+                $exp = explode('embed/', $urlParts['path']);
+                if(isset($exp[1])) {
+                    $key = $exp[1];
+                }
+            }
+        } elseif(in_array($urlParts['host'], ['youtu.be', 'www.youtu.be'])) {
+            $key = str_replace("/", "", $urlParts['path']);
+        }
+
+        return $key;
     }
 
     /**
@@ -122,6 +164,9 @@ class Post extends \yii\db\ActiveRecord
     }
 
     public function getSrcUrl() {
+        if($this->type == self::TYPE_VIDEO) {
+            return 'https://img.youtube.com/vi/'.$this->yt_id.'/hqdefault.jpg';
+        }
         return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->media);
     }
 

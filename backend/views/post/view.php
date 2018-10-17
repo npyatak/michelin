@@ -41,23 +41,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'contest_stage_id',
                 'format' => 'raw',
                 'value' => function($model) {
-                    return Html::a($model->contest_stage->name, Url::toRoute(['contest_stage/view', 'id' => $model->contest_stage_id]));
-                },
-            ],
-            [
-                'attribute' => 'is_from_ig',
-                'value' => function($model) {
-                    $arr = [0 => 'Нет', 1 => 'Да'];
-                    return $arr[$model->is_from_ig];
+                    return Html::a($model->contestStage->name, Url::toRoute(['contest_stage/view', 'id' => $model->contest_stage_id]));
                 },
             ],
             [
                 'attribute' => 'media',
                 'format' => 'raw',
                 'value' => function($model) {
-                    //return Html::img($model->imageUrl, ['width' => '140px']);
+                    return Html::img($model->srcUrl, ['width' => '140px']);
                 }
             ],
+            'yt_id',
             [
                 'attribute' => 'score',
                 'format' => 'raw',
