@@ -38,7 +38,6 @@ class CreativeContestController extends Controller
     public function actionIndex($id = null)
     {
         $pageSize = 100;
-        $newPost = null;
         $contestStage = $this->currentContestStage;
         if($contestStage == null) {
             return $this->redirect('index');
@@ -73,10 +72,15 @@ class CreativeContestController extends Controller
             $model = Post::findOne($id);
         }
 
+        $newPost = null;
+        if(Yii::$app->session->getFlash('success')) {
+            $newPost = Post::findOne((int)Yii::$app->session->getFlash('success'));
+        }
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
-            'newPost' => $newPost,
             'model' => $model,
+            'newPost' => $newPost,
         ]);
     }
 
@@ -118,6 +122,7 @@ class CreativeContestController extends Controller
 
                 $model->save(false, ['media', 'type']);
 
+                Yii::$app->session->setFlash('success', $model->id);
                 return $this->redirect(['index']);
             }
         }

@@ -16,9 +16,9 @@ use kop\y2sp\ScrollPager;
 <?php endif;?>
 
 <?php if($newPost):?>
-<div class="confirm-upload">
+<div class="confirm-upload" style="display: block;">
     <div class="confirm-title">Ссылка на историю</div>
-    <div class="confirm-link"><a href=""><?=$newPost->url;?></a></div>
+    <div class="confirm-link"><a href=""><?=Url::to($newPost->url, true);?></a></div>
     <a class="btn btn-oblique" target="_blank" href=""><span>ok</span></a>
 </div>
 <?php endif;?>
