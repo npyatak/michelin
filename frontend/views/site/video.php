@@ -14,6 +14,9 @@ use yii\helpers\Url;
 	['id' => 'xajxxDJUNxQ', 'title' => 'Ретро-дайвинг, Семиозерье', 'image' => '/img/video/9.jpg', 'cityId' => 103],
 	['id' => 'pjLmtZViw8k', 'title' => 'По законам севера. Этническая деревня', 'image' => '/img/video/10.jpg', 'cityId' => 104],
 	['id' => 'W0awU596rNo', 'title' => 'Горячий снег. Тур на снегоходах', 'image' => '/img/video/11.jpg'],
+    ['id' => 'tCY8VXOZhK8', 'title' => 'Лёдная погода. Хибины', 'image' => '/img/video/2018-10-18_17-44-31.png'],
+    ['id' => 'wRSDnBc-4-w', 'title' => 'Арт-парк "Таинственный лес"', 'image' => '/img/video/2018-10-18_17-45-37.png'],
+    ['id' => 'gtqMyLBQfJE', 'title' => 'Саблинские пещеры', 'image' => '/img/video/2018-10-18_17-47-41.png'],
 ];
 ?>
 <?php $this->params['bodyClass'] = 'about_page';?>
