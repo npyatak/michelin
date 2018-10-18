@@ -28,6 +28,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return [
             [['sid', 'status', 'created_at', 'updated_at', 'score'], 'integer'],
+            ['email', 'email'],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_BANNED]],
             [['surname', 'name', 'image', 'ip', 'browser'], 'string', 'max' => 255],
             ['soc', 'string', 'max' => 2],
@@ -52,6 +53,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'ip' => 'IP адрес',
             'browser' => 'Браузер',
             'score' => 'Баллы',
+            'email' => 'E-mail',
         ];
     }
 

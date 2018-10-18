@@ -122,6 +122,9 @@ class SiteController extends Controller
 
                         $user->save();
                     }
+                    if(isset($eauth->email)) {
+                        $user->email = $eauth->email;
+                    }
 
                     $user->ip = $_SERVER['REMOTE_ADDR'];
                     $user->browser = $_SERVER['HTTP_USER_AGENT'];

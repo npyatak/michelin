@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'sid',
             'name',
             'surname',
+            'email',
             [
                 'attribute' => 'image',
                 'format' => 'raw',
