@@ -37,7 +37,7 @@ class CreativeContestController extends Controller
 
     public function actionIndex($id = null)
     {
-        $pageSize = 100;
+        $pageSize = 8;
         $contestStage = $this->currentContestStage;
         if($contestStage == null) {
             return $this->redirect('index');
@@ -81,6 +81,7 @@ class CreativeContestController extends Controller
             'dataProvider' => $dataProvider,
             'model' => $model,
             'newPost' => $newPost,
+            'pageSize' => $pageSize,
         ]);
     }
 

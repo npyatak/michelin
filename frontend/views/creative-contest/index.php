@@ -16,11 +16,11 @@ use kop\y2sp\ScrollPager;
 <?php endif;?>
 
 <?php if($newPost):?>
-<div class="confirm-upload" style="display: block;">
-    <div class="confirm-title">Ссылка на историю</div>
-    <div class="confirm-link"><a href=""><?=Url::to($newPost->url, true);?></a></div>
-    <a class="btn btn-oblique" target="_blank" href=""><span>ok</span></a>
-</div>
+    <div class="confirm-upload" style="display: block;">
+        <div class="confirm-title">Ссылка на историю</div>
+        <div class="confirm-link"><a href=""><?=Url::to($newPost->url, true);?></a></div>
+        <a class="btn btn-oblique" target="_blank" href=""><span>ok</span></a>
+    </div>
 <?php endif;?>
 
 <div class="page_wrapper history">
@@ -44,9 +44,11 @@ use kop\y2sp\ScrollPager;
             <?=$this->render('_posts', ['dataProvider' => $dataProvider]);?>
         </div>
     </div>
-    <div class="more">
-        <a href="" data-page="1">Больше работ</a>
-    </div>
+    <?php if($pageSize < $dataProvider->totalCount):?>
+        <div class="more">
+            <a href="" data-page="1">Больше работ</a>
+        </div>
+    <?php endif;?>
 </div>
     
 <?=$this->render('_post_popup', ['model' => $model, 'showMap' => false]);?>
@@ -131,6 +133,10 @@ $script = "
     $(document).on('click', '.login-modal-btn', function(e) {
         $('.auth').show();
         $('.overlay').show();
+    });
+
+    $(document).on('click', '.close-popup', function(e) {
+        history.pushState(null, null, '".Url::toRoute(['creative-contest/index'])."');
     });
 ";
 ?>

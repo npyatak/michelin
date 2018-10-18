@@ -47,14 +47,6 @@ use yii\helpers\Html;
 
                 return false;
             });
-
-            $(document).on('click', '.auth .close-popup', function(e) {
-                $('.start-question').show();
-                $('.auth').hide();
-                $('.overlay').hide();
-
-                return false;
-            });
         ";?>
     <?php else:?>
         <div id="question">

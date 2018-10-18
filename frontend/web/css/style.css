@@ -233,7 +233,8 @@ header .main_menu span {
 }
 
 .row {
-    font-size: 0
+    font-size: 0;
+    margin: 0;
 }
 
 .row > * {
@@ -945,22 +946,24 @@ header .main_menu span {
 .text .like-p {
     color: #1b4c94;
     font-size: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 50px!important;
     line-height: 30px;
 }
 
 .history .action {
     text-align: center;
 }
-.history .text {
-    margin-top: 40px;
-}
 .history .text .like-p {
+    margin: auto;
+    max-width: 80%;
     -webkit-transform: skewX(-24deg);
     -moz-transform: skewX(-24deg);
     -ms-transform: skewX(-24deg);
     -o-transform: skewX(-24deg);
     transform: skewX(-24deg);
+}
+.history .text {
+    margin-top: 40px;
 }
 
 .history .gallery {
@@ -979,15 +982,17 @@ header .main_menu span {
     background: #f1f1f1;
     margin-right: 2.3%;
     margin-bottom: 2.3%;
-    /*-webkit-transform: skewX(-24deg);
+    -webkit-transform: skewX(-24deg);
     -moz-transform: skewX(-24deg);
     -ms-transform: skewX(-24deg);
     -o-transform: skewX(-24deg);
-    transform: skewX(-24deg);*/
+    transform: skewX(-24deg);
     background-repeat: no-repeat;
-    background-position: center;
+    /*background-position: center;
     -webkit-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
+    background-position: 0 0;
+    background-size: auto 100%;
     display: -webkit-flex;
     display: -moz-flex;
     display: flex;

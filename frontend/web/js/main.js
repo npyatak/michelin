@@ -138,7 +138,7 @@ $(window).on('load', function() {
     },2000);
 
     $('.fileinput').find('span.fileinput-new')
-        .html('Прикрепить фото или видео +')
+        .html('Прикрепить фото +')
         .css({'display':'block'});
 });
 
@@ -178,4 +178,11 @@ $('.close-popup').click(function () {
     $('.main_screen, .main_top').css("opacity","1");
     $(".marker").removeClass('active');
     $(".city").hide();
+});
+$(document).on('click', '.auth .close-popup', function(e) {
+    $('.start-question').show();
+    $('.auth').hide();
+    $('.overlay').hide();
+
+    return false;
 });
