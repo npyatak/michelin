@@ -19,22 +19,26 @@ use common\models\Post;
     </div>
     <div class="info_block row">
         <div class="characteristics row">
-            <div class="link"> 
-                <?=$model ?  Url::to($model->url, true) : '';?>
+            <div class="link">
+                <div class="skew-text">
+                    <?=$model ?  Url::to($model->url, true) : '';?>
+                </div>
             </div>
             <div></div>
             <div></div>
             <div class="score">
-                Баллы: <span><?=$model ?  $model->score : '';?></span>
-                <?php if(Yii::$app->user->isGuest):?>
-                    <?=Html::a('Голосовать', null, [
-                        'class' => 'login-modal-btn',
-                    ]);?>
-                <?php elseif($model):?>
-                    <?=Html::a('Голосовать', null, [
-                        'class' => 'vote-button',
-                    ]);?>
-                <?php endif;?>
+                <div class="skew-text">
+                    Баллы: <span><?=$model ?  $model->score : '';?></span>
+                    <?php if(Yii::$app->user->isGuest):?>
+                        <?=Html::a('Голосовать', null, [
+                            'class' => 'login-modal-btn',
+                        ]);?>
+                    <?php elseif($model):?>
+                        <?=Html::a('Голосовать', null, [
+                            'class' => 'vote-button',
+                        ]);?>
+                    <?php endif;?>
+                </div>
             </div>
         </div>
         <div class="peoples row sss">
