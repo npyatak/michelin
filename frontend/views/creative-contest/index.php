@@ -19,8 +19,9 @@ use kop\y2sp\ScrollPager;
     <div class="confirm-upload" style="display: block;">
         <div class="confirm-title">Ссылка на историю</div>
         <div class="confirm-link"><a href=""><?=Url::to($newPost->url, true);?></a></div>
-        <a class="btn btn-oblique" target="_blank" href=""><span>ok</span></a>
+        <a class="btn btn-oblique confirm-btn" href=""><span>ok</span></a>
     </div>
+    <div class="overlay" style="display: block"></div>
 <?php endif;?>
 
 <div class="page_wrapper history">

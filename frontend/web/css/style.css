@@ -987,16 +987,12 @@ header .main_menu span {
     -ms-transform: skewX(-24deg);
     -o-transform: skewX(-24deg);
     transform: skewX(-24deg);
-    background-repeat: no-repeat;
-    /*background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;*/
-    background-position: 0 0;
-    background-size: auto 100%;
     display: -webkit-flex;
     display: -moz-flex;
     display: flex;
     align-items: flex-end;
+    cursor: pointer;
+    overflow: hidden;
 }
 .history .gallery .item:nth-child(4n) {
     margin-right: 0;
@@ -1009,7 +1005,7 @@ header .main_menu span {
     left: 0;
     right: 0;
     height: 50%;
-    z-index: 0;
+    z-index: 1;
     background: -webkit-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 90%);
     background: -moz-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 90%);
     background: -o-linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 90%);
@@ -1023,6 +1019,18 @@ header .main_menu span {
     -o-transform: skewX(24deg);
     transform: skewX(24deg);
 }
+.history .gallery .item-image {
+    position: absolute;
+    top: 0;
+    left: -45px;
+    right: -45px;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+}
 .history .gallery .item-user {
     display: -webkit-flex;
     display: -moz-flex;
@@ -1032,7 +1040,7 @@ header .main_menu span {
     width: 100%;
     position: relative;
     padding: 5px 35px;
-    z-index: 1;
+    z-index: 2;
     color: #fff;
     font: 14px 'Michelin';
     font-weight: 100;
@@ -1957,6 +1965,7 @@ body.overflow {
 }
 .fileinput>div>a.btn:hover {
     background: #0551A0;
+    color: #fff;
 }
 .fileinput>div>a.btn:hover::after {
     color: #fff;

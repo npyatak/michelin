@@ -5,7 +5,8 @@ use common\models\Post;
 ?>
 
 <?php foreach ($dataProvider->models as $model):?>
-	<div class="item" data-id="<?=$model->id;?>" style="background-image: url('<?=$model->srcUrl;?>')">
+	<div class="item" data-id="<?=$model->id;?>">
+        <div class="item-image" style="background-image: url('<?=$model->srcUrl;?>')"></div>
 		<div class="item-user">
 			<?php if($model->type == Post::TYPE_IMAGE):?>
 				<?php $model->srcUrl;?>

@@ -140,6 +140,12 @@ $(window).on('load', function() {
     $('.fileinput').find('span.fileinput-new')
         .html('Прикрепить фото +')
         .css({'display':'block'});
+
+    $(document).on('click','.confirm-btn',function (e) {
+        e.preventDefault();
+        $('.confirm-upload').css({'display': 'none'});
+        $('.overlay').css({'display': 'none'});
+    })
 });
 
 // let map = 'undefined';
