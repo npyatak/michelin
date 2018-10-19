@@ -1420,6 +1420,7 @@ body.overflow {
 }
 .upload-inner form .form-bottom>div:nth-child(1) {
     float: left;
+    width: calc(100% - 170px);
     font: 11px 'Michelin';
     font-weight: bold;
     color: rgba(0,0,0,.7);
@@ -1772,6 +1773,69 @@ body.overflow {
     box-shadow: 0 0 33px 10px #fff;
 }
 
+@media (max-height: 720px) {
+    .upload-inner form textarea {
+        height: 125px;
+    }
+    .upload-inner form .form-text {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1299px) {
+    .history .text .like-p {
+        font-size: 23px;
+    }
+}
+@media (max-width: 1199px) {
+    .history .gallery .item {
+        width: calc(33.333% - 22px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .history .gallery .item:nth-child(4n) {
+         margin-right: 20px;
+    }
+    .history .text .like-p {
+        font-size: 20px;
+    }
+}
+@media (max-width: 992px) {
+    .history {
+        overflow: hidden;
+    }
+    .history .text .like-p {
+        max-width: 100%;
+        padding-left: 45px;
+        padding-right: 45px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .upload-form {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .upload-title {
+        position: static;
+        margin-bottom: 25px;
+        color: #0551A0;
+        text-align: center;
+    }
+    .upload-inner {
+        max-width: 100%;
+        padding: 0 100px;
+    }
+    .upload-inner form {
+        padding-left: 50px;
+    }
+    .upload-inner form .form-link {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .upload-inner form .form-text {
+        margin-top: 30px !important;
+    }
+}
 @media (max-width: 768px) {
     .question,
     .start-question {
@@ -1838,6 +1902,93 @@ body.overflow {
         background: linear-gradient(to bottom, rgba(4, 81, 160, 0) 10%, rgba(4, 81, 160, 1) 77%);
     }
 
+}
+@media (max-width: 767px){
+    .upload-inner form {
+        width: calc(100% + 55px);
+        padding-left: 0;
+    }
+    .history .text .like-p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .history .gallery .item {
+        width: calc(50% - 22px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .history .gallery .item {
+        width: calc(100% - 90px);
+        margin-left: 45px !important;
+        margin-right: 0 !important;
+    }
+    .field-post-mediafile {
+        width: calc(100% + 40px);
+        margin-left: -140px;
+    }
+    .upload-inner form .image,
+    .fileinput,
+    .upload-inner .fileinput .thumbnail {
+        width: 100% !important;
+    }
+    .upload-inner form .form-text {
+        width: calc(100% + 45px);
+        margin-left: 15px;
+    }
+    .upload-inner form .form-link {
+        width: calc(100% + 100px);
+        -webkit-transform: translateX(23px);
+        -moz-transform: translateX(23px);
+        -ms-transform: translateX(23px);
+        -o-transform: translateX(23px);
+        transform: translateX(23px);
+    }
+    .upload-inner form .form-bottom {
+        width: calc(100% + 95px);
+        margin-left: 30px;
+        text-align: center;
+    }
+    .upload-inner form .form-bottom>div:nth-child(1) {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .upload-inner form .form-bottom>div:nth-child(2) {
+        float: none;
+    }
+    .confirm-upload {
+        width: calc(100% - 40px);
+        height: auto;
+        padding: 40px 70px;
+    }
+}
+@media (max-width: 475px) {
+    .upload-title {
+        width: calc(100% + 115px);
+        margin-left: -50px;
+        font-size: 20px;
+    }
+    .field-post-mediafile {
+        margin-left: -155px;
+    }
+    .upload-inner form .form-link {
+        width: calc(100% + 120px);
+        -webkit-transform: translateX(21px);
+        -moz-transform: translateX(21px);
+        -ms-transform: translateX(21px);
+        -o-transform: translateX(21px);
+        transform: translateX(21px);
+    }
+    .upload-inner form .form-text {
+        width: calc(100% + 60px);
+        margin-left: -5px;
+    }
+    .confirm-upload {
+        padding: 40px;
+    }
+    .confirm-title {
+        font-size: 20px;
+    }
 }
 .ui-loader {
     display: none;
