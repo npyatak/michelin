@@ -101,6 +101,9 @@ class Post extends \yii\db\ActiveRecord
         if(file_exists($path.$this->media) && is_file($path.$this->media)) {
             unlink($path.$this->media);
         }
+        if(file_exists($path.$this->thumb) && is_file($path.$this->thumb)) {
+            unlink($path.$this->thumb);
+        }
         return parent::afterDelete();
     }
 
@@ -163,11 +166,13 @@ class Post extends \yii\db\ActiveRecord
         return __DIR__ . '/../../frontend/web/uploads/post/';
     }
 
-    public function getSrcUrl() {
+    public function getSrcUrl($fullImage = false) {
         if($this->type == self::TYPE_VIDEO) {
             return 'https://img.youtube.com/vi/'.$this->yt_id.'/hqdefault.jpg';
+        } elseif($fullImage) {
+            return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->media);
         }
-        return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->media);
+        return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->thumb);
     }
 
     // public static function getImageUrl($user_id, $media) {
@@ -218,5 +223,14 @@ class Post extends \yii\db\ActiveRecord
         }
 
         return true;
+    }
+
+    public function getThumb($image = null)
+    {
+        $image = $image ? $image : $this->media;
+        $exp = explode('.', $image);
+        if(isset($exp[1])) {
+            return $exp[0].'_thumb.'.$exp[1];
+        }
     }
 }

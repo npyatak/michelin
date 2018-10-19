@@ -114,9 +114,15 @@ class CreativeContestController extends Controller
                     }
 
                     $model->media = $model->mediaFile->name;
-                    $model->type = in_array($model->mediaFile->extension, ['jpg', 'png', 'jpeg']) ? Post::TYPE_IMAGE : Post::TYPE_VIDEO;          
 
                     $model->mediaFile->saveAs($path.$model->media);
+
+                    if(in_array($model->mediaFile->extension, ['jpg', 'png', 'jpeg'])) {
+                        $model->type = Post::TYPE_IMAGE;
+                        \yii\imagine\Image::thumbnail($path.$model->media, 354, 200)->save($path.$model->getThumb($model->media));
+                    } else {
+                        $model->type = Post::TYPE_VIDEO;
+                    }
                 } else {
                     $model->type = Post::TYPE_VIDEO;
                 }
@@ -149,7 +155,7 @@ class CreativeContestController extends Controller
                 'yt_id' => $post->yt_id,
                 'text' => $post->text,
                 'url' => Url::to($post->url, true),
-                'srcUrl' => $post->srcUrl,
+                'srcUrl' => $post->getSrcUrl(true),
                 'type' => $post->type,
             ];
         }
