@@ -91,6 +91,7 @@ $script = "
             type: 'get',
             success: function(data) {
                 $('.city').data('id', data.id);
+                alert(data.type);
                 if (data.type == 2) {
                     $('.city').find('.play-video').attr('data-id', data.yt_id).show();
                     $('.city').find('.text_block').addClass('show-video');

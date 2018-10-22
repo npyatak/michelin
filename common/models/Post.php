@@ -17,6 +17,7 @@ class Post extends \yii\db\ActiveRecord
 
     const TYPE_IMAGE = 1;
     const TYPE_VIDEO = 2;
+    const TYPE_STORY = 3;
 
     public $mediaFile;
     public $link;
@@ -170,7 +171,12 @@ class Post extends \yii\db\ActiveRecord
         if($this->type == self::TYPE_VIDEO) {
             return 'https://img.youtube.com/vi/'.$this->yt_id.'/hqdefault.jpg';
         } elseif($fullImage) {
+            if(!$this->media) {
+                return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/img/post-preview/'.rand(1, 8).'-big.jpg');
+            }
             return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->media);
+        } elseif(!$this->media) {
+            return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/img/post-preview/'.rand(1, 8).'.jpg');
         }
         return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl('/uploads/post/'.$this->thumb);
     }
@@ -195,6 +201,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             self::TYPE_IMAGE => 'Изображение',
             self::TYPE_VIDEO => 'Видео',
+            self::TYPE_STORY => 'История',
         ];
     }
 

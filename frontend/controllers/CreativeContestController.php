@@ -108,6 +108,8 @@ class CreativeContestController extends Controller
                 $path = $model->srcPath;
                 $model->mediaFile = UploadedFile::getInstance($model, 'mediaFile');
 
+                $model->type = Post::TYPE_STORY;
+
                 if($model->mediaFile) {
                     if(!file_exists($path)) {
                         mkdir($path, 0775, true);
@@ -120,10 +122,10 @@ class CreativeContestController extends Controller
                     if(in_array($model->mediaFile->extension, ['jpg', 'png', 'jpeg'])) {
                         $model->type = Post::TYPE_IMAGE;
                         \yii\imagine\Image::thumbnail($path.$model->media, 354, 200)->save($path.$model->getThumb($model->media));
-                    } else {
-                        $model->type = Post::TYPE_VIDEO;
                     }
-                } else {
+                }
+
+                if($model->yt_id) {
                     $model->type = Post::TYPE_VIDEO;
                 }
 
