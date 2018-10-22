@@ -9,7 +9,7 @@ $this->title = 'Поделиться историей';
     <div class="upload-inner">
         <div class="upload-title">Поделиться историей</div>
         <?php $form = ActiveForm::begin([
-            'id' => 'creative-contest-form',
+            'id' => 'contest-form',
             'options' => [
                 'method' => 'post',
                 'enctype' => 'multipart/form-data',
@@ -22,7 +22,7 @@ $this->title = 'Поделиться историей';
                 ],
                 'thumbnail' => false,
                 'style' => \dosamigos\fileinput\FileInput::STYLE_CUSTOM,
-                'customView' => '@frontend/views/creative-contest/_fileinput_custom_view.php',
+                'customView' => '@frontend/views/contest/_fileinput_custom_view.php',
             ])->label(false);?>
 
             <?= $form->field($model, 'link', ['template' => '<div class="form-link">{label}<div>{input}</div></div>'])->textInput()->label('или ссылка на видео на youtube') ?>

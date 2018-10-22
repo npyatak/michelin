@@ -24,10 +24,7 @@ use common\models\PostAction;
 use common\models\search\PostSearch;
 use common\models\ContestStage;
 
-/**
- * Site controller
- */
-class CreativeContestController extends Controller
+class ContestController extends Controller
 {
     public $currentContestStage;
 

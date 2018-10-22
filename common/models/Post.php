@@ -160,7 +160,7 @@ class Post extends \yii\db\ActiveRecord
     }
 
     public function getUrl() {
-        return Url::toRoute(['creative-contest/index', 'id'=>$this->id]);
+        return Url::toRoute(['contest/index', 'id'=>$this->id]);
     }
 
     public function getSrcPath() {

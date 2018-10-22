@@ -33,7 +33,7 @@ use common\models\Post;
                         <?=Html::a('Голосовать', null, [
                             'class' => 'login-modal-btn',
                         ]);?>
-                    <?php elseif($model):?>
+                    <?php else:?>
                         <?=Html::a('Голосовать', null, [
                             'class' => 'vote-button',
                         ]);?>

@@ -38,7 +38,7 @@ use kop\y2sp\ScrollPager;
         </div>
     </div>
     <div class="action">
-        <a class="btn btn-oblique btn-yellow" target="_blank" href="<?=Url::toRoute(['creative-contest/participate']);?>"><span>Поделиться историей</span></a>
+        <a class="btn btn-oblique btn-yellow" target="_blank" href="<?=Url::toRoute(['contest/participate']);?>"><span>Поделиться историей</span></a>
     </div>
     <div class="gallery">
         <div class="container">
@@ -87,7 +87,7 @@ $script = "
         var item = $(this);
         $.ajax({
             data: 'id='+id,
-            url: '".Url::toRoute(['creative-contest/post-data'])."',
+            url: '".Url::toRoute(['contest/post-data'])."',
             type: 'get',
             success: function(data) {
                 $('.city').data('id', data.id);
@@ -111,7 +111,7 @@ $script = "
 
                 $('.score span').html(data.score);
 
-                history.pushState(null, null, '".Url::toRoute(['creative-contest/index'])."?id='+id);
+                history.pushState(null, null, '".Url::toRoute(['contest/index'])."?id='+id);
             }
         });
 
@@ -123,7 +123,7 @@ $script = "
         var id = link.closest('.city').data('id');
         $.ajax({
             data: 'id='+id,
-            url: '".Url::toRoute(['creative-contest/user-action'])."',
+            url: '".Url::toRoute(['contest/user-action'])."',
             type: 'get',
             success: function(data) {
                 $('.score span').html(data.score);
@@ -137,7 +137,7 @@ $script = "
     });
 
     $(document).on('click', '.close-popup', function(e) {
-        history.pushState(null, null, '".Url::toRoute(['creative-contest/index'])."');
+        history.pushState(null, null, '".Url::toRoute(['contest/index'])."');
     });
 ";
 ?>

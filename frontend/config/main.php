@@ -86,9 +86,9 @@ return [
             'baseUrl' => '/',
             'rules' => [                
                 '/' => 'site/index',
-                '<controller:creative-contest>'=>'<controller>/index',
-                '<controller:creative-contest>/<action>'=>'<controller>/<action>',
-                '<controller:creative-contest>/<action>/<id:\d+>' => '<controller>/<action>',
+                '<controller:contest>'=>'<controller>/index',
+                '<controller:contest>/<action>'=>'<controller>/<action>',
+                '<controller:contest>/<action>/<id:\d+>' => '<controller>/<action>',
                 '<action>/<id:\d+>' => 'site/<action>',
                 '<action>' => 'site/<action>',
             ],
