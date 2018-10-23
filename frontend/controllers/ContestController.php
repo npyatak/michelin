@@ -129,7 +129,7 @@ class ContestController extends Controller
                 $model->save(false, ['media', 'type']);
 
                 Yii::$app->session->setFlash('success', $model->id);
-                return $this->redirect(['index']);
+                return $this->redirect(['index', 'id' => $model->id]);
             }
         }
 
