@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 use common\models\Post;
 ?>
-<div class="city" data-id="<?=($model && $model->status == Post::STATUS_ACTIVE) ?  $model->id : '';?>" style="<?=$model ?  'display: block;' : '';?>">
+<div class="city history-city" data-id="<?=($model && $model->status == Post::STATUS_ACTIVE) ?  $model->id : '';?>" style="<?=$model ?  'display: block;' : '';?>">
     <div class="close-popup"><i class="fa fa-close"></i></div>
     <div class="text_block <?=($model && $model->type == Post::TYPE_VIDEO) ? 'show-video' : '';?>">
         <div class="city_img">

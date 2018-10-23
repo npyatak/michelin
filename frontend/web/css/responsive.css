@@ -155,6 +155,9 @@
         right: 0;
         width: auto;
     }
+    .city.history-city .info_block {
+        padding-top: 40px;
+    }
     .city .info_block>div {
         transform: none!important;
         width: 100%;
@@ -194,6 +197,18 @@
         -o-transform: translateX(38px)!important;
         transform: translateX(38px)!important;
         margin: 0 auto;
+        text-align: center;
+    }
+    .city.history-city .text_block {
+        padding-top: 105px;
+    }
+    .city.history-city .text_block .wrap {
+        height: 240px!important;
+        -webkit-transform: translateX(0)!important;
+        -moz-transform: translateX(0)!important;
+        -ms-transform: translateX(0)!important;
+        -o-transform: translateX(0)!important;
+        transform: translateX(0)!important;
         text-align: center;
     }
     .video .play-video {
@@ -381,6 +396,9 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .city.history-city .text_block {
+        padding-top: 240px;
+    }
     #tire .marker:before{
         transform: skewX(24deg) scale(3);
     }
@@ -707,6 +725,14 @@
     .city .info_block .peoples {
         margin: auto;
         text-align: left;
+    }
+    .city.history-city .info_block .peoples > div {
+        display: block;
+        max-width: inherit;
+        width: 100%;
+    }
+    .city.history-city .info_block .peoples > div::before {
+        display: none;
     }
     .index_page .ss-content {
         padding-right: 0;
