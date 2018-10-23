@@ -8,10 +8,15 @@ use yii\widgets\Pjax;
 use kartik\editable\Editable;
 
 use common\models\Post;
-use common\models\Week;
+use common\models\ContestStage;
 
 $this->title = 'Посты';
 $this->params['breadcrumbs'][] = $this->title;
+
+$contestStageArr = [];
+foreach (ContestStage::find()->all() as $cs) {
+    $contestStageArr[$cs->id] = mb_substr($cs->name, 0, 7).'...';
+}
 ?>
 <div class="post-index">
 
@@ -36,9 +41,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'contest_stage_id',
                     'format' => 'raw',
                     'value' => function($data) {
-                        return Html::a($data->contestStage->name, Url::toRoute(['contest_stage/view', 'id' => $data->contest_stage_id]));
+                        return Html::a(mb_substr($data->contestStage->name, 0, 7).'...', Url::toRoute(['contest_stage/view', 'id' => $data->contest_stage_id]));
                     },
-                    'filter' => Html::activeDropDownList($searchModel, 'contest_stage_id', ArrayHelper::map(Week::find()->all(), 'id', 'name'), ['prompt'=>'']),
+                    'width' => '50px',
+                    'filter' => Html::activeDropDownList($searchModel, 'contest_stage_id', $contestStageArr, ['prompt'=>'']),
                 ],
                 [
                     'attribute' => 'user_id',
@@ -52,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'format' => 'raw',
                     'value' => function($data) {
                         //if($data->type == Post::TYPE_IMAGE) {
-                            return Html::img($data->srcUrl, ['width' => '200px']);
+                            return Html::img($data->srcUrl, ['width' => '150px']);
                         //}
                         //return $data->media;
                     }

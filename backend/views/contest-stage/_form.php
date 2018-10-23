@@ -64,14 +64,6 @@ if(!empty($userTests)) {
 
     <?= $form->field($model, 'description')->textarea() ?>
 
-    <?php if(!empty($users)):?>
-    <div class="row">
-        <div class="col-sm-6">
-            <?= $form->field($model, 'winner_id')->dropDownList($users, ['prompt' => '...']) ?>
-        </div>
-    </div>
-    <?php endif;?>
-
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

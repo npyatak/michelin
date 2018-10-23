@@ -52,6 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'yt_id',
+            'text:ntext',
             [
                 'attribute' => 'score',
                 'format' => 'raw',

@@ -41,6 +41,7 @@ use kop\y2sp\ScrollPager;
         <a class="btn btn-oblique btn-yellow" target="_blank" href="<?=Url::toRoute(['contest/participate']);?>"><span>Поделиться историей</span></a>
     </div>
     <div class="gallery">
+        <div class="row text_center text"><b class="like-p" style="transform: none;">Истории участников</b></div>
         <div class="container">
             <?=$this->render('_posts', ['dataProvider' => $dataProvider]);?>
         </div>
