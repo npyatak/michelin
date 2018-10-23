@@ -12,7 +12,6 @@ use common\models\Post;
                 <div id="launch-video" class="play-video" data-id="<?=($model && $model->status == Post::STATUS_ACTIVE) ?  $model->yt_id : '';?>" style="<?=($model && $model->type !== Post::TYPE_VIDEO) ? 'display: none;' : '';?>"></div>
             </div>
         </div>
-        <div class="city-title"></div>
         <div class="text">
             <div class="wrap niceScroll"><?=($model && $model->status == Post::STATUS_ACTIVE) ?  $model->text : 'Работа находится на модерации';?></div>
         </div>
@@ -29,12 +28,13 @@ use common\models\Post;
             <div class="score">
                 <div class="skew-text">
                     Баллы: <span><?=$model ?  $model->score : '';?></span>
+                    <br>
                     <?php if(Yii::$app->user->isGuest):?>
-                        <?=Html::a('Голосовать', null, [
+                        <?=Html::a('<i class="fa fa-heart"></i>Голосовать', null, [
                             'class' => 'login-modal-btn',
                         ]);?>
                     <?php else:?>
-                        <?=Html::a('Голосовать', null, [
+                        <?=Html::a('<i class="fa fa-heart"></i>Голосовать', null, [
                             'class' => 'vote-button',
                         ]);?>
                     <?php endif;?>

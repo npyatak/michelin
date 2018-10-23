@@ -10,6 +10,34 @@ function playVideo(id) {
     window.player.playVideo();
 }
 
+function niceScrollUpdate(height) { 
+    if(typeof height === 'undefined') {
+        height = 140;
+    }
+    $(".niceScroll").slimScroll({
+        destroy: true
+    });
+    $(".niceScroll").css("height","auto");
+    
+    setTimeout(function() { 
+        if( $(".niceScroll").height() > "130" ){
+            $('.city').find(".niceScroll").slimScroll({
+                height: height+"px",
+                size: '5px',
+                position: 'right',
+                color: '#fff',
+                alwaysVisible: true,
+                railVisible: true,
+                railColor: '#5D84BD',
+                railOpacity: 0.3,
+                wheelStep: 10,
+                allowPageScroll: true,
+                disableFadeOut: true
+            });
+        }
+    }, 200);
+}
+
 function loadCityData(city_id) {
     $.when(window.App.request.getCityData(city_id)).then(function (data) {
         $(".marker").removeClass('active');
@@ -53,29 +81,7 @@ function loadCityData(city_id) {
         SimpleScrollbar.initAll();
     });
 
-    $(".niceScroll").slimScroll({
-        destroy: true
-    });
-    $(".niceScroll").css("height","auto");
-    
-    setTimeout(function() { 
-        if( $(".niceScroll").height() > "130" ){
-            $('.city').find(".niceScroll").slimScroll({
-                height: "140px",
-                size: '5px',
-                position: 'right',
-                color: '#fff',
-                alwaysVisible: true,
-                railVisible: true,
-                railColor: '#5D84BD',
-                railOpacity: 0.3,
-                wheelStep: 10,
-                allowPageScroll: true,
-                disableFadeOut: true
-            });
-        }
-    }, 200);
-
+    niceScrollUpdate();
 }
 
 

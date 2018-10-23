@@ -23,44 +23,44 @@ class ShareWidget extends \yii\base\Widget
     }
 
     public function run() {
+    	$share = $this->share;
+    	
     	$scheme = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : true;
-        $this->share['url'] = Url::current([], $scheme);
-        $this->share['imageUrl'] = isset($this->share['image']) ? Url::to([$this->share['image']], $scheme) : null;
+        $share['url'] = Url::current([], $scheme);
+        $share['imageUrl'] = isset($share['image']) ? Url::to([$share['image']], $scheme) : null;
 
         $view = $this->getView();
-		$view->registerMetaTag(['property' => 'og:description', 'content' => $this->share['text']], 'og:description');
-		$view->registerMetaTag(['property' => 'og:title', 'content' => $this->share['title']], 'og:title');
-		$view->registerMetaTag(['property' => 'og:url', 'content' => $this->share['url']], 'og:url');
+		$view->registerMetaTag(['property' => 'og:description', 'content' => $share['text']], 'og:description');
+		$view->registerMetaTag(['property' => 'og:title', 'content' => $share['title']], 'og:title');
+		$view->registerMetaTag(['property' => 'og:url', 'content' => $share['url']], 'og:url');
 		$view->registerMetaTag(['property' => 'og:type', 'content' => 'website'], 'og:type');
-		if(isset($this->share['image']) && $this->share['image']) {
-        	$imagePath = __DIR__ . '/../../../frontend/web'.$this->share['image'];
-        	if(is_file($imagePath)) {
-				$view->registerMetaTag(['property' => 'og:image', 'content' => $this->share['imageUrl']], 'og:image');
-				$size = getimagesize($imagePath);
-				if(is_array($size)) {
-					$view->registerMetaTag(['property' => 'og:image:width', 'content' => $size[0]], 'og:image:width');
-					$view->registerMetaTag(['property' => 'og:image:height', 'content' => $size[1]], 'og:image:height');
-				}
-			}
+
+        if($share['image'] && $this->ifFileExists($share['imageUrl'])) {
+            $view->registerMetaTag(['property' => 'og:image', 'content' => $share['imageUrl']], 'og:image');
+			list($width, $height) = getimagesize($share['imageUrl']);
+            if($width && $height) {
+                $view->registerMetaTag(['property' => 'og:image:width', 'content' => $width], 'og:image:width');
+                $view->registerMetaTag(['property' => 'og:image:height', 'content' => $height], 'og:image:height');
+            }
 		}
 
 		if($this->showButtons) {
 		    echo Html::a('<i class="fa fa-facebook-f"></i>', '', [
 		        'class' => 'share result-facebook',
 		        'data-type' => 'fb',
-		        'data-url' => $this->share['url'],
-		        'data-title' => $this->share['title'],
-		        'data-image' => $this->share['imageUrl'],
-		        'data-text' => $this->share['text'],
+		        'data-url' => $share['url'],
+		        'data-title' => $share['title'],
+		        'data-image' => $share['imageUrl'],
+		        'data-text' => $share['text'],
 		        'rel' => 'nofollow',
 		    ]);
 		    echo Html::a('<i class="fa fa-vk"></i>', '', [
 		        'class' => 'share result-vk',
 		        'data-type' => 'vk',
-		        'data-url' => $this->share['url'],
-		        'data-title' => $this->share['title'],
-		        'data-image' => $this->share['imageUrl'],
-		        'data-text' => $this->share['text'],
+		        'data-url' => $share['url'],
+		        'data-title' => $share['title'],
+		        'data-image' => $share['imageUrl'],
+		        'data-text' => $share['text'],
 		        'rel' => 'nofollow',
 		    ]);
 		}
@@ -71,5 +71,27 @@ class ShareWidget extends \yii\base\Widget
         $view = $this->getView();
 
         $asset = ShareAsset::register($view);
+    }
+
+    public static function ifFileExists($url) 
+    {
+        $curl = curl_init($url);
+
+        curl_setopt($curl, CURLOPT_NOBODY, true);
+
+        $result = curl_exec($curl);
+
+        $ret = false;
+
+        if ($result !== false) {
+            $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);  
+
+            if ($statusCode == 200) {
+                $ret = true;   
+            }
+        }
+        curl_close($curl);
+
+        return $ret;
     }
 }

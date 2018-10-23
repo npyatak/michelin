@@ -5,6 +5,16 @@ use yii\widgets\ListView;
 use kop\y2sp\ScrollPager;
 ?>
 
+<?=\frontend\widgets\share\ShareWidget::widget([
+    'share' => [
+        'text' => 'Голосуй за историю моего путешествия! Увеличь мои шансы на победу!',
+        'title' => '#РУЛИЗИМОЙ вместе с MICHELIN X-Ice North 4!',
+        'image' => ($model && $model->getSrcUrl(true)) ? $model->getSrcUrl(true) : '/img/share-michelin.jpg',
+    ], 
+    'showButtons' => false,
+]);?>
+
+
 <?php if(Yii::$app->user->isGuest):?>
     <div class="auth" style="display: none;">
         <div class="close-popup"><i class="fa fa-close"></i></div>
@@ -65,6 +75,7 @@ use kop\y2sp\ScrollPager;
 
 <?php
 $script = "
+    niceScrollUpdate(250);
     $(document).on('click', '.more a', function(e) {
         var page = $(this).data('page');
         var link = $(this);
@@ -113,6 +124,8 @@ $script = "
                 $('.score span').html(data.score);
 
                 history.pushState(null, null, '".Url::toRoute(['contest/index'])."?id='+id);
+
+                niceScrollUpdate(250);
             }
         });
 
