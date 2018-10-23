@@ -147,6 +147,7 @@
         display: block;
     }
     .city .info_block {
+        position: relative;
         margin: 0;
         transform: none;
         padding: 60px 20px 5px;
@@ -191,11 +192,11 @@
         transform: none!important;
     }
     .city .text_block .wrap {
-        -webkit-transform: translateX(38px)!important;
-        -moz-transform: translateX(38px)!important;
-        -ms-transform: translateX(38px)!important;
-        -o-transform: translateX(38px)!important;
-        transform: translateX(38px)!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
         margin: 0 auto;
         text-align: center;
     }
@@ -259,6 +260,9 @@
         right: 25px;
         width: auto;
         padding: 0;
+    }
+    .city.history-city .info_block .peoples {
+        bottom: calc(100% - 25px);
     }
     header .main_menu a.active,
     header .main_menu span.active {
@@ -506,47 +510,47 @@
         display: none;
     }
     .city .info_block .characteristics > div:nth-child(1) {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
         width: auto;
     }
     .city .info_block>div.characteristics .skew-text {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .info_block .characteristics > div .scores {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .text {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .info_block>div.characteristics>div {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .text_block .wrap {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
         min-height: 175px !important;
         height: 175px !important;
         overflow-y: auto !important;
@@ -711,7 +715,7 @@
     }
     .city .text_block .city-title {
         position: relative;
-        margin: 105px 0 0 0;
+        margin: 145px 0 0 0;
         padding: 0 15px;
         text-align: center;
     }

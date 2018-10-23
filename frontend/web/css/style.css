@@ -545,6 +545,10 @@ header .main_menu span {
     }
 }
 
+.city.history-city .info_block .peoples > div:before {
+    display: none;
+}
+
 .city {
     display: none;
     top: 140px;
