@@ -85,10 +85,11 @@ class PostController extends CController
     public function actionStatus($id, $status) {
         $model = $this->findModel($id);
         $model->status = $status;
+        $model->save(false, ['status']);
 
-        return $model->save(false);
+        //return $model->save(false);
         
-        //return $this->redirect(['index']);
+        return $this->redirect(['view', 'id' => $id]);
     }
 
     public function actionDelete($id) {
