@@ -114,7 +114,7 @@ $script = "
                 $('.city').show();
 
                 $('.text_block .wrap').html(data.text);
-                $('.link .skew-text').html(data.url);
+                $('.link .skew-text span').html(data.url);
 
                 $('.text_block').find('.city_img .video').css('background-image', 'url('+data.srcUrl+')');
                 $('.text_block').find('.text').attr('ss-container', true);
