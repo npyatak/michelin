@@ -14,7 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/font-awesome.min.css',
         'css/style.css?v=23.10_v1',
-        'css/responsive.css?v=23.10_v2',
+        'css/responsive.css?v=23.10_v3',
         'css/menu.css?v=17.09_v2'
     ];
     public $js = [

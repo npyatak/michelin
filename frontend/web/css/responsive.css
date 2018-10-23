@@ -84,16 +84,9 @@
         transform: skewX(24deg) scale(2);
     }
     .text_block .video .play-video {
-        top: auto;
+        top: 77px;
         width: 40px;
-        height: 40px;  
-        left: 30px;
-        bottom: 20px;
-        -webkit-transform: translateX(0px) translateY(0px);
-        -moz-transform: translateX(0px) translateY(0px);
-        -ms-transform: translateX(0px) translateY(0px);
-        -o-transform: translateX(0px) translateY(0px);
-        transform: translateX(0px) translateY(0px);
+        height: 40px;
     }
     .close-info-modal {
         position: absolute;
@@ -223,6 +216,7 @@
         height: auto !important;
     }
     .city .text_block .city-title {
+        margin-top: 110px;
         transform: none;
         position: relative;
         z-index: 1;
