@@ -21,7 +21,7 @@ use common\models\Post;
             <div class="link" style="text-transform: none;">
                 <div class="skew-text">
                     Ссылка на историю:
-                    <span><?=$model ?  Url::to($model->url, true) : '';?></span>
+                    <span style="word-break: break-all;"><?=$model ?  Url::to($model->url, true) : '';?></span>
                 </div>
             </div>
             <div></div>
