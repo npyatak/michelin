@@ -84,16 +84,9 @@
         transform: skewX(24deg) scale(2);
     }
     .text_block .video .play-video {
-        top: auto;
+        top: 77px;
         width: 40px;
-        height: 40px;  
-        left: 30px;
-        bottom: 20px;
-        -webkit-transform: translateX(0px) translateY(0px);
-        -moz-transform: translateX(0px) translateY(0px);
-        -ms-transform: translateX(0px) translateY(0px);
-        -o-transform: translateX(0px) translateY(0px);
-        transform: translateX(0px) translateY(0px);
+        height: 40px;
     }
     .close-info-modal {
         position: absolute;
@@ -147,6 +140,7 @@
         display: block;
     }
     .city .info_block {
+        position: relative;
         margin: 0;
         transform: none;
         padding: 60px 20px 5px;
@@ -154,6 +148,9 @@
         bottom: 0;
         right: 0;
         width: auto;
+    }
+    .city.history-city .info_block {
+        padding-top: 40px;
     }
     .city .info_block>div {
         transform: none!important;
@@ -188,12 +185,24 @@
         transform: none!important;
     }
     .city .text_block .wrap {
-        -webkit-transform: translateX(38px)!important;
-        -moz-transform: translateX(38px)!important;
-        -ms-transform: translateX(38px)!important;
-        -o-transform: translateX(38px)!important;
-        transform: translateX(38px)!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
         margin: 0 auto;
+        text-align: center;
+    }
+    .city.history-city .text_block {
+        padding-top: 105px;
+    }
+    .city.history-city .text_block .wrap {
+        height: 240px!important;
+        -webkit-transform: translateX(0)!important;
+        -moz-transform: translateX(0)!important;
+        -ms-transform: translateX(0)!important;
+        -o-transform: translateX(0)!important;
+        transform: translateX(0)!important;
         text-align: center;
     }
     .video .play-video {
@@ -207,6 +216,7 @@
         height: auto !important;
     }
     .city .text_block .city-title {
+        margin-top: 110px;
         transform: none;
         position: relative;
         z-index: 1;
@@ -244,6 +254,9 @@
         right: 25px;
         width: auto;
         padding: 0;
+    }
+    .city.history-city .info_block .peoples {
+        bottom: calc(100% - 25px);
     }
     header .main_menu a.active,
     header .main_menu span.active {
@@ -381,6 +394,9 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .city.history-city .text_block {
+        padding-top: 240px;
+    }
     #tire .marker:before{
         transform: skewX(24deg) scale(3);
     }
@@ -488,47 +504,47 @@
         display: none;
     }
     .city .info_block .characteristics > div:nth-child(1) {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
         width: auto;
     }
     .city .info_block>div.characteristics .skew-text {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .info_block .characteristics > div .scores {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .text {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .info_block>div.characteristics>div {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
     }
     .city .text_block .wrap {
-        -webkit-transform: none!important;
-        -moz-transform: none!important;
-        -ms-transform: none!important;
-        -o-transform: none!important;
-        transform: none!important;
+        -webkit-transform: translateX(0px)!important;
+        -moz-transform: translateX(0px)!important;
+        -ms-transform: translateX(0px)!important;
+        -o-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
         min-height: 175px !important;
         height: 175px !important;
         overflow-y: auto !important;
@@ -693,7 +709,7 @@
     }
     .city .text_block .city-title {
         position: relative;
-        margin: 105px 0 0 0;
+        margin: 145px 0 0 0;
         padding: 0 15px;
         text-align: center;
     }
@@ -707,6 +723,14 @@
     .city .info_block .peoples {
         margin: auto;
         text-align: left;
+    }
+    .city.history-city .info_block .peoples > div {
+        display: block;
+        max-width: inherit;
+        width: 100%;
+    }
+    .city.history-city .info_block .peoples > div::before {
+        display: none;
     }
     .index_page .ss-content {
         padding-right: 0;
