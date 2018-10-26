@@ -12,7 +12,25 @@ use kop\y2sp\ScrollPager;
         'image' => ($model && $model->getSrcUrl(true)) ? $model->getSrcUrl(true) : '/img/share-michelin.jpg',
     ], 
     'showButtons' => false,
-]);?>
+]);
+
+$videoArr = [
+    ['id' => '042UyeWlC5I', 'title' => 'О проекте', 'image' => '/img/video/1.jpg'],
+    ['id' => 'jB4MyAc2ujQ', 'title' => 'Скажите сыыыр! Ферма-сыроварня, Матокса', 'image' => '', 'cityId' => 105],
+    ['id' => 'gtqMyLBQfJE', 'title' => 'Саблинские пещеры', 'image' => ''],
+    ['id' => 'wRSDnBc-4-w', 'title' => 'Таинственный лес', 'image' => ''],
+    ['id' => 'e7pYgyx7cWM', 'title' => 'Музей железных дорог России', 'image' => '', 'cityId' => 100],
+    ['id' => 'tCY8VXOZhK8', 'title' => 'Трек, Хибины', 'image' => ''],
+    ['id' => 'b4j0uABIbBc', 'title' => 'Кировский рудник, Хибины', 'image' => '/img/video/7.jpg', 'cityId' => 101],
+    ['id' => 'WBMPt-EqKLo', 'title' => 'Гольф-клуб "Дюны", Сестрорецк', 'image' => '', 'cityId' => 102],
+    ['id' => 'xajxxDJUNxQ', 'title' => 'Ретро-дайвинг, Семиозерье', 'image' => '/img/video/9.jpg', 'cityId' => 103],
+    ['id' => 'pjLmtZViw8k', 'title' => 'По законам севера. Этническая деревня', 'image' => '/img/video/10.jpg', 'cityId' => 104],
+    ['id' => 'W0awU596rNo', 'title' => 'Горячий снег. Тур на снегоходах', 'image' => '/img/video/11.jpg'],
+    ['id' => 'tCY8VXOZhK8', 'title' => 'Лёдная погода. Хибины', 'image' => ''],
+    ['id' => 'wRSDnBc-4-w', 'title' => 'Арт-парк "Таинственный лес"', 'image' => ''],
+    ['id' => 'gtqMyLBQfJE', 'title' => 'Саблинские пещеры', 'image' => ''],
+];
+?>
 
 
 <?php if(Yii::$app->user->isGuest):?>
@@ -61,6 +79,24 @@ use kop\y2sp\ScrollPager;
             <a href="" data-page="1">Больше работ</a>
         </div>
     <?php endif;?>
+
+    <div class="row text_center text"><b class="like-p" style="transform: none;">Смотри крутые путешествия  наших ведущих и делись своими</b></div>
+    <div class="row">
+        <?php foreach ($videoArr as $key => $v):?>
+            <?php $image = $v['image'] ? Url::toRoute($v['image']) : "https://img.youtube.com/vi/".$v['id']."/maxresdefault.jpg";?>
+            <div class="col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-6 col-md-4 col-lg-4 contast-card"">
+                <div class="contast-card-play-icon play-video" data-id="<?=$v['id']?>"></div>
+                <div class="contest-image" style="background: url(<?=$image;?>) 0 0/cover;">
+                    <?php if(isset($v['cityId'])):?>
+                        <a href="<?=Url::toRoute(['site/index', 'cityId' => $v['cityId']]);?>" class="contest-link">Подробнее..</a>
+                    <?php endif;?>
+
+                    <div class="contest-image-shadow"></div>
+                </div>
+                <div class="contest-text text_center"><?=$v['title'];?></div>
+            </div>
+        <?php endforeach;?>
+    </div>
 </div>
     
 <?=$this->render('_post_popup', ['model' => $model, 'showMap' => false]);?>
