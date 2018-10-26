@@ -15,10 +15,9 @@ use kop\y2sp\ScrollPager;
 ]);
 
 $videoArr = [
-    ['id' => '042UyeWlC5I', 'title' => 'О проекте', 'image' => '/img/video/1.jpg'],
     ['id' => 'jB4MyAc2ujQ', 'title' => 'Скажите сыыыр! Ферма-сыроварня, Матокса', 'image' => '', 'cityId' => 105],
     ['id' => 'gtqMyLBQfJE', 'title' => 'Саблинские пещеры', 'image' => ''],
-    ['id' => 'wRSDnBc-4-w', 'title' => 'Таинственный лес', 'image' => ''],
+    ['id' => 'wRSDnBc-4-w', 'title' => 'Арт-парк "Таинственный лес"', 'image' => ''],
     ['id' => 'e7pYgyx7cWM', 'title' => 'Музей железных дорог России', 'image' => '', 'cityId' => 100],
     ['id' => 'tCY8VXOZhK8', 'title' => 'Трек, Хибины', 'image' => ''],
     ['id' => 'b4j0uABIbBc', 'title' => 'Кировский рудник, Хибины', 'image' => '/img/video/7.jpg', 'cityId' => 101],
@@ -26,9 +25,6 @@ $videoArr = [
     ['id' => 'xajxxDJUNxQ', 'title' => 'Ретро-дайвинг, Семиозерье', 'image' => '/img/video/9.jpg', 'cityId' => 103],
     ['id' => 'pjLmtZViw8k', 'title' => 'По законам севера. Этническая деревня', 'image' => '/img/video/10.jpg', 'cityId' => 104],
     ['id' => 'W0awU596rNo', 'title' => 'Горячий снег. Тур на снегоходах', 'image' => '/img/video/11.jpg'],
-    ['id' => 'tCY8VXOZhK8', 'title' => 'Лёдная погода. Хибины', 'image' => ''],
-    ['id' => 'wRSDnBc-4-w', 'title' => 'Арт-парк "Таинственный лес"', 'image' => ''],
-    ['id' => 'gtqMyLBQfJE', 'title' => 'Саблинские пещеры', 'image' => ''],
 ];
 ?>
 
