@@ -15,7 +15,7 @@ use kop\y2sp\ScrollPager;
 ]);
 
 $videoArr = [
-    ['id' => 'jB4MyAc2ujQ', 'title' => 'Скажите сыыыр! Ферма-сыроварня, Матокса', 'image' => '', 'cityId' => 105],
+    ['id' => 'jB4MyAc2ujQ', 'title' => 'Скажите сыыыр!<br>Ферма-сыроварня, Матокса', 'image' => '', 'cityId' => 105],
     ['id' => 'gtqMyLBQfJE', 'title' => 'Саблинские пещеры', 'image' => ''],
     ['id' => 'wRSDnBc-4-w', 'title' => 'Арт-парк "Таинственный лес"', 'image' => ''],
     ['id' => 'e7pYgyx7cWM', 'title' => 'Музей железных дорог России', 'image' => '', 'cityId' => 100],
