@@ -68,17 +68,6 @@ $videoArr = [
     <div class="action">
         <a class="btn btn-oblique btn-yellow" target="_blank" href="<?=Url::toRoute(['contest/participate']);?>"><span>Поделиться историей</span></a>
     </div>
-    <div class="gallery">
-        <div class="row text_center text"><b class="like-p" style="transform: none;">Истории участников</b></div>
-        <div class="container">
-            <?=$this->render('_posts', ['dataProvider' => $dataProvider]);?>
-        </div>
-    </div>
-    <?php if($pageSize < $dataProvider->totalCount):?>
-        <div class="more">
-            <a href="" data-page="1">Больше работ</a>
-        </div>
-    <?php endif;?>
 
     <div class="row text_center text"><b class="like-p" style="transform: none;">Смотри крутые путешествия  наших ведущих и делись своими</b></div>
     <div class="row">
@@ -97,6 +86,18 @@ $videoArr = [
             </div>
         <?php endforeach;?>
     </div>
+
+    <div class="gallery">
+        <div class="row text_center text"><b class="like-p" style="transform: none;">Истории участников</b></div>
+        <div class="container">
+            <?=$this->render('_posts', ['dataProvider' => $dataProvider]);?>
+        </div>
+    </div>
+    <?php if($pageSize < $dataProvider->totalCount):?>
+        <div class="more">
+            <a href="" data-page="1">Больше работ</a>
+        </div>
+    <?php endif;?>
 </div>
     
 <?=$this->render('_post_popup', ['model' => $model, 'showMap' => false]);?>
