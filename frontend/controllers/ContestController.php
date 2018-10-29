@@ -64,7 +64,7 @@ class ContestController extends Controller
             ]);
         }
 
-        $stagesFinished = ContestStage::find()->where(['>', 'date_end', time()])->indexBy('id')->all();
+        $stagesFinished = ContestStage::find()->where(['<', 'date_end', time()])->indexBy('id')->all();
         $oldPosts = [];
         $oldPostsAll = Post::find()->where(['in', 'contest_stage_id', array_keys($stagesFinished)])->andWhere(['post.status' => Post::STATUS_ACTIVE])->all();
         foreach ($oldPostsAll as $p) {
@@ -74,6 +74,7 @@ class ContestController extends Controller
         $model = null;
         if($id) {
             $model = Post::findOne($id);
+            $model->canVote = $model->contest_stage_id == $contestStage->id;
         }
 
         $newPost = null;
@@ -154,6 +155,11 @@ class ContestController extends Controller
             if($post === null) {
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
+
+            $contestStage = ContestStage::find()->where(['id' => $post->contest_stage_id])->one();
+            if($contestStage && $contestStage->status == ContestStage::STATUS_ACTIVE) {
+                $canVote = true;
+            }
             
             return  [
                 'score' => $post->score,
@@ -164,6 +170,7 @@ class ContestController extends Controller
                 'url' => Url::to($post->url, true),
                 'srcUrl' => $post->getSrcUrl(true),
                 'type' => $post->type,
+                'canVote' => isset($canVote) ? true : false,
             ];
         }
     } 

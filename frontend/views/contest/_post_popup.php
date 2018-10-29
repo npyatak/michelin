@@ -28,15 +28,17 @@ use common\models\Post;
             <div></div>
             <div class="score">
                 <div class="skew-text">
-                    Баллы: <span><?=$model ?  $model->score : '';?></span>
+                    Баллы: <span><?=$model ? $model->score : '';?></span>
                     <br>
                     <?php if(Yii::$app->user->isGuest):?>
                         <?=Html::a('<i class="fa fa-heart"></i>Голосовать', null, [
                             'class' => 'login-modal-btn',
+                            'style' => ($model && $model->canVote) ? '' : 'display: none;',
                         ]);?>
                     <?php else:?>
                         <?=Html::a('<i class="fa fa-heart"></i>Голосовать', null, [
                             'class' => 'vote-button',
+                            'style' => ($model && $model->canVote) ? '' : 'display: none;',
                         ]);?>
                     <?php endif;?>
                 </div>

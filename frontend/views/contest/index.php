@@ -100,7 +100,7 @@ $videoArr = [
             <div class="gallery">
                 <div class="row text_center text"><b class="like-p" style="transform: none;"><?=$stage;?>:</b></div>
                 <div class="container">
-                    <?=$this->render('_posts', ['models' => $models]);?>
+                    <?=$this->render('_posts', ['models' => $models, 'noVote' => true]);?>
                 </div>
             </div>
         <?php endif;?>
@@ -170,6 +170,12 @@ $script = "
                 history.pushState(null, null, '".Url::toRoute(['contest/index'])."?id='+id);
 
                 niceScrollUpdate(250);
+
+                if(data.canVote) {
+                    $('.skew-text a').show();
+                } else {
+                    $('.skew-text a').hide();
+                }
             }
         });
 

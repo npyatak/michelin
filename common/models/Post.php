@@ -22,6 +22,8 @@ class Post extends \yii\db\ActiveRecord
     public $mediaFile;
     public $link;
 
+    public $canVote;
+
     public $x;
     public $y;
     public $w;
