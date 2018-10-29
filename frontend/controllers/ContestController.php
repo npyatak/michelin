@@ -64,6 +64,13 @@ class ContestController extends Controller
             ]);
         }
 
+        $stagesFinished = ContestStage::find()->where(['>', 'date_end', time()])->indexBy('id')->all();
+        $oldPosts = [];
+        $oldPostsAll = Post::find()->where(['in', 'contest_stage_id', array_keys($stagesFinished)])->andWhere(['post.status' => Post::STATUS_ACTIVE])->all();
+        foreach ($oldPostsAll as $p) {
+            $oldPosts[$stagesFinished[$p->contest_stage_id]->name][] = $p;
+        }
+
         $model = null;
         if($id) {
             $model = Post::findOne($id);
@@ -79,6 +86,7 @@ class ContestController extends Controller
             'model' => $model,
             'newPost' => $newPost,
             'pageSize' => $pageSize,
+            'oldPosts' => $oldPosts,
         ]);
     }
 

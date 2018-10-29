@@ -86,7 +86,7 @@ $videoArr = [
     <div class="gallery">
         <div class="row text_center text"><b class="like-p" style="transform: none;">Истории участников</b></div>
         <div class="container">
-            <?=$this->render('_posts', ['dataProvider' => $dataProvider]);?>
+            <?=$this->render('_posts', ['models' => $dataProvider->models]);?>
         </div>
     </div>
     <?php if($pageSize < $dataProvider->totalCount):?>
@@ -94,6 +94,17 @@ $videoArr = [
             <a href="" data-page="1">Больше работ</a>
         </div>
     <?php endif;?>
+
+    <?php foreach ($oldPosts as $stage => $models):?>
+        <?php if(!empty($models)):?>
+            <div class="gallery">
+                <div class="row text_center text"><b class="like-p" style="transform: none;"><?=$stage;?>:</b></div>
+                <div class="container">
+                    <?=$this->render('_posts', ['models' => $models]);?>
+                </div>
+            </div>
+        <?php endif;?>
+    <?php endforeach;?>
 </div>
     
 <?=$this->render('_post_popup', ['model' => $model, 'showMap' => false]);?>

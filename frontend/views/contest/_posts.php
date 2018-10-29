@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use common\models\Post;
 ?>
 
-<?php foreach ($dataProvider->models as $model):?>
+<?php foreach ($models as $model):?>
 	<div class="item" data-id="<?=$model->id;?>">
         <div class="item-image" style="background-image: url('<?=$model->srcUrl;?>')"></div>
 		<div class="item-user">
