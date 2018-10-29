@@ -176,6 +176,10 @@ $script = "
                 } else {
                     $('.skew-text a').hide();
                 }
+
+                $('html, body').animate({
+                    scrollTop: $('.city').offset().top - 50
+                }, 1000);
             }
         });
 
