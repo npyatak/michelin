@@ -47,7 +47,7 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'score', 'status', 'created_at', 'updated_at', 'type'], 'integer'],
-            [['media', 'yt_id'], 'string', 'max' => 255],
+            [['media', 'yt_id', 'city'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             ['text', 'string', 'max' => 2000],
 
@@ -86,6 +86,7 @@ class Post extends \yii\db\ActiveRecord
             'updated_at' => 'Время последнего изменения',
             'type' => 'Тип',
             'text' => 'Текст',
+            'city' => 'Город или место на карте',
         ];
     }
 

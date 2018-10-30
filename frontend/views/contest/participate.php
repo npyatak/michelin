@@ -26,6 +26,8 @@ $this->title = 'Поделиться историей';
             ])->label(false);?>
 
             <?= $form->field($model, 'link', ['template' => '<div class="form-link">{label}<div>{input}</div></div>'])->textInput()->label('или ссылка на видео на youtube') ?>
+            
+            <?= $form->field($model, 'city', ['template' => '<div class="form-link" style="margin-top: 15px;">{label}<div>{input}</div></div>'])->textInput() ?>
 
             <?= $form->field($model, 'text', ['template' => '<div class="form-text">{label}<div>{input}</div></div>'])->textarea()->label('ваша история:') ?>
 

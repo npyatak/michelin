@@ -34,7 +34,7 @@ foreach (ContestStage::find()->all() as $cs) {
                 }
             },
             'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
+                //['class' => 'yii\grid\SerialColumn'],
 
                 'id',
                 [
@@ -93,6 +93,7 @@ foreach (ContestStage::find()->all() as $cs) {
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'type', Post::getTypeArray(), ['prompt'=>'']),
                 ],
+                'city',
                 [
                     'attribute' => 'created_at',
                     'value' => function($data) {

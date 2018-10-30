@@ -108,7 +108,7 @@ class ContestController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->user_id = Yii::$app->user->id;
             $model->contest_stage_id = $contestStage->id;
-            $model->status = Post::STATUS_ACTIVE;
+            $model->status = Post::STATUS_NEW;
             
             if($model->save()) {
                 $path = $model->srcPath;
