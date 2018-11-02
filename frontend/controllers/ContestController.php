@@ -60,7 +60,7 @@ class ContestController extends Controller
                 'pageSize' => $pageSize,
             ];
             return $this->renderAjax('_posts', [
-                'dataProvider' => $dataProvider,
+                'models' => $dataProvider->models,
             ]);
         }
 
