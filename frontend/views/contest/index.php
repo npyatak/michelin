@@ -85,7 +85,7 @@ $videoArr = [
 
     <div class="gallery">
         <div class="row text_center text"><b class="like-p" style="transform: none;">Истории участников</b></div>
-        <div class="container">
+        <div class="container" id="posts">
             <?=$this->render('_posts', ['models' => $dataProvider->models]);?>
         </div>
     </div>
@@ -127,7 +127,7 @@ $script = "
             data: 'page='+page, 
             type: 'get',
             success: function(data) {
-                $('.gallery .container').append(data);
+                $('#posts').append(data);
                 link.data('page', page + 1);
                 if(data.length <= 1) {
                     link.hide();
