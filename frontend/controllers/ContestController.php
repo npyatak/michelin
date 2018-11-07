@@ -68,7 +68,7 @@ class ContestController extends Controller
         $oldPosts = [];
         $oldPostsAll = Post::find()->where(['in', 'contest_stage_id', array_keys($stagesFinished)])->andWhere(['post.status' => Post::STATUS_ACTIVE])->all();
         foreach ($oldPostsAll as $p) {
-            $oldPosts[$stagesFinished[$p->contest_stage_id]->name][] = $p;
+            $oldPosts[$p->contest_stage_id][] = $p;
         }
 
         $model = null;
@@ -88,6 +88,7 @@ class ContestController extends Controller
             'newPost' => $newPost,
             'pageSize' => $pageSize,
             'oldPosts' => $oldPosts,
+            'stagesFinished' => $stagesFinished,
         ]);
     }
 
@@ -166,7 +167,7 @@ class ContestController extends Controller
                 'fullName' => $post->user->fullName,
                 'id' => $post->id,
                 'yt_id' => $post->yt_id,
-                'text' => $post->text,
+                'text' => '<p>'.$post->city.'</p><br>'.$post->text,
                 'url' => Url::to($post->url, true),
                 'srcUrl' => $post->getSrcUrl(true),
                 'type' => $post->type,

@@ -13,7 +13,11 @@ use common\models\Post;
             </div>
         </div>
         <div class="text">
-            <div class="wrap niceScroll"><?=($model && $model->status == Post::STATUS_ACTIVE) ?  $model->text : 'Работа находится на модерации';?></div>
+            <div class="wrap niceScroll">
+                <p><?=($model && $model->status == Post::STATUS_ACTIVE) ? $model->city : '';?></p>
+                <br>
+                <?=($model && $model->status == Post::STATUS_ACTIVE) ?  $model->text : 'Работа находится на модерации';?>
+            </div>
         </div>
     </div>
     <div class="info_block row">

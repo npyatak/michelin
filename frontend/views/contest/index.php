@@ -95,10 +95,10 @@ $videoArr = [
         </div>
     <?php endif;?>
 
-    <?php foreach ($oldPosts as $stage => $models):?>
+    <?php foreach ($oldPosts as $stageId => $models):?>
         <?php if(!empty($models)):?>
             <div class="gallery">
-                <div class="row text_center text"><b class="like-p" style="transform: none;"><?=$stage;?>:</b></div>
+                <div class="row text_center text"><b class="like-p" style="transform: none;"><?=$stagesFinished[$stageId]->name;?>:</b></div>
                 <div class="container">
                     <?=$this->render('_posts', ['models' => $models, 'noVote' => true]);?>
                 </div>
