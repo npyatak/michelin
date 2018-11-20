@@ -49,7 +49,7 @@ class Post extends \yii\db\ActiveRecord
             [['user_id', 'score', 'status', 'created_at', 'updated_at', 'type'], 'integer'],
             [['media', 'yt_id', 'city'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
-            ['text', 'string', 'max' => 2000],
+            ['text', 'string'],
 
             [['x', 'y', 'w', 'h', 'scale', 'angle'], 'safe'],
             [['mediaFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg, jpeg, png, mp4, mov, m4v, mpeg, mpg', 'maxSize' => 1024 * 1024 * 30, 'tooBig' => 'Максимальный размер 30Мб', 'checkExtensionByMimeType'=>false],
