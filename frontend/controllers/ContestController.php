@@ -110,10 +110,11 @@ class ContestController extends Controller
             $model->user_id = Yii::$app->user->id;
             $model->contest_stage_id = $contestStage->id;
             $model->status = Post::STATUS_NEW;
+
+            $model->mediaFile = UploadedFile::getInstance($model, 'mediaFile');
             
             if($model->save()) {
                 $path = $model->srcPath;
-                $model->mediaFile = UploadedFile::getInstance($model, 'mediaFile');
 
                 $model->type = Post::TYPE_STORY;
 

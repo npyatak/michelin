@@ -52,7 +52,7 @@ class Post extends \yii\db\ActiveRecord
             ['text', 'string'],
 
             [['x', 'y', 'w', 'h', 'scale', 'angle'], 'safe'],
-            [['mediaFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg, jpeg, png, mp4, mov, m4v, mpeg, mpg', 'maxSize' => 1024 * 1024 * 30, 'tooBig' => 'Максимальный размер 30Мб', 'checkExtensionByMimeType'=>false],
+            [['mediaFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg, jpeg, png', 'maxSize' => 1024 * 1024 * 30, 'tooBig' => 'Максимальный размер 30Мб', 'mimeTypes' => 'image/jpg, image/jpeg, image/png', 'checkExtensionByMimeType'=>true],
             ['text', 'required', 'when' => function($model) {
                 return ($model->mediaFile == null && $model->yt_id == null);
             }, 'message' => 'Необходимо заполнить выбрать изображение/видео или заполнить текст'],

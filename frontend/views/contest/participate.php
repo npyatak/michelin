@@ -25,11 +25,11 @@ $this->title = 'Поделиться историей';
                 'customView' => '@frontend/views/contest/_fileinput_custom_view.php',
             ])->label(false);?>
 
-            <?= $form->field($model, 'link', ['template' => '<div class="form-link">{label}<div>{input}</div></div>'])->textInput()->label('или ссылка на видео на youtube') ?>
+            <?= $form->field($model, 'link', ['template' => '<div class="form-link">{label}<div>{input}{error}</div></div>'])->textInput()->label('или ссылка на видео на youtube') ?>
             
-            <?= $form->field($model, 'city', ['template' => '<div class="form-link" style="margin-top: 15px;">{label}<div>{input}</div></div>'])->textInput() ?>
+            <?= $form->field($model, 'city', ['template' => '<div class="form-link" style="margin-top: 15px;">{label}<div>{input}{error}</div></div>'])->textInput() ?>
 
-            <?= $form->field($model, 'text', ['template' => '<div class="form-text">{label}<div>{input}</div></div>'])->textarea()->label('ваша история:') ?>
+            <?= $form->field($model, 'text', ['template' => '<div class="form-text">{label}<div>{input}{error}</div></div>'])->textarea()->label('ваша история:') ?>
 
             <div class="form-bottom">
                 <div>История будет опубликована  в течение 24 часов</div>
