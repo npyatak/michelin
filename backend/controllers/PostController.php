@@ -9,6 +9,8 @@ use yii\filters\VerbFilter;
 use kartik\grid\EditableColumnAction;
 
 use common\models\Post;
+use common\models\User;
+use common\models\ContestStage;
 use common\models\search\PostSearch;
 
 /**
@@ -90,6 +92,78 @@ class PostController extends CController
         //return $model->save(false);
         
         return $this->redirect(['view', 'id' => $id]);
+    }
+
+    public function actionExcelExport()
+    {
+        $contestStages = ContestStage::find()->all();
+        //этап, место, ник, id в конкурсе, дата рождения, e-mail, соц. сеть, телефон, ip. 
+        $postArr = [];
+        $query = Post::find()
+            //->select(['user_id', 'sum(score) as sumScore', 'name', 'birthdate', 'email', 'soc', 'phone', 'ip'])
+            ->where(['post.status' => Post::STATUS_ACTIVE, 'user.status' => User::STATUS_ACTIVE])
+            ->joinWith('user')
+            ->asArray();
+        
+        $sheets = [];
+        foreach ($contestStages as $stage) {
+            if($stage->status == ContestStage::STATUS_FINISHED) {
+                $q = clone($query);
+                $postArr[$stage->id] = $q->andWhere(['contest_stage_id' => $stage->id])->all();
+
+                foreach ($postArr[$stage->id] as $p => $w) {
+                    $sheets['Этап '.$stage->number]['data'][] = [
+                        $w['user']['id'],
+                        $w['user']['soc'],
+                        $w['user']['sid'],
+                        $w['user']['name'],
+                        $w['user']['surname'],
+                        $w['user']['ip'],
+                        $w['user']['browser'],
+                        $w['user']['email'],
+
+                        $w['id'],
+                        $w['score'],
+                        $w['media'],
+                        $w['city'],
+                        $w['text'],
+                    ];
+
+                    $sheets['Этап '.$stage->number]['titles'] = [
+                        User::attributeLabels()['id'],
+                        User::attributeLabels()['soc'],
+                        User::attributeLabels()['sid'],
+                        User::attributeLabels()['name'],
+                        User::attributeLabels()['surname'],
+                        User::attributeLabels()['ip'],
+                        User::attributeLabels()['browser'],
+                        User::attributeLabels()['email'],
+
+                        Post::attributeLabels()['id'],
+                        Post::attributeLabels()['score'],
+                        Post::attributeLabels()['media'],
+                        Post::attributeLabels()['city'],
+                        Post::attributeLabels()['text'],
+                    ]; 
+                }
+            }
+        }
+
+        $file = \Yii::createObject([
+            'class' => 'codemix\excelexport\ExcelFile',
+            'sheets' => $sheets
+        ]);
+
+        $file->createSheets();
+
+        foreach ($file->getWorkbook()->getAllSheets() as $key => $sheet) {
+            foreach(range('A','K') as $columnID) {
+                $sheet->getColumnDimension($columnID)
+                    ->setAutoSize(true);
+            }
+        }
+
+        $file->send('posts.xlsx');
     }
 
     public function actionDelete($id) {

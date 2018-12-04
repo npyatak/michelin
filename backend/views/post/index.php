@@ -22,6 +22,10 @@ foreach (ContestStage::find()->all() as $cs) {
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+    <p>
+        <?= Html::a('Выгрузить в Excel', ['excel-export'], ['class' => 'btn btn-success']) ?>
+    </p>
+
     <?php Pjax::begin(['id' => 'grid-pjax']); ?>  
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
