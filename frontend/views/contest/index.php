@@ -83,16 +83,18 @@ $videoArr = [
         <?php endforeach;?>
     </div>
 
-    <div class="gallery">
-        <div class="row text_center text"><b class="like-p" style="transform: none;">Истории участников</b></div>
-        <div class="container" id="posts">
-            <?=$this->render('_posts', ['models' => $dataProvider->models]);?>
+    <?php if(isset($dataProvider->models)):?>
+        <div class="gallery">
+            <div class="row text_center text"><b class="like-p" style="transform: none;">Истории участников</b></div>
+            <div class="container" id="posts">
+                <?=$this->render('_posts', ['models' => $dataProvider->models]);?>
+            </div>
         </div>
-    </div>
-    <?php if($pageSize < $dataProvider->totalCount):?>
-        <div class="more">
-            <a href="" data-page="1">Больше работ</a>
-        </div>
+        <?php if($pageSize < $dataProvider->totalCount):?>
+            <div class="more">
+                <a href="" data-page="1">Больше работ</a>
+            </div>
+        <?php endif;?>
     <?php endif;?>
 
     <?php foreach ($oldPosts as $stageId => $models):?>

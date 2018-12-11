@@ -36,32 +36,33 @@ class ContestController extends Controller
     {
         $pageSize = 8;
         $contestStage = $this->currentContestStage;
-        if($contestStage == null) {
-            return $this->redirect('index');
-        }
-
+        
         $searchModel = new PostSearch();
-        $params = Yii::$app->request->queryParams;
-        $params['PostSearch']['contest_stage_id'] = $contestStage->id;
+        $dataProvider = false;
+        
+        if($contestStage !== null) {
+            $params = Yii::$app->request->queryParams;
+            $params['PostSearch']['contest_stage_id'] = $contestStage->id;
 
-        $dataProvider = $searchModel->search($params);
-        $dataProvider->query->andWhere(['post.status' => Post::STATUS_ACTIVE])->joinWith('user');
-        $dataProvider->sort = [
-            'defaultOrder' => ['score' => SORT_DESC],
-            'attributes' => ['created_at', 'score'],
-        ];
-        $dataProvider->pagination = [
-            'pageSize' => $pageSize,
-        ];
-
-        if (Yii::$app->request->isAjax && isset($_GET['page'])) {
+            $dataProvider = $searchModel->search($params);
+            $dataProvider->query->andWhere(['post.status' => Post::STATUS_ACTIVE])->joinWith('user');
+            $dataProvider->sort = [
+                'defaultOrder' => ['score' => SORT_DESC],
+                'attributes' => ['created_at', 'score'],
+            ];
             $dataProvider->pagination = [
-                'page' => $_GET['page'],
                 'pageSize' => $pageSize,
             ];
-            return $this->renderAjax('_posts', [
-                'models' => $dataProvider->models,
-            ]);
+
+            if (Yii::$app->request->isAjax && isset($_GET['page'])) {
+                $dataProvider->pagination = [
+                    'page' => $_GET['page'],
+                    'pageSize' => $pageSize,
+                ];
+                return $this->renderAjax('_posts', [
+                    'models' => $dataProvider->models,
+                ]);
+            }
         }
 
         $stagesFinished = ContestStage::find()->where(['<', 'date_end', time()])->indexBy('id')->all();
