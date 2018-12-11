@@ -61,9 +61,9 @@ $videoArr = [
             <div>революционные шины <b>Michelin X-Ice North 4</b></div>
         </div>
     </div>
-    <div class="action">
+    <!-- <div class="action">
         <a class="btn btn-oblique btn-yellow" target="_blank" href="<?=Url::toRoute(['contest/participate']);?>"><span>Поделиться историей</span></a>
-    </div>
+    </div> -->
 
     <div class="row text_center text"><b class="like-p" style="transform: none;">Смотри крутые путешествия  наших ведущих и делись своими</b></div>
     <div class="row">
