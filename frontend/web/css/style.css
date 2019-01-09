@@ -434,7 +434,7 @@ header .main_menu span {
     box-sizing: border-box
 }
 
-.index_page .main_screen .about .title {
+.index_page .main_screen .about .title, .subtitle {
     font-size: 20px;
     color: #FFF;
     font-weight: 600;
@@ -442,6 +442,9 @@ header .main_menu span {
     transform: skewX(24deg);
     margin-bottom: 25px;
     text-shadow: 2px 1px 6px rgba(0, 0, 0, .3)
+}
+.subtitle {
+    transform: skewX(-1deg);
 }
 
 .index_page .main_screen .about .descr {
@@ -480,7 +483,7 @@ header .main_menu span {
         max-width: 420px
     }
 
-    .index_page .main_screen .about .title {
+    .index_page .main_screen .about .title, .subtitle {
         font-size: 18px;
         margin-bottom: 15px
     }
@@ -515,7 +518,7 @@ header .main_menu span {
         box-sizing: border-box
     }
 
-    .index_page .main_screen .about .title {
+    .index_page .main_screen .about .title, .subtitle {
         font-size: 18px;
         margin-bottom: 15px
     }
@@ -540,7 +543,7 @@ header .main_menu span {
         margin-bottom: 50px;
     }
 
-    .index_page .main_screen .about, .index_page .main_screen .about .descr > div, .index_page .main_screen .about .title {
+    .index_page .main_screen .about, .index_page .main_screen .about .descr > div, .index_page .main_screen .about .title, .subtitle {
         transform: none
     }
 }
@@ -2023,6 +2026,7 @@ body.overflow {
 .winners .elem .name {
     font-size: 22px;
     font-weight: bold;
+    white-space: nowrap;
 }
 .winners .elem .week {
     font-family: Arial;
